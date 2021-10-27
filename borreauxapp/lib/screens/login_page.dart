@@ -19,15 +19,21 @@ class _LoginPageState extends State<LoginPage> {
             decoration: BoxDecoration(
               color: const Color(0xFFFFFFFF),
             ),
-          ),
-          ElevatedButton(
-            child: Text('Open route'),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => SecondRoute()),
-              );
-            },
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                ElevatedButton(
+                  child: Text('Open route'),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SecondRoute()),
+                    );
+                  },
+                ),
+              ],
+            ),
           ),
           //Image.asset('assets/images/4330logo3.png'),
         ],
