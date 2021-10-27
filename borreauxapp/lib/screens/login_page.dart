@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:borreauxapp/widgets/ButtonWidget.dart';
+import 'package:borreauxapp/screens/storefront.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -17,14 +19,53 @@ class _LoginPageState extends State<LoginPage> {
             decoration: BoxDecoration(
               color: const Color(0xFFFFFFFF),
               ),
+              child: ElevatedButton(
+                child: Text('Open route'),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SecondRoute()),
+                  );
+                },
+              ),
             ),
-          Image.asset('assets/images/4330logo2.png'),
+          Image.asset('assets/images/4330logo3.png'),
           ],
-        ),
+        ),  
       );
+  }
+}
+
+class FirstRoute extends StatelessWidget {
+  const FirstRoute({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('First Route'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          child: Text('Open route'),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SecondRoute()),
+            );
+          },
+        ),
+      ),
+    );
   }
 }
 /*
   padding: EdgeInsets.all(20.0),
   margin: EdgeInsets.all(20.0),
+  ButtonWidget(
+                text: 'Push: Page 2',
+                onClicked: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SecondPage()),
+                ),
   */
