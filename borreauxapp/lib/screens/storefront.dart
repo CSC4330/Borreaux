@@ -17,12 +17,12 @@ class _StorefrontState extends State<Storefront> {
             height: double.infinity,
             decoration: BoxDecoration(
               color: const Color(0xFFFFFFFF),
-              ),
             ),
+          ),
           Image.asset('assets/images/4330logo2.png'),
-          ],
-        ),
-      );
+        ],
+      ),
+    );
   }
 }
 
@@ -37,12 +37,42 @@ class SecondRoute extends StatelessWidget {
       ),
       body: Center(
         child: ElevatedButton(
+          child: Text('Go back'),
           onPressed: () {
-            // Navigate back to first route when tapped.
+            Navigator.pop(context);
           },
-          child: Text('Go back!'),
         ),
       ),
     );
   }
 }
+
+// class SecondPage extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) => Scaffold(
+//         appBar: AppBar(
+//           title: Text(MyApp.title),
+//           centerTitle: true,
+//         ),
+//         body: Center(
+//           child: Column(
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             children: <Widget>[
+//               HeaderWidget(title: 'Page 2'),
+//               ButtonWidget(
+//                 text: 'Push: Page 3',
+//                 onClicked: () => Navigator.push(
+//                   context,
+//                   MaterialPageRoute(builder: (context) => ThirdPage()),
+//                 ),
+//               ),
+//               const SizedBox(height: 24),
+//               ButtonWidget(
+//                 text: 'Pop: Page 1',
+//                 onClicked: () => Navigator.pop(context),
+//               ),
+//             ],
+//           ),
+//         ),
+//       );
+// }
