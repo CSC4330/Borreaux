@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:borreauxapp/screens/login_page.dart';
-import 'package:borreauxapp/screens/storefront.dart';
+import 'package:borreauxapp/widgets/nav_bar.dart';
 
 void main() {
   runApp(MyApp());

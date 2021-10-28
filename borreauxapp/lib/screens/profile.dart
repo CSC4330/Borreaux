@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class StorefrontWidget extends StatelessWidget {
+class ProfileWidget extends StatelessWidget {
   final Color color;
 
-  StorefrontWidget(this.color);
+  ProfileWidget(this.color);
 
   @override
   Widget build(BuildContext context) {

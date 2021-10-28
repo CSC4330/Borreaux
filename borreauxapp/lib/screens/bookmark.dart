@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class StorefrontWidget extends StatelessWidget {
+class BookmarkWidget extends StatelessWidget {
   final Color color;
 
-  StorefrontWidget(this.color);
+  BookmarkWidget(this.color);
 
   @override
   Widget build(BuildContext context) {

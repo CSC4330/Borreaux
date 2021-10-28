@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:borreauxapp/widgets/ButtonWidget.dart';
-import 'package:borreauxapp/screens/storefront.dart';
+import 'package:borreauxapp/widgets/nav_bar.dart';
+import 'package:borreauxapp/assets/colors.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -17,7 +18,7 @@ class _LoginPageState extends State<LoginPage> {
             width: double.infinity,
             height: double.infinity,
             decoration: BoxDecoration(
-              color: const Color(0xFFFFFFFF),
+              color: AppColor.primaryColor,
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -28,7 +29,7 @@ class _LoginPageState extends State<LoginPage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => SecondRoute()),
+                      MaterialPageRoute(builder: (context) => nav_bar()),
                     );
                   },
                 ),
