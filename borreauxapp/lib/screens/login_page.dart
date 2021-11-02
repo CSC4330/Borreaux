@@ -52,7 +52,7 @@ class _LoginPageState extends State<LoginPage> {
           child: const TextField(
             keyboardType: TextInputType.emailAddress,
             style: TextStyle(
-              color: AppColor.primaryColor,
+              color: AppColor.secondaryColor,
               fontFamily: 'OpenSans',
             ),
             decoration: InputDecoration(
@@ -171,11 +171,17 @@ class _LoginPageState extends State<LoginPage> {
                   physics: const AlwaysScrollableScrollPhysics(),
                   padding: const EdgeInsets.symmetric(
                     horizontal: 40.0,
-                    vertical: 120.0,
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
+                      Padding(
+                        padding: EdgeInsets.all(30),
+                        child: Image.asset('lib/assets/images/4330logo3.png',
+                        width: 130.0,
+                        height: 130.0,
+                        ),
+                      ),
                       const Text(
                         'Sign In',
                         style: TextStyle(
@@ -186,11 +192,9 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                       const SizedBox(height: 30.0),
-                      const SizedBox(
-                        height: 30.0,
-                      ),
                       buildEmailTextbox(),
                       buildPasswordTextbox(),
+                      const SizedBox(height: 20.0),
                       buildLoginButton(),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
