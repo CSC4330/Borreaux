@@ -14,7 +14,7 @@ class _LoginPageState extends State<LoginPage> {
     return Column(
       children: <Widget>[
         ElevatedButton(
-          child: Text('Login'),
+          child: const Text('Login'),
           onPressed: () {
             Navigator.push(
               context,
@@ -31,16 +31,16 @@ class _LoginPageState extends State<LoginPage> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text('Email', style: TextStyle(color: Colors.white)),
-        SizedBox(height: 10.0),
+        const Text('Email', style: TextStyle(color: Colors.white)),
+        const SizedBox(height: 10.0),
         Container(
           alignment: Alignment.centerLeft,
           height: 60.0,
-          decoration: new BoxDecoration(
+          decoration: BoxDecoration(
             border: Border.all(color: Colors.blueAccent),
-            borderRadius: BorderRadius.all(Radius.circular(20)),
+            borderRadius: const BorderRadius.all(Radius.circular(20)),
           ),
-          child: TextField(
+          child: const TextField(
             keyboardType: TextInputType.emailAddress,
             style: TextStyle(
               color: Colors.white,
@@ -65,19 +65,19 @@ class _LoginPageState extends State<LoginPage> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text('Password',
+        const Text('Password',
             style: TextStyle(
               color: Colors.white,
             )),
-        SizedBox(height: 10.0),
+        const SizedBox(height: 10.0),
         Container(
           alignment: Alignment.centerLeft,
           height: 60.0,
-          decoration: new BoxDecoration(
+          decoration: BoxDecoration(
             border: Border.all(color: Colors.blueAccent),
-            borderRadius: BorderRadius.all(Radius.circular(20)),
+            borderRadius: const BorderRadius.all(Radius.circular(20)),
           ),
-          child: TextField(
+          child: const TextField(
             obscureText: true,
             style: TextStyle(
               color: Colors.white,
@@ -103,7 +103,7 @@ class _LoginPageState extends State<LoginPage> {
       alignment: Alignment.centerRight,
       child: TextButton(
         onPressed: () => print('Forgot Password Button Pressed'),
-        child: Text(
+        child: const Text(
           'Forgot Password?',
           style: TextStyle(color: Colors.white),
         ),
@@ -116,7 +116,7 @@ class _LoginPageState extends State<LoginPage> {
       alignment: Alignment.centerLeft,
       child: TextButton(
         onPressed: () => print('Sign up Button Pressed'),
-        child: Text(
+        child: const Text(
           'Sign up',
           style: TextStyle(
             color: Colors.white,
@@ -145,15 +145,15 @@ class _LoginPageState extends State<LoginPage> {
                 height: double.infinity,
                 //in case entire screen is not visible on a different device
                 child: SingleChildScrollView(
-                  physics: AlwaysScrollableScrollPhysics(),
-                  padding: EdgeInsets.symmetric(
+                  physics: const AlwaysScrollableScrollPhysics(),
+                  padding: const EdgeInsets.symmetric(
                     horizontal: 40.0,
                     vertical: 120.0,
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Text(
+                      const Text(
                         'Sign In',
                         style: TextStyle(
                           color: Colors.white,
@@ -162,8 +162,8 @@ class _LoginPageState extends State<LoginPage> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 30.0),
-                      SizedBox(
+                      const SizedBox(height: 30.0),
+                      const SizedBox(
                         height: 30.0,
                       ),
                       buildEmailTextbox(),
