@@ -1,6 +1,7 @@
+import 'package:borreauxapp/screens/signup_page.dart';
 import 'package:flutter/material.dart';
-import 'package:borreauxapp/widgets/ButtonWidget.dart';
 import 'package:borreauxapp/widgets/nav_bar.dart';
+import 'package:borreauxapp/widgets/textbox_widget.dart';
 import 'package:borreauxapp/assets/colors.dart';
 
 class LoginPage extends StatefulWidget {
@@ -75,12 +76,12 @@ class _LoginPageState extends State<LoginPage> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Container(
-        margin: const EdgeInsets.only(top: 20.0),
-        child: const Text('Password',
-            style: TextStyle(
-              color: AppColor.secondaryColor,
-            )),
-          ),
+          margin: const EdgeInsets.only(top: 20.0),
+          child: const Text('Password',
+              style: TextStyle(
+                color: AppColor.secondaryColor,
+              )),
+        ),
         const SizedBox(height: 10.0),
         Container(
           alignment: Alignment.centerLeft,
@@ -124,13 +125,13 @@ class _LoginPageState extends State<LoginPage> {
       alignment: Alignment.centerRight,
       child: TextButton(
         child: const Text('Forgot Password?'),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => nav_bar()),
-            );
-          },
-        ),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => nav_bar()),
+          );
+        },
+      ),
     );
   }
 
@@ -139,13 +140,13 @@ class _LoginPageState extends State<LoginPage> {
       alignment: Alignment.centerLeft,
       child: TextButton(
         child: const Text('Sign Up'),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => nav_bar()),
-            );
-          },
-        ),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => buildSignupPage()),
+          );
+        },
+      ),
     );
   }
 
@@ -177,9 +178,10 @@ class _LoginPageState extends State<LoginPage> {
                     children: <Widget>[
                       Padding(
                         padding: EdgeInsets.all(30),
-                        child: Image.asset('lib/assets/images/4330logo3.png',
-                        width: 130.0,
-                        height: 130.0,
+                        child: Image.asset(
+                          'lib/assets/images/4330logo3.png',
+                          width: 130.0,
+                          height: 130.0,
                         ),
                       ),
                       const Text(
