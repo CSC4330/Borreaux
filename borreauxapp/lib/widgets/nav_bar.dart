@@ -1,4 +1,6 @@
+import 'package:borreauxapp/assets/colors.dart';
 import 'package:borreauxapp/screens/storefront.dart';
+import 'package:borreauxapp/widgets/profile_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:borreauxapp/screens/login_page.dart';
 import 'package:borreauxapp/screens/messages.dart';
@@ -18,7 +20,7 @@ class _nav_bar_state extends State<nav_bar> {
     BookmarkWidget(Colors.deepOrange),
     AddWidget(Colors.green),
     MessagesWidget(Colors.blue),
-    ProfileWidget(Colors.black)
+    ProfilePage(),
   ];
   @override
   Widget build(BuildContext context) {
