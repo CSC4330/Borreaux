@@ -5,6 +5,7 @@ import 'package:borreauxapp/utils/user_preferences.dart';
 import 'package:borreauxapp/widgets/button_widget.dart';
 import 'package:borreauxapp/widgets/numbers_widget.dart';
 import 'package:borreauxapp/widgets/profile_widget.dart';
+import 'package:borreauxapp/screens/edit_profile.dart';
 
 class ProfilePage extends StatefulWidget {
   // final Color color;
@@ -24,24 +25,32 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
+    // allows access to the user fields we created in this page
     final user = UserPreferences.myUser;
 
     return Scaffold(
+      // builds the entire profile page
       body: ListView(
         physics: BouncingScrollPhysics(),
         children: [
           ProfileWidget(
             imagePath: user.imagePath,
-            onClicked: () async {},
+            // when clicking the image, it will take us to the
+            // editProfile page
+            onClicked: () async {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => EditProfile()),
+              );
+            }, // we edit the photo
           ),
           const SizedBox(height: 24),
           buildName(user),
           const SizedBox(height: 24),
-          // Center(child: buildUpgradeButton()),
-          const SizedBox(height: 24),
           NumbersWidget(),
           const SizedBox(height: 48),
           buildAbout(user),
+          const SizedBox(height: 96),
+          Center(child: buildLogoutButton()),
         ],
       ),
     );
@@ -49,11 +58,13 @@ class _ProfilePageState extends State<ProfilePage> {
 
   Widget buildName(User user) => Column(
         children: [
+          // shows user's name
           Text(
             user.name,
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
           ),
           const SizedBox(height: 4),
+          // shows user email
           Text(
             user.email,
             style: TextStyle(color: Colors.grey),
@@ -61,8 +72,8 @@ class _ProfilePageState extends State<ProfilePage> {
         ],
       );
 
-  Widget buildUpgradeButton() => ButtonWidget(
-        text: 'Upgrade To PRO',
+  Widget buildLogoutButton() => ButtonWidget(
+        text: 'Logout',
         onClicked: () {},
       );
 

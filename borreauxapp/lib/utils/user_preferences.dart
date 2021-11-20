@@ -1,5 +1,7 @@
 import 'package:borreauxapp/model/user.dart';
 
+// this class will display all the user infor
+// in the UI
 class UserPreferences {
   static const myUser = User(
     imagePath:
