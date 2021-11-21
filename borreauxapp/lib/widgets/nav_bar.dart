@@ -16,7 +16,7 @@ class nav_bar extends StatefulWidget {
 class _nav_bar_state extends State<nav_bar> {
   int _currentIndex = 0;
   final List _children = [
-    StorefrontWidget(Colors.white),
+    StorefrontState(),
     BookmarkWidget(Colors.deepOrange),
     AddWidget(Colors.green),
     MessagesWidget(Colors.blue),
@@ -26,7 +26,7 @@ class _nav_bar_state extends State<nav_bar> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Temp Bar to go back to Login"),
+        title: Text("Temp Bar to go back to Login"),       // REMOVE APP BAR LINES TO FIX FORMAT
       ),
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
