@@ -1,8 +1,9 @@
 import 'package:borreauxapp/screens/signup_page.dart';
 import 'package:flutter/material.dart';
 import 'package:borreauxapp/widgets/nav_bar.dart';
-import 'package:borreauxapp/widgets/textbox_widget.dart';
 import 'package:borreauxapp/assets/colors.dart';
+import 'package:borreauxapp/utils/authentication.dart';
+import 'package:borreauxapp/widgets/google_sign_button.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -208,7 +209,22 @@ class _LoginPageState extends State<LoginPage> {
                     ],
                   ),
                 ),
-              )
+              ),
+              FutureBuilder(
+                future: Authentication.initializeFirebase(),
+                builder: (context, snapshot) {
+                  if (snapshot.hasError) {
+                    return Text('Error initializing Firebase');
+                  } else if (snapshot.connectionState == ConnectionState.done) {
+                    return GoogleSignInButton();
+                  }
+                  return CircularProgressIndicator(
+                    valueColor: AlwaysStoppedAnimation<Color>(
+                      AppColor.primaryColor,
+                    ),
+                  );
+                },
+              ),
             ],
           ),
         ],
