@@ -1,11 +1,13 @@
 //import 'dart:html';
 
+import 'package:borreauxapp/assets/colors.dart';
 import 'package:borreauxapp/screens/listings.dart';
+import 'package:borreauxapp/widgets/ratingbar_widget.dart';
+import 'package:borreauxapp/widgets/storefront_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:filter_list/filter_list.dart';
 
 class StorefrontState extends StatefulWidget{
@@ -45,7 +47,6 @@ class StorefrontWidget extends State<StorefrontState> {
   Widget build(BuildContext context) => MaterialApp(
         debugShowCheckedModeBanner: false,
 
-
             home: Scaffold(
               appBar: PreferredSize(
                   preferredSize: Size.fromHeight(100.0), // here the desired height
@@ -55,11 +56,18 @@ class StorefrontWidget extends State<StorefrontState> {
                     title: Container(
                       width: double.infinity,
                       height: 40,
-                      color: Colors.white,
+                      color: AppColor.secondaryColor,
                       child: Center(
                         child: TextField(
+                          
                           decoration: InputDecoration(
+                              filled: true,
+                              fillColor: Colors.white,
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(20.0),
+                              ),
                               hintText: 'Search for something',
+                              hintStyle: TextStyle(fontSize: 13),
                               prefixIcon: Icon(Icons.search),
                               suffixIcon: IconButton(  
                                 icon: ImageIcon(AssetImage("lib/assets/images/barcode_scan.png"), size: 35,),
@@ -105,7 +113,7 @@ class StorefrontWidget extends State<StorefrontState> {
                     ),
                   )), // APP BAR
               body: Container(
-                  height: 570.0,
+                  height: 1000.0,
                   child: ViewHasBeenPressed ? _contentGridView() : _contentListView(),  
                 ),
             )
@@ -137,79 +145,23 @@ class StorefrontWidget extends State<StorefrontState> {
              },
               child: Row(
                 children: [
-                  Expanded(
-                    flex: 33,
-                    child: Image.asset('lib/assets/images/book_image_not_found.png',),
-                  ),
+                  StorefrontImage("lib/assets/images/book_image_not_found.png"),
                   Expanded(
                     flex: 50,
                     child: Column(
                       children: [
                         SizedBox(height: 20,),
-                        Row(children: [Expanded( flex: 20, child: Center(child: Text('Title')),)]),
+                        StorefrontTitle("My Title"),
                         SizedBox(height: 15,),
-                        Row(children:[
-                          SizedBox(width: 15,),
-                          Container(
-                            height: 20,
-                            width: 20,
-                            child: Image.asset("lib/assets/images/blank_profile.png"),
-                          ), 
-                          SizedBox(width: 15,),
-                          Expanded(flex: 20, child: Text('Username'))],
-                        ),
+                        StorefrontProfile("lib/assets/images/blank_profile.png", "Username"),
                         Row(children:[
                             SizedBox(width: 50,),
-                            RatingBar.builder(
-                              initialRating: 3,
-                              itemCount: 5,
-                              itemSize: 15,
-                              itemBuilder: (context, index) {
-                                switch (index) {
-                                    case 0:
-                                      return Icon(
-                                          Icons.sentiment_very_dissatisfied,
-                                          color: Colors.red,
-                                      );
-                                    case 1:
-                                      return Icon(
-                                          Icons.sentiment_dissatisfied,
-                                          color: Colors.redAccent,
-                                      );
-                                    case 2:
-                                      return Icon(
-                                          Icons.sentiment_neutral,
-                                          color: Colors.amber,
-                                      );
-                                    case 3:
-                                      return Icon(
-                                          Icons.sentiment_satisfied,
-                                          color: Colors.lightGreen,
-                                      );
-                                    case 4:
-                                        return Icon(
-                                          Icons.sentiment_very_satisfied,
-                                          color: Colors.green,
-                                        );
-                                    default: return Icon(Icons.sentiment_neutral);
-                                }
-                              },
-                              onRatingUpdate: (rating) {print(rating);},
-                            )]
-                        ),
+                            RatingBarWidget(3.0, 15.0),
+                         ]),
                         SizedBox(height: 10,),
-                        Row(children:[
-                          SizedBox(width: 15,),
-                          Expanded(flex: 15, child: Text('1 Day: \$1')),
-                          ]),
-                        Row(children:[
-                          SizedBox(width: 15,),
-                          Expanded(flex: 15, child: Text('1 Week: \$10')),
-                          ]),
-                        Row(children:[
-                          SizedBox(width: 15,),
-                          Expanded(flex: 15, child: Text('1 Month: \$25')),
-                          ]),
+                        StorefrontRate("1 Day: \$1"),
+                        StorefrontRate("1 Week: \$10"),
+                        StorefrontRate("1 Week: \$25"),
                       ],
                     ),
                   )
