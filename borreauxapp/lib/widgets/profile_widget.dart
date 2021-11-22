@@ -1,15 +1,18 @@
 import 'dart:io';
 
+import 'package:borreauxapp/assets/colors.dart';
 import 'package:flutter/material.dart';
 
 class ProfileWidget extends StatelessWidget {
   final String imagePath;
   final VoidCallback onClicked;
+  final bool isEdit;
 
   const ProfileWidget({
     Key? key,
     required this.imagePath,
     required this.onClicked,
+    this.isEdit = false,
   }) : super(key: key);
 
   @override
@@ -31,8 +34,11 @@ class ProfileWidget extends StatelessWidget {
   }
 
   Widget buildImage() {
+    // using networkimage for now to get it form the internet
     final image = NetworkImage(imagePath);
 
+    // clips the picture to make it an oval rather than just
+    // the square image
     return ClipOval(
       child: Material(
         color: Colors.transparent,
@@ -47,15 +53,17 @@ class ProfileWidget extends StatelessWidget {
     );
   }
 
+  // pencil edit icon that is at the bottom right
+  // of the profile picture
   Widget buildEditIcon(Color color) => buildCircle(
-        color: Colors.white,
+        color: AppColor.primaryColor,
         all: 3,
         child: buildCircle(
           color: color,
           all: 8,
           child: Icon(
-            Icons.edit,
-            color: Colors.white,
+            isEdit ? Icons.add_a_photo : Icons.edit,
+            color: AppColor.primaryColor,
             size: 20,
           ),
         ),

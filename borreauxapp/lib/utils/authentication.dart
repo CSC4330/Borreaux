@@ -1,4 +1,12 @@
 import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth_platform_interface/firebase_auth_platform_interface.dart';
+import 'package:firebase_core_platform_interface/firebase_core_platform_interface.dart';
+import 'package:cloud_firestore_platform_interface/cloud_firestore_platform_interface.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:flutter/material.dart';
 
 class Authentication {
   static Future<FirebaseApp> initializeFirebase() async {
