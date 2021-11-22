@@ -8,16 +8,6 @@ import 'package:borreauxapp/widgets/profile_widget.dart';
 import 'package:borreauxapp/screens/edit_profile.dart';
 
 class ProfilePage extends StatefulWidget {
-  // final Color color;
-
-  // ProfileWidget(this.color);
-
-  // @override
-  // Widget build(BuildContext context) {
-  //   return Container(
-  //     color: color,
-  //   );
-  // }
   @override
   _ProfilePageState createState() => _ProfilePageState();
 }
@@ -25,7 +15,7 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
-    // allows access to the user fields we created in this page
+    // allows access to the user fields we created in /utils
     final user = UserPreferences.myUser;
 
     return Scaffold(

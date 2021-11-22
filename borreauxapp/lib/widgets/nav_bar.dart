@@ -19,14 +19,14 @@ class _nav_bar_state extends State<nav_bar> {
     StorefrontState(),
     BookmarkWidget(Colors.deepOrange),
     AddWidget(Colors.green),
-    MessagesWidget(Colors.blue),
+    MessagesPage(),
     ProfilePage(),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     // appBar: AppBar(
-        //title: Text("Temp Bar to go back to Login"),       // REMOVE APP BAR LINES TO FIX FORMAT
+      // appBar: AppBar(
+      //title: Text("Temp Bar to go back to Login"),       // REMOVE APP BAR LINES TO FIX FORMAT
       //),
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
