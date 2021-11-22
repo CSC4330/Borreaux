@@ -4,6 +4,7 @@ import 'package:borreauxapp/screens/profile.dart';
 import 'package:borreauxapp/screens/seller_profile.dart';
 import 'package:borreauxapp/widgets/Listing_widgets.dart';
 import 'package:borreauxapp/widgets/carousel_widget.dart';
+import 'package:borreauxapp/widgets/google_map.dart';
 import 'package:borreauxapp/widgets/ratingbar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -37,7 +38,7 @@ class ListingWidget extends StatelessWidget {
             SliverList(
               delegate: SliverChildListDelegate([
                 Container(
-                  height: 850,
+                  height: 1100,
                   width: 100,
                   decoration: BoxDecoration(
                       color: Colors.white,
@@ -50,7 +51,6 @@ class ListingWidget extends StatelessWidget {
                         SizedBox(
                           height: 30,
                         ),
-
                         ListingTitle("Listing Title"),
 
                         SizedBox(
@@ -115,6 +115,12 @@ class ListingWidget extends StatelessWidget {
                         ),
 
                         ListingSubHeader("Location"),
+
+                        SizedBox(
+                          height: 30,
+                        ),
+
+                        MapScreen(),
 
                         SizedBox(
                           height: 30,
