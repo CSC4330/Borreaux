@@ -210,21 +210,25 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
               ),
-              FutureBuilder(
-                future: Authentication.initializeFirebase(),
-                builder: (context, snapshot) {
-                  if (snapshot.hasError) {
-                    return Text('Error initializing Firebase');
-                  } else if (snapshot.connectionState == ConnectionState.done) {
-                    return GoogleSignInButton();
-                  }
-                  return CircularProgressIndicator(
-                    valueColor: AlwaysStoppedAnimation<Color>(
-                      AppColor.primaryColor,
-                    ),
-                  );
-                },
-              ),
+              Positioned(
+                bottom: 30,
+                left: 80,
+                child: FutureBuilder(
+                  future: Authentication.initializeFirebase(),
+                  builder: (context, snapshot) {
+                    if (snapshot.hasError) {
+                      return Text('Error initializing Firebase');
+                    } else if (snapshot.connectionState == ConnectionState.done) {
+                      return GoogleSignInButton();
+                    }
+                    return CircularProgressIndicator(
+                      valueColor: AlwaysStoppedAnimation<Color>(
+                        AppColor.primaryColor,
+                      ),
+                    );
+                  },
+                ),
+              )
             ],
           ),
         ],
