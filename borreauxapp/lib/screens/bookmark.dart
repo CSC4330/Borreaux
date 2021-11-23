@@ -6,12 +6,12 @@ import 'package:borreauxapp/widgets/storefront_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-class BookmarkState extends StatefulWidget {
+class BookmarkPage extends StatefulWidget {
   @override
-  BookmarkWidget createState() => BookmarkWidget();
+  _BookmarkPageState createState() => _BookmarkPageState();
 }
 
-class BookmarkWidget extends State<BookmarkState> {
+class _BookmarkPageState extends State<BookmarkPage> {
   
   List<newListing> savedListings = [
 
@@ -108,7 +108,7 @@ class BookmarkWidget extends State<BookmarkState> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => ListingWidget(Colors.green),
+                  builder: (context) => ListingsPage(Colors.green),
                 ),
               );
             },

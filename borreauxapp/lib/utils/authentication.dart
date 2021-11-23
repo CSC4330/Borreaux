@@ -24,6 +24,7 @@ class Authentication {
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => nav_bar()),
+
       );
     }
 
