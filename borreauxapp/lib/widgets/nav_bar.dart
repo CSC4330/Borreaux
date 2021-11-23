@@ -6,7 +6,7 @@ import 'package:borreauxapp/screens/login_page.dart';
 import 'package:borreauxapp/screens/messages.dart';
 import 'package:borreauxapp/screens/bookmark.dart';
 import 'package:borreauxapp/screens/profile.dart';
-import 'package:borreauxapp/screens/add.dart';
+import 'package:borreauxapp/screens/add_item.dart';
 
 class nav_bar extends StatefulWidget {
   @override
@@ -16,9 +16,9 @@ class nav_bar extends StatefulWidget {
 class _nav_bar_state extends State<nav_bar> {
   int _currentIndex = 0;
   final List _children = [
-    StorefrontState(),
-    BookmarkState(),
-    AddWidget(Colors.green),
+    Storefront(),
+    BookmarkPage(),
+    AddItemPage(),
     MessagesPage(),
     ProfilePage(),
   ];
