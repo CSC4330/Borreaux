@@ -9,10 +9,10 @@ import 'package:borreauxapp/widgets/ratingbar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-class ListingWidget extends StatelessWidget {
+class ListingsPage extends StatelessWidget {
   final Color color;
 
-  ListingWidget(this.color);
+  ListingsPage(this.color);
 
   @override
   Widget build(BuildContext context) {
@@ -114,9 +114,15 @@ class ListingWidget extends StatelessWidget {
                           height: 30,
                         ),
 
-                        ListingSubHeader("Location"),
+                        ListingSubHeader("Location Details"),
 
                         SizedBox(
+                          height: 30,
+                        ),
+
+                       ListingDescription('Rental Info Goes here'),
+
+                       SizedBox(
                           height: 30,
                         ),
 
