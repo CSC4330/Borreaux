@@ -1,11 +1,15 @@
+import 'package:borreauxapp/screens/login_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:borreauxapp/model/user.dart';
+import 'package:borreauxapp/model/user.dart' as userDartPack;
 import 'package:borreauxapp/utils/user_preferences.dart';
 import 'package:borreauxapp/widgets/button_widget.dart';
 import 'package:borreauxapp/widgets/numbers_widget.dart';
 import 'package:borreauxapp/widgets/profile_widget.dart';
 import 'package:borreauxapp/screens/edit_profile.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:borreauxapp/assets/colors.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -13,6 +17,15 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  FirebaseAuth auth = FirebaseAuth.instance;
+
+  static Future<void> signOut({required BuildContext context}) async {
+    final GoogleSignIn googleSignIn = GoogleSignIn();
+
+    googleSignIn.signOut();
+    await FirebaseAuth.instance.signOut();
+  }
+
   @override
   Widget build(BuildContext context) {
     // allows access to the user fields we created in /utils
@@ -20,6 +33,13 @@ class _ProfilePageState extends State<ProfilePage> {
 
     return Scaffold(
       // builds the entire profile page
+      appBar: AppBar(
+        leading: BackButton(),
+        elevation: 0,
+        backgroundColor: AppColor.primaryColor,
+        foregroundColor: AppColor.secondaryColor,
+      ),
+
       body: ListView(
         physics: BouncingScrollPhysics(),
         children: [
@@ -46,7 +66,7 @@ class _ProfilePageState extends State<ProfilePage> {
     );
   }
 
-  Widget buildName(User user) => Column(
+  Widget buildName(userDartPack.User user) => Column(
         children: [
           // shows user's name
           Text(
@@ -63,11 +83,16 @@ class _ProfilePageState extends State<ProfilePage> {
       );
 
   Widget buildLogoutButton() => ButtonWidget(
-        text: 'Logout',
-        onClicked: () {},
-      );
+      text: 'Logout',
+      onClicked: () async {
+        signOut(context: context);
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => LoginPage()),
+        );
+      });
 
-  Widget buildAbout(User user) => Container(
+  Widget buildAbout(userDartPack.User user) => Container(
         padding: EdgeInsets.symmetric(horizontal: 48),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

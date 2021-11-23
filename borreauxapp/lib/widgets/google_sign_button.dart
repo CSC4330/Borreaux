@@ -1,3 +1,4 @@
+import 'package:borreauxapp/screens/profile.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:borreauxapp/screens/storefront.dart';
 import 'package:flutter/material.dart';
@@ -37,7 +38,7 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
                     await Authentication.signInWithGoogle(context: context);
 
                 setState(() {
-                    _isSigningIn = false;
+                  _isSigningIn = false;
                 });
 
                 if (user != null) {
@@ -48,7 +49,6 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
                   );
                 }
               },
-
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                 child: Row(
