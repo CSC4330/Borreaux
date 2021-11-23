@@ -33,16 +33,17 @@ class _ProfilePageState extends State<ProfilePage> {
 
     return Scaffold(
       // builds the entire profile page
-      appBar: AppBar(
-        leading: BackButton(),
-        elevation: 0,
-        backgroundColor: AppColor.primaryColor,
-        foregroundColor: AppColor.secondaryColor,
-      ),
+      // appBar: AppBar(
+      //   leading: BackButton(),
+      //   elevation: 0,
+      //   backgroundColor: Colors.transparent,
+      //   foregroundColor: AppColor.secondaryColor,
+      // ),
 
       body: ListView(
         physics: BouncingScrollPhysics(),
         children: [
+          const SizedBox(height: 24),
           ProfileWidget(
             imagePath: user.imagePath,
             // when clicking the image, it will take us to the
@@ -82,9 +83,18 @@ class _ProfilePageState extends State<ProfilePage> {
         ],
       );
 
-  Widget buildLogoutButton() => ButtonWidget(
-      text: 'Logout',
-      onClicked: () async {
+  Widget buildLogoutButton() => ElevatedButton(
+      child: Text('Logout'),
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all<Color>(AppColor.secondaryColor),
+        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(18.0),
+            side: BorderSide(color: AppColor.secondaryColor)
+          )
+        )
+      ),
+      onPressed: () async {
         signOut(context: context);
         Navigator.push(
           context,

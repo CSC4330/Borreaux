@@ -21,7 +21,7 @@ class _EditProfileState extends State<EditProfile> {
         appBar: AppBar(
           leading: BackButton(),
           elevation: 0,
-          backgroundColor: AppColor.primaryColor,
+          backgroundColor: Colors.transparent,
           foregroundColor: AppColor.secondaryColor,
         ),
         body: ListView(
@@ -60,7 +60,16 @@ class _EditProfileState extends State<EditProfile> {
 }
 
 // implement database to save this info
-Widget buildSaveButton() => ButtonWidget(
-      text: 'Save',
-      onClicked: () {},
+Widget buildSaveButton() => ElevatedButton(
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all<Color>(AppColor.secondaryColor),
+        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+          RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(18.0),
+        side: BorderSide(color: AppColor.secondaryColor)
+    )
+  )
+      ),
+      child: Text('Save'),
+      onPressed: () {},
     );
