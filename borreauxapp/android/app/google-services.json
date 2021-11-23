@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "559175313322-2fslcb3pumhk1jg0l55j83011pgnb65e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.borreauxapp",
+            "certificate_hash": "b8704cbf5fb512795d06b7d9152e8470fc4d5d78"
+          }
+        },
+        {
           "client_id": "559175313322-vi2rjosdn9vcrl6r729ftkp2bq0rj72t.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

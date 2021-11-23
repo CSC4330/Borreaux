@@ -1,3 +1,4 @@
+import 'package:borreauxapp/assets/colors.dart';
 import 'package:flutter/material.dart';
 
 class ButtonWidget extends StatelessWidget {
@@ -14,7 +15,7 @@ class ButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) => ElevatedButton(
         style: ElevatedButton.styleFrom(
           shape: StadiumBorder(),
-          onPrimary: Colors.white,
+          onPrimary: AppColor.primaryColor, // text color
           padding: EdgeInsets.symmetric(horizontal: 32, vertical: 12),
         ),
         child: Text(text),
