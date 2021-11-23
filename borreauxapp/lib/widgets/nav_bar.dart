@@ -32,28 +32,30 @@ class _nav_bar_state extends State<nav_bar> {
       bottomNavigationBar: BottomNavigationBar(
         onTap: onTabTapped, // new
         currentIndex: _currentIndex,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
         type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(
-            icon: new Icon(Icons.home),
-            label: 'Storefront',
+            icon: Icon(Icons.home),
+            label: '',
           ),
           BottomNavigationBarItem(
-            icon: new Icon(Icons.bookmark),
-            label: 'Saved',
+            icon: Icon(Icons.bookmark),
+            label: '',
           ),
           BottomNavigationBarItem(
-            icon: new Icon(Icons.add),
-            label: 'Add Item',
+            icon: Icon(Icons.add),
+            label: '',
           ),
           BottomNavigationBarItem(
-            icon: new Icon(Icons.mail),
-            label: 'Messages',
+            icon: Icon(Icons.mail),
+            label: '',
           ),
           // ignore: prefer_const_constructors
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            label: 'Profile',
+            label: '',
           )
         ],
       ),
