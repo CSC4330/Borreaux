@@ -16,7 +16,8 @@ class _LoginPageState extends State<LoginPage> {
     return Column(
       children: <Widget>[
         ElevatedButton(
-          child: const Text('Login'),
+          child: const Text('Login'),style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all<Color>(AppColor.secondaryColor),),
           onPressed: () {
             Navigator.push(
               context,
@@ -125,7 +126,7 @@ class _LoginPageState extends State<LoginPage> {
     return Container(
       alignment: Alignment.centerRight,
       child: TextButton(
-        child: const Text('Forgot Password?'),
+        child: const Text('Forgot Password?', style: TextStyle(color: AppColor.secondaryColor)),
         onPressed: () {
           Navigator.push(
             context,
@@ -140,7 +141,7 @@ class _LoginPageState extends State<LoginPage> {
     return Container(
       alignment: Alignment.centerLeft,
       child: TextButton(
-        child: const Text('Sign Up'),
+        child: const Text('Sign Up', style: TextStyle(color: AppColor.secondaryColor),),
         onPressed: () {
           Navigator.push(
             context,

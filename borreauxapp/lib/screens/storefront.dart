@@ -1,4 +1,6 @@
+import 'package:borreauxapp/assets/book_listing_struct.dart';
 import 'package:borreauxapp/assets/colors.dart';
+import 'package:borreauxapp/screens/bookmark.dart';
 import 'package:borreauxapp/screens/listings.dart';
 import 'package:borreauxapp/widgets/ratingbar_widget.dart';
 import 'package:borreauxapp/widgets/storefront_widgets.dart';
@@ -9,16 +11,77 @@ import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:filter_list/filter_list.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+
 class StorefrontState extends StatefulWidget {
+  
   @override
   StorefrontWidget createState() => StorefrontWidget();
 }
 
 class StorefrontWidget extends State<StorefrontState> {
   String? scanResult;
-  bool ViewHasBeenPressed = false;
-  List<String>? selectedCountList = [];
-  List<String> countList = [
+  bool viewHasBeenPressed = false;
+  List<String>? selectedFilterCountList = [];
+
+
+  // Datasets for Each Listing
+
+  List<newListing> listings = [
+
+    newListing("lib/assets/images/book_image_not_found.png", 
+               "joey_b", 
+               "lib/assets/images/blank_profile.png",
+               "\$3.50",
+               "\$10.00",
+               "\$30.70",
+               false,
+                1.0,
+                "Cool Title"),
+
+    newListing("lib/assets/images/book_image_not_found.png", 
+               "mike_123", 
+               "lib/assets/images/blank_profile.png",
+               "\$1.00",
+               "\$10.00",
+               "\$30.70",
+               false,
+               3.5,
+               "Sad Title"),
+
+    newListing("lib/assets/images/book_image_not_found.png", 
+               "bob_4", 
+               "lib/assets/images/blank_profile.png",
+               "\$2.30",
+               "\$10.00",
+               "\$30.70",
+               false,
+               2.5,
+               "Exciting Title"),
+
+    newListing("lib/assets/images/book_image_not_found.png", 
+               "alice_2", 
+               "lib/assets/images/blank_profile.png",
+               "\$1.10",
+               "\$10.00",
+               "\$30.70",
+               false,
+               5.0,
+               "Silly Title"),
+
+    newListing("lib/assets/images/book_image_not_found.png", 
+               "hello_world", 
+               "lib/assets/images/blank_profile.png",
+               "\$0.50",
+               "\$10.00",
+               "\$50.70",
+               true,
+               3.0,
+               "Book: The Book"),
+  ];
+
+
+
+  List<String> filterCountList = [
     "One",
     "Two",
     "Three",
@@ -41,7 +104,79 @@ class StorefrontWidget extends State<StorefrontState> {
     "Twenty"
   ];
 
-  //StorefrontWidget(this.color);
+//   List<String> bookCoverPicsList = [
+//     "lib/assets/images/book_image_not_found.png",
+//     "lib/assets/images/book_image_not_found.png",
+//     "lib/assets/images/book_image_not_found.png",
+//     "lib/assets/images/book_image_not_found.png",
+//     "lib/assets/images/book_image_not_found.png",
+//   ];
+
+//   List<String> usernameList = [
+//     "joey_b",
+//     "mike_123",
+//     "bob_4",
+//     "alice_2",
+//     "hello_world"
+//   ];
+
+//   List<String> profilePicsList = [
+//       "lib/assets/images/blank_profile.png",
+//       "lib/assets/images/blank_profile.png",
+//       "lib/assets/images/blank_profile.png",
+//       "lib/assets/images/blank_profile.png",
+//       "lib/assets/images/blank_profile.png",
+//   ];
+
+//   List<String> dayRateList = [
+//     "\$3.50",
+//     "\$1.00",
+//     "\$2.30",
+//     "\$1.10",
+//     "\$0.50",
+//   ];
+
+//   List<String> weekRateList = [
+//     "\$10.00",
+//     "\$8.50",
+//     "\$6.20",
+//     "\$9.99",
+//     "\$3.45",
+//   ];
+
+//   List<String> monthRateList = [
+//     "\$30.70",
+//     "\$99.99",
+//     "\$40.39",
+//     "\$30.50",
+//     "\$15.50",
+//   ];
+
+//   List<bool> bookmarkList = [
+//    false,
+//    false,
+//    false,
+//    false,
+//    false,
+//  ];
+
+//   List<double> ratingsList = [
+//     1.0,
+//     5.0,
+//     2.5,
+//     4.0,
+//     3.5,
+//   ];
+
+//   List<String> bookTitleList = [
+//     "One",
+//     "Two",
+//     "Three",
+//     "Four",
+//     "Five",
+//   ];
+
+  // Builds the Storefront
   @override
   Widget build(BuildContext context) => MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -63,7 +198,7 @@ class StorefrontWidget extends State<StorefrontState> {
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20.0),
                       ),
-                      hintText: 'Search for something',
+                      hintText: 'Search...',
                       hintStyle: TextStyle(fontSize: 13),
                       prefixIcon: Icon(Icons.search),
                       suffixIcon: IconButton(
@@ -85,11 +220,11 @@ class StorefrontWidget extends State<StorefrontState> {
                       TextButton.icon(
                         onPressed: () {
                           setState(() {
-                            ViewHasBeenPressed = !ViewHasBeenPressed;
+                            viewHasBeenPressed = !viewHasBeenPressed;
                           });
                         },
                         label: Text(("View")),
-                        icon: ViewHasBeenPressed
+                        icon: viewHasBeenPressed
                             ? Icon(Icons.grid_view)
                             : Icon(Icons.format_list_bulleted),
                         style: TextButton.styleFrom(primary: Colors.white),
@@ -117,7 +252,7 @@ class StorefrontWidget extends State<StorefrontState> {
             )), // APP BAR
         body: Container(
           height: 1000.0,
-          child: ViewHasBeenPressed ? _contentGridView() : _contentListView(),
+          child: viewHasBeenPressed ? _contentGridView() : _contentListView(),
         ),
       ));
 
@@ -134,7 +269,7 @@ class StorefrontWidget extends State<StorefrontState> {
       height: 175.0,
       child: ListView.builder(
         itemExtent: 175.0,
-        itemCount: 20,
+        itemCount: 5,
         itemBuilder: (content, index) => Card(
           color: Colors.white,
           child: InkResponse(
@@ -148,32 +283,49 @@ class StorefrontWidget extends State<StorefrontState> {
             },
             child: Row(
               children: [
-                StorefrontImage("lib/assets/images/book_image_not_found.png"),
+                StorefrontImage(listings[index].bookCoverPicPath),
                 Expanded(
                   flex: 50,
                   child: Column(
                     children: [
                       SizedBox(
-                        height: 20,
-                      ),
-                      StorefrontTitle("My Title"),
-                      SizedBox(
                         height: 15,
                       ),
+                      StorefrontTitle(listings[index].bookTitle),
+                      SizedBox(
+                        height: 10,
+                      ),
                       StorefrontProfile(
-                          "lib/assets/images/blank_profile.png", "Username"),
+                         listings[index].profilePicPath, listings[index].username),
                       Row(children: [
                         SizedBox(
                           width: 50,
                         ),
-                        RatingBarWidget(3.0, 15.0),
+                        RatingBarWidget(listings[index].rating, 15.0),
                       ]),
                       SizedBox(
                         height: 10,
                       ),
-                      StorefrontRate("1 Day: \$1"),
-                      StorefrontRate("1 Week: \$10"),
-                      StorefrontRate("1 Week: \$25"),
+                      StorefrontRate("Daily: ${listings[index].dayRate}"),
+                      StorefrontRate("Weekly: ${listings[index].weekRate}"),
+                      StorefrontRate("Monthly: ${listings[index].monthRate}"),
+
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          IconButton(
+                            padding: EdgeInsets.zero,
+                            constraints: BoxConstraints(),
+                            icon: Icon(Icons.bookmark),
+                            onPressed: () {
+                              setState(()
+                              {
+                                listings[index].bookmarked = !listings[index].bookmarked;
+                              });                    
+                            },
+                            color:(listings[index].bookmarked) ? Colors.red : const Color(0xff9A9A9A)),
+                          SizedBox(width: 10,),
+                        ]),
                     ],
                   ),
                 )
@@ -186,35 +338,38 @@ class StorefrontWidget extends State<StorefrontState> {
   }
 
   Widget _contentGridView() {
-    return GridView.builder(
-      itemCount: 20,
-      gridDelegate:
-          SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
-      itemBuilder: (context, index) => Card(
-        child: GridTile(
-          child: InkResponse(
-            child: Center(
-              child: Image.asset("lib/assets/images/book_image_not_found.png"),
+    return Container(
+      color: AppColor.secondaryColor,
+      child: GridView.builder(
+        itemCount: 5,
+        gridDelegate:
+            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+        itemBuilder: (context, index) => Card(
+          child: GridTile(
+            child: InkResponse(
+              child: Center(
+                child: Image.asset(listings[index].bookCoverPicPath),
+              ),
+              enableFeedback: true,
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ListingWidget(Colors.green),
+                  ),
+                );
+              },
             ),
-            enableFeedback: true,
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ListingWidget(Colors.green),
-                ),
-              );
-            },
           ),
         ),
-      ),
+      )
     );
   }
 
   void _openFilterWindow() async {
     await FilterListDialog.display<String>(context,
-        listData: countList,
-        selectedListData: selectedCountList,
+        listData: filterCountList,
+        selectedListData: selectedFilterCountList,
         height: 480,
         headlineText: "Select Count",
         searchFieldHintText: "Search Here", choiceChipLabel: (item) {
@@ -234,7 +389,7 @@ class StorefrontWidget extends State<StorefrontState> {
     }, onApplyButtonClick: (list) {
       if (list != null) {
         setState(() {
-          selectedCountList = List.from(list);
+          selectedFilterCountList = List.from(list);
         });
       }
       Navigator.pop(context);

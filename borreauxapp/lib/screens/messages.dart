@@ -69,6 +69,7 @@ class _MessagesPageState extends State<MessagesPage> {
 
   Widget build(BuildContext context) {
     return Scaffold(
+      //appBar: AppBar(backgroundColor: AppColor.secondaryColor, title: Text("Seller Profile"),),
       body: SingleChildScrollView(
         physics: BouncingScrollPhysics(),
         child: Column(

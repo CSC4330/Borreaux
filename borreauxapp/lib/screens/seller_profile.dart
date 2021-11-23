@@ -33,9 +33,21 @@ class _ProfilePageState extends State<SellerProfilePage> {
         physics: BouncingScrollPhysics(),
         children: [
           SizedBox(height: 20,),
-          ProfileWidget(
-            imagePath: user.imagePath,
-            onClicked: () async {},
+          Center(
+            child: Stack(
+            children: [
+              ClipOval(
+                child: Material(
+                  color: Colors.transparent,
+                  child: Ink.image(
+                    image: NetworkImage(user.imagePath),
+                    fit: BoxFit.cover,
+                    width: 128,
+                    height: 128,
+                  ),
+                ),
+              )
+            ],),
           ),
           const SizedBox(height: 24),
           buildName(user),
