@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:borreauxapp/screens/storefront.dart';
 import 'package:flutter/material.dart';
 import 'package:borreauxapp/utils/authentication.dart';
+import 'package:borreauxapp/widgets/nav_bar.dart';
 
 class GoogleSignInButton extends StatefulWidget {
   @override
@@ -42,10 +43,9 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
                 });
 
                 if (user != null) {
-                  Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(
-                      builder: (context) => Storefront(),
-                    ),
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => nav_bar()),
                   );
                 }
               },
