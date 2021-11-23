@@ -4,6 +4,7 @@ import 'package:borreauxapp/widgets/nav_bar.dart';
 import 'package:borreauxapp/assets/colors.dart';
 import 'package:borreauxapp/utils/authentication.dart';
 import 'package:borreauxapp/widgets/google_sign_button.dart';
+import 'package:flutter/widgets.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -16,8 +17,11 @@ class _LoginPageState extends State<LoginPage> {
     return Column(
       children: <Widget>[
         ElevatedButton(
-          child: const Text('Login'),style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all<Color>(AppColor.secondaryColor),),
+          child: const Text('Login'),
+          style: ButtonStyle(
+            backgroundColor:
+                MaterialStateProperty.all<Color>(AppColor.secondaryColor),
+          ),
           onPressed: () {
             Navigator.push(
               context,
@@ -126,7 +130,8 @@ class _LoginPageState extends State<LoginPage> {
     return Container(
       alignment: Alignment.centerRight,
       child: TextButton(
-        child: const Text('Forgot Password?', style: TextStyle(color: AppColor.secondaryColor)),
+        child: const Text('Forgot Password?',
+            style: TextStyle(color: AppColor.secondaryColor)),
         onPressed: () {
           Navigator.push(
             context,
@@ -141,7 +146,10 @@ class _LoginPageState extends State<LoginPage> {
     return Container(
       alignment: Alignment.centerLeft,
       child: TextButton(
-        child: const Text('Sign Up', style: TextStyle(color: AppColor.secondaryColor),),
+        child: const Text(
+          'Sign Up',
+          style: TextStyle(color: AppColor.secondaryColor),
+        ),
         onPressed: () {
           Navigator.push(
             context,
@@ -155,6 +163,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false, // fluter 2.x
       body: Stack(
         children: <Widget>[
           Stack(
@@ -211,6 +220,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
               ),
+
               Positioned(
                 bottom: 30,
                 left: 80,
@@ -230,7 +240,7 @@ class _LoginPageState extends State<LoginPage> {
                     );
                   },
                 ),
-              )
+              ),
             ],
           ),
         ],
