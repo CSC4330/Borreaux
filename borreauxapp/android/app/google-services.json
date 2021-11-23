@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "559175313322",
+    "project_id": "borreaux-67b0f",
+    "storage_bucket": "borreaux-67b0f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:559175313322:android:0934c69d047ebd5ea56dd3",
+        "android_client_info": {
+          "package_name": "com.example.borreauxapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "559175313322-2fslcb3pumhk1jg0l55j83011pgnb65e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.borreauxapp",
+            "certificate_hash": "b8704cbf5fb512795d06b7d9152e8470fc4d5d78"
+          }
+        },
+        {
+          "client_id": "559175313322-vi2rjosdn9vcrl6r729ftkp2bq0rj72t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.borreauxapp",
+            "certificate_hash": "ef65ce84b77338f20674a5d7dc0783ce84e94d35"
+          }
+        },
+        {
+          "client_id": "559175313322-f74aeoivntmqg617v3tqt7he9dho9h74.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDMJVklI5zbU2p-dIkHkapcEWXvNDI8o8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "559175313322-f74aeoivntmqg617v3tqt7he9dho9h74.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "559175313322-5h5viedhf7c9pqq8uvlj61uk30ug4kj7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.borreauxapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
