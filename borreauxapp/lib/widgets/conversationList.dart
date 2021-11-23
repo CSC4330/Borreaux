@@ -5,13 +5,13 @@ import 'package:flutter/material.dart';
 class ConversationList extends StatefulWidget {
   String name;
   String messageText;
-  String imageUrl;
+  String imagePath;
   String time;
   bool isMessageRead;
   ConversationList(
       {required this.name,
       required this.messageText,
-      required this.imageUrl,
+      required this.imagePath,
       required this.time,
       required this.isMessageRead});
   @override
@@ -35,7 +35,7 @@ class _ConversationListState extends State<ConversationList> {
               child: Row(
                 children: <Widget>[
                   CircleAvatar(
-                    backgroundImage: NetworkImage(widget.imageUrl),
+                    backgroundImage: AssetImage(widget.imagePath),
                     maxRadius: 30,
                     backgroundColor: AppColor.secondaryColor,
                   ),

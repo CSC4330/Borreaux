@@ -4,8 +4,7 @@ import 'package:borreauxapp/model/user.dart';
 // in the UI
 class UserPreferences {
   static const myUser = User(
-    imagePath:
-        'https://apiv2.thedraftnetwork.com/api/files/the-draft-network/7be020e733289f64e991d37eb4ab4bd2_Joe%20Burrow.png',
+    imagePath: 'lib/assets/images/burrow.png',
     name: 'Joe Burrow',
     email: 'jburrow@gmail.com',
     about:

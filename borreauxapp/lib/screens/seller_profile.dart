@@ -28,26 +28,32 @@ class _ProfilePageState extends State<SellerProfilePage> {
     final user = UserPreferences.myUser;
 
     return Scaffold(
-      appBar: AppBar(backgroundColor: AppColor.secondaryColor, title: Text("Seller Profile"),),
+      appBar: AppBar(
+        backgroundColor: AppColor.secondaryColor,
+        title: Text("Seller Profile"),
+      ),
       body: ListView(
         physics: BouncingScrollPhysics(),
         children: [
-          SizedBox(height: 20,),
+          SizedBox(
+            height: 20,
+          ),
           Center(
             child: Stack(
-            children: [
-              ClipOval(
-                child: Material(
-                  color: Colors.transparent,
-                  child: Ink.image(
-                    image: NetworkImage(user.imagePath),
-                    fit: BoxFit.cover,
-                    width: 128,
-                    height: 128,
+              children: [
+                ClipOval(
+                  child: Material(
+                    color: Colors.transparent,
+                    child: Ink.image(
+                      image: AssetImage(user.imagePath),
+                      fit: BoxFit.cover,
+                      width: 128,
+                      height: 128,
+                    ),
                   ),
-                ),
-              )
-            ],),
+                )
+              ],
+            ),
           ),
           const SizedBox(height: 24),
           buildName(user),

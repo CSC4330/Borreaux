@@ -55,8 +55,7 @@ class _MessagesDetailPageState extends State<MessagesDetailPage> {
                   width: 2,
                 ),
                 CircleAvatar(
-                  backgroundImage: NetworkImage(
-                      "https://profootballdraft.com/wp-content/uploads/2020/05/chaseheadshot.png"),
+                  backgroundImage: AssetImage("lib/assets/images/chase.png"),
                   maxRadius: 20,
                 ),
                 SizedBox(
