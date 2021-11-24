@@ -12,13 +12,13 @@ import 'package:filter_list/filter_list.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 
-class StorefrontState extends StatefulWidget {
+class Storefront extends StatefulWidget {
   
   @override
-  StorefrontWidget createState() => StorefrontWidget();
+  _StorefrontState createState() => _StorefrontState();
 }
 
-class StorefrontWidget extends State<StorefrontState> {
+class _StorefrontState extends State<Storefront> {
   String? scanResult;
   bool viewHasBeenPressed = false;
   List<String>? selectedFilterCountList = [];
@@ -277,7 +277,7 @@ class StorefrontWidget extends State<StorefrontState> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => ListingWidget(Colors.green),
+                  builder: (context) => ListingsPage(Colors.green),
                 ),
               );
             },
@@ -355,7 +355,7 @@ class StorefrontWidget extends State<StorefrontState> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ListingWidget(Colors.green),
+                    builder: (context) => ListingsPage(Colors.green),
                   ),
                 );
               },
