@@ -43,7 +43,7 @@ class _StorefrontState extends State<Storefront> {
         "\$30.70",
         false,
         3.5,
-        "William Shakespeare Tragedies"),
+        "Tragedies"),
     newListing(
         "lib/assets/images/scarletLetter.jpg",
         "bob_4",
@@ -53,7 +53,7 @@ class _StorefrontState extends State<Storefront> {
         "\$30.70",
         false,
         2.5,
-        "TheScarlet Letter"),
+        "Scarlet Letter"),
     newListing(
         "lib/assets/images/beowulf.jpeg",
         "alice_2",
@@ -252,7 +252,7 @@ class _StorefrontState extends State<Storefront> {
             color: Colors.white70,
           ),
         ),
-        color: const Color(0xff41c5ff),
+        color: AppColor.primaryColor,
       ),
       height: 175.0,
       child: ListView.builder(
@@ -260,6 +260,7 @@ class _StorefrontState extends State<Storefront> {
         itemCount: 5,
         itemBuilder: (content, index) => Card(
           color: Colors.white,
+          margin: EdgeInsets.all(0),
           child: InkResponse(
             onTap: () {
               Navigator.push(
@@ -317,7 +318,7 @@ class _StorefrontState extends State<Storefront> {
                       ]),
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ),

@@ -22,7 +22,7 @@ class ListingsPage extends StatelessWidget {
       //   centerTitle: true,
       // ),
       body: Container(
-        color: AppColor.secondaryColor,
+        color: AppColor.primaryColor,
         child: CustomScrollView(
           slivers: [
             SliverAppBar(
