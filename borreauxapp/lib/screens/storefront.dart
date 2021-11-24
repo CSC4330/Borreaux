@@ -25,17 +25,17 @@ class _StorefrontState extends State<Storefront> {
 
   List<newListing> listings = [
     newListing(
-        "lib/assets/images/book_image_not_found.png",
+        "lib/assets/images/fahrenheit451.jpg",
         "joey_b",
-        "lib/assets/images/blank_profile.png",
+        "lib/assets/images/burrow.png",
         "\$3.50",
         "\$10.00",
         "\$30.70",
         false,
         1.0,
-        "Cool Title"),
+        "Fahrenheit 451"),
     newListing(
-        "lib/assets/images/book_image_not_found.png",
+        "lib/assets/images/shakespeare.jpg",
         "mike_123",
         "lib/assets/images/blank_profile.png",
         "\$1.00",
@@ -43,9 +43,9 @@ class _StorefrontState extends State<Storefront> {
         "\$30.70",
         false,
         3.5,
-        "Sad Title"),
+        "William Shakespeare Tragedies"),
     newListing(
-        "lib/assets/images/book_image_not_found.png",
+        "lib/assets/images/scarletLetter.jpg",
         "bob_4",
         "lib/assets/images/blank_profile.png",
         "\$2.30",
@@ -53,9 +53,9 @@ class _StorefrontState extends State<Storefront> {
         "\$30.70",
         false,
         2.5,
-        "Exciting Title"),
+        "TheScarlet Letter"),
     newListing(
-        "lib/assets/images/book_image_not_found.png",
+        "lib/assets/images/beowulf.jpeg",
         "alice_2",
         "lib/assets/images/blank_profile.png",
         "\$1.10",
@@ -63,9 +63,9 @@ class _StorefrontState extends State<Storefront> {
         "\$30.70",
         false,
         5.0,
-        "Silly Title"),
+        "Beowulf"),
     newListing(
-        "lib/assets/images/book_image_not_found.png",
+        "lib/assets/images/wutheringHeights.jpg",
         "hello_world",
         "lib/assets/images/blank_profile.png",
         "\$0.50",
@@ -73,7 +73,7 @@ class _StorefrontState extends State<Storefront> {
         "\$50.70",
         true,
         3.0,
-        "Book: The Book"),
+        "Wuthering Heights"),
   ];
 
   List<String> filterCountList = [
@@ -274,7 +274,7 @@ class _StorefrontState extends State<Storefront> {
                 StorefrontImage(listings[index].bookCoverPicPath),
                 Expanded(
                   flex: 50,
-                  child: Column(
+                  child: ListView(
                     children: [
                       SizedBox(
                         height: 15,
