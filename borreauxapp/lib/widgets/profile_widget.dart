@@ -34,8 +34,8 @@ class ProfileWidget extends StatelessWidget {
   }
 
   Widget buildImage() {
-    // using networkimage for now to get it form the internet
-    final image = NetworkImage(imagePath);
+    // using assetImage to build it from the imagePath
+    final image = AssetImage(imagePath);
 
     // clips the picture to make it an oval rather than just
     // the square image

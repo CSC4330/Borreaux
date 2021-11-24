@@ -26,44 +26,42 @@ class _MessagesPageState extends State<MessagesPage> {
     MessagesUsers(
         name: "Ja'Marr Chase",
         messageText: "leave me alone",
-        imageURL:
-            "https://profootballdraft.com/wp-content/uploads/2020/05/chaseheadshot.png",
+        imagePath: "lib/assets/images/chase.png",
         time: "Yesterday"),
     MessagesUsers(
         name: "Justin Jefferson",
         messageText: "natty",
-        imageURL:
-            "https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/4262921.png&w=350&h=254",
+        imagePath: "lib/assets/images/chase.png",
         time: "Yesterday"),
     MessagesUsers(
         name: "Jorge Henry",
         messageText: "tomorrow?",
-        imageURL: "<https://randomuser.me/api/portraits/men/5.jpg>",
+        imagePath: "lib/assets/images/chase.png",
         time: "31 Mar"),
     MessagesUsers(
         name: "Philip Fox",
         messageText: "i don't have it anymore",
-        imageURL: "<https://randomuser.me/api/portraits/men/5.jpg>",
+        imagePath: "lib/assets/images/chase.png",
         time: "28 Mar"),
     MessagesUsers(
         name: "Debra Hawkins",
         messageText: "yeah it's pretty much new",
-        imageURL: "<https://randomuser.me/api/portraits/men/5.jpg>",
+        imagePath: "lib/assets/images/chase.png",
         time: "23 Mar"),
     MessagesUsers(
         name: "Jacob Pena",
         messageText: "i think i can come in 10 mins",
-        imageURL: "<https://randomuser.me/api/portraits/men/5.jpg>",
+        imagePath: "lib/assets/images/chase.png",
         time: "17 Mar"),
     MessagesUsers(
         name: "Andrey Jones",
         messageText: "Where do you want to meet?",
-        imageURL: "<https://randomuser.me/api/portraits/men/5.jpg>",
+        imagePath: "lib/assets/images/chase.png",
         time: "24 Feb"),
     MessagesUsers(
         name: "John Wick",
         messageText: "Do you still have this book for rent?",
-        imageURL: "<https://randomuser.me/api/portraits/men/5.jpg>",
+        imagePath: "lib/assets/images/chase.png",
         time: "18 Feb"),
   ];
 
@@ -145,7 +143,7 @@ class _MessagesPageState extends State<MessagesPage> {
                 return ConversationList(
                   name: messagesUsers[index].name,
                   messageText: messagesUsers[index].messageText,
-                  imageUrl: messagesUsers[index].imageURL,
+                  imagePath: messagesUsers[index].imagePath,
                   time: messagesUsers[index].time,
                   isMessageRead: (index == 1 || index == 4) ? true : false,
                 );

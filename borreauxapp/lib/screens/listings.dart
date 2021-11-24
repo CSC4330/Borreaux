@@ -120,9 +120,9 @@ class ListingsPage extends StatelessWidget {
                           height: 30,
                         ),
 
-                       ListingDescription('Rental Info Goes here'),
+                        ListingDescription('Rental Info Goes here'),
 
-                       SizedBox(
+                        SizedBox(
                           height: 30,
                         ),
 

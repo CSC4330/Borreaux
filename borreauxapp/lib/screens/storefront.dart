@@ -11,9 +11,7 @@ import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:filter_list/filter_list.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-
 class Storefront extends StatefulWidget {
-  
   @override
   _StorefrontState createState() => _StorefrontState();
 }
@@ -23,63 +21,60 @@ class _StorefrontState extends State<Storefront> {
   bool viewHasBeenPressed = false;
   List<String>? selectedFilterCountList = [];
 
-
   // Datasets for Each Listing
 
   List<newListing> listings = [
-
-    newListing("lib/assets/images/book_image_not_found.png", 
-               "joey_b", 
-               "lib/assets/images/blank_profile.png",
-               "\$3.50",
-               "\$10.00",
-               "\$30.70",
-               false,
-                1.0,
-                "Cool Title"),
-
-    newListing("lib/assets/images/book_image_not_found.png", 
-               "mike_123", 
-               "lib/assets/images/blank_profile.png",
-               "\$1.00",
-               "\$10.00",
-               "\$30.70",
-               false,
-               3.5,
-               "Sad Title"),
-
-    newListing("lib/assets/images/book_image_not_found.png", 
-               "bob_4", 
-               "lib/assets/images/blank_profile.png",
-               "\$2.30",
-               "\$10.00",
-               "\$30.70",
-               false,
-               2.5,
-               "Exciting Title"),
-
-    newListing("lib/assets/images/book_image_not_found.png", 
-               "alice_2", 
-               "lib/assets/images/blank_profile.png",
-               "\$1.10",
-               "\$10.00",
-               "\$30.70",
-               false,
-               5.0,
-               "Silly Title"),
-
-    newListing("lib/assets/images/book_image_not_found.png", 
-               "hello_world", 
-               "lib/assets/images/blank_profile.png",
-               "\$0.50",
-               "\$10.00",
-               "\$50.70",
-               true,
-               3.0,
-               "Book: The Book"),
+    newListing(
+        "lib/assets/images/book_image_not_found.png",
+        "joey_b",
+        "lib/assets/images/blank_profile.png",
+        "\$3.50",
+        "\$10.00",
+        "\$30.70",
+        false,
+        1.0,
+        "Cool Title"),
+    newListing(
+        "lib/assets/images/book_image_not_found.png",
+        "mike_123",
+        "lib/assets/images/blank_profile.png",
+        "\$1.00",
+        "\$10.00",
+        "\$30.70",
+        false,
+        3.5,
+        "Sad Title"),
+    newListing(
+        "lib/assets/images/book_image_not_found.png",
+        "bob_4",
+        "lib/assets/images/blank_profile.png",
+        "\$2.30",
+        "\$10.00",
+        "\$30.70",
+        false,
+        2.5,
+        "Exciting Title"),
+    newListing(
+        "lib/assets/images/book_image_not_found.png",
+        "alice_2",
+        "lib/assets/images/blank_profile.png",
+        "\$1.10",
+        "\$10.00",
+        "\$30.70",
+        false,
+        5.0,
+        "Silly Title"),
+    newListing(
+        "lib/assets/images/book_image_not_found.png",
+        "hello_world",
+        "lib/assets/images/blank_profile.png",
+        "\$0.50",
+        "\$10.00",
+        "\$50.70",
+        true,
+        3.0,
+        "Book: The Book"),
   ];
-
-
 
   List<String> filterCountList = [
     "One",
@@ -230,14 +225,7 @@ class _StorefrontState extends State<Storefront> {
                         style: TextButton.styleFrom(primary: Colors.white),
                       ),
                       SizedBox(
-                        width: 95,
-                      ),
-                      SizedBox(
-                          width: 40,
-                          height: 40,
-                          child: Image.asset("lib/assets/images/logo.png")),
-                      SizedBox(
-                        width: 95,
+                        width: 250,
                       ),
                       TextButton.icon(
                         onPressed: _openFilterWindow,
@@ -295,8 +283,8 @@ class _StorefrontState extends State<Storefront> {
                       SizedBox(
                         height: 10,
                       ),
-                      StorefrontProfile(
-                         listings[index].profilePicPath, listings[index].username),
+                      StorefrontProfile(listings[index].profilePicPath,
+                          listings[index].username),
                       Row(children: [
                         SizedBox(
                           width: 50,
@@ -309,23 +297,24 @@ class _StorefrontState extends State<Storefront> {
                       StorefrontRate("Daily: ${listings[index].dayRate}"),
                       StorefrontRate("Weekly: ${listings[index].weekRate}"),
                       StorefrontRate("Monthly: ${listings[index].monthRate}"),
-
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          IconButton(
+                      Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+                        IconButton(
                             padding: EdgeInsets.zero,
                             constraints: BoxConstraints(),
                             icon: Icon(Icons.bookmark),
                             onPressed: () {
-                              setState(()
-                              {
-                                listings[index].bookmarked = !listings[index].bookmarked;
-                              });                    
+                              setState(() {
+                                listings[index].bookmarked =
+                                    !listings[index].bookmarked;
+                              });
                             },
-                            color:(listings[index].bookmarked) ? Colors.red : const Color(0xff9A9A9A)),
-                          SizedBox(width: 10,),
-                        ]),
+                            color: (listings[index].bookmarked)
+                                ? Colors.red
+                                : const Color(0xff9A9A9A)),
+                        SizedBox(
+                          width: 10,
+                        ),
+                      ]),
                     ],
                   ),
                 )
@@ -339,31 +328,30 @@ class _StorefrontState extends State<Storefront> {
 
   Widget _contentGridView() {
     return Container(
-      color: AppColor.secondaryColor,
-      child: GridView.builder(
-        itemCount: 5,
-        gridDelegate:
-            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
-        itemBuilder: (context, index) => Card(
-          child: GridTile(
-            child: InkResponse(
-              child: Center(
-                child: Image.asset(listings[index].bookCoverPicPath),
+        color: AppColor.secondaryColor,
+        child: GridView.builder(
+          itemCount: 5,
+          gridDelegate:
+              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+          itemBuilder: (context, index) => Card(
+            child: GridTile(
+              child: InkResponse(
+                child: Center(
+                  child: Image.asset(listings[index].bookCoverPicPath),
+                ),
+                enableFeedback: true,
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ListingsPage(Colors.green),
+                    ),
+                  );
+                },
               ),
-              enableFeedback: true,
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ListingsPage(Colors.green),
-                  ),
-                );
-              },
             ),
           ),
-        ),
-      )
-    );
+        ));
   }
 
   void _openFilterWindow() async {
