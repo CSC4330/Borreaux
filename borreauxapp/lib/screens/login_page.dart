@@ -1,4 +1,5 @@
 import 'package:borreauxapp/screens/signup_page.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:borreauxapp/widgets/nav_bar.dart';
 import 'package:borreauxapp/assets/colors.dart';
@@ -15,12 +16,22 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget buildLoginButton() {
     return Column(
+      crossAxisAlignment:
+          CrossAxisAlignment.start, //moves log in box to left of its column
+
       children: <Widget>[
+        const SizedBox(
+            width: 200, // works
+            height: 1),
         ElevatedButton(
-          child: const Text('Login'),
+          child: const Text('Sign In'),
           style: ButtonStyle(
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(14)))),
             backgroundColor:
                 MaterialStateProperty.all<Color>(AppColor.secondaryColor),
+            fixedSize: MaterialStateProperty.all(const Size(100, 0)),
           ),
           onPressed: () {
             Navigator.push(
@@ -38,8 +49,9 @@ class _LoginPageState extends State<LoginPage> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        const Text('Email', style: TextStyle(color: AppColor.secondaryColor)),
-        const SizedBox(height: 10.0),
+        // const Text('Email', style: TextStyle(color: AppColor.secondaryColor)),
+        // const SizedBox(height: 10.0),
+
         Container(
           alignment: Alignment.centerLeft,
           height: 60.0,
@@ -69,7 +81,7 @@ class _LoginPageState extends State<LoginPage> {
                 Icons.email,
                 color: AppColor.secondaryColor,
               ),
-              hintText: 'Enter your Email',
+              hintText: 'Email',
             ),
           ),
         ),
@@ -83,10 +95,10 @@ class _LoginPageState extends State<LoginPage> {
       children: <Widget>[
         Container(
           margin: const EdgeInsets.only(top: 20.0),
-          child: const Text('Password',
-              style: TextStyle(
-                color: AppColor.secondaryColor,
-              )),
+          // child: const Text('Password',
+          //     style: TextStyle(
+          //       color: AppColor.secondaryColor,
+          //     )),
         ),
         const SizedBox(height: 10.0),
         Container(
@@ -118,7 +130,7 @@ class _LoginPageState extends State<LoginPage> {
                 Icons.lock,
                 color: AppColor.secondaryColor,
               ),
-              hintText: 'Enter your Password',
+              hintText: 'Password',
             ),
           ),
         ),
@@ -128,10 +140,12 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget buildForgotPasswordBtn() {
     return Container(
-      alignment: Alignment.centerRight,
+      alignment: Alignment.topLeft,
       child: TextButton(
-        child: const Text('Forgot Password?',
-            style: TextStyle(color: AppColor.secondaryColor)),
+        child: const Text('Forgot Password?'),
+        style: TextButton.styleFrom(
+          primary: AppColor.secondaryColor,
+        ),
         onPressed: () {
           Navigator.push(
             context,
@@ -176,8 +190,10 @@ class _LoginPageState extends State<LoginPage> {
                   color: AppColor.primaryColor,
                 ),
               ),
+
               Container(
                 height: double.infinity,
+
                 //in case entire screen is not visible on a different device
                 child: SingleChildScrollView(
                   physics: const AlwaysScrollableScrollPhysics(),
@@ -188,41 +204,56 @@ class _LoginPageState extends State<LoginPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Padding(
-                        padding: EdgeInsets.all(30),
+                        padding: EdgeInsets.all(60),
                         child: Image.asset(
                           'lib/assets/images/4330logo3.png',
                           width: 130.0,
                           height: 130.0,
                         ),
                       ),
-                      const Text(
-                        'Sign In',
-                        style: TextStyle(
-                          color: AppColor.secondaryColor,
-                          fontFamily: 'OpenSans',
-                          fontSize: 30.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const SizedBox(height: 30.0),
+                      const SizedBox(height: 1.0),
                       buildEmailTextbox(),
                       buildPasswordTextbox(),
                       const SizedBox(height: 20.0),
-                      buildLoginButton(),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
-                          buildSignupButton(),
-                          buildForgotPasswordBtn(),
+                          Container(
+                            height: 0.11,
+                          ),
+                          buildLoginButton(),
+                          Column(children: <Widget>[
+                            Container(
+                              height: 0.11,
+                            ),
+                            buildForgotPasswordBtn(),
+                          ])
                         ],
                       ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment
+                            .center, //Center Row contents horizontally,
+                        crossAxisAlignment: CrossAxisAlignment
+                            .center, //Center Row contents vertically,
+
+                        children: <Widget>[
+                          Container(
+                            child: Text("Don't have an account?"),
+                          ),
+
+                          buildSignupButton(),
+                          const SizedBox(
+                              height:
+                                  260), //spaces the sign up button from the top, the higher the value the lower it goes
+                        ],
+                      )
                     ],
                   ),
                 ),
               ),
 
               Positioned(
-                bottom: 30,
+                bottom:
+                    110, //the highter the value to higher the google button moves up
                 left: 80,
                 child: FutureBuilder(
                   future: Authentication.initializeFirebase(context: context),
