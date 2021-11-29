@@ -7,9 +7,9 @@ class CarouselImages extends StatelessWidget {
   CarouselController buttonCarouselController = CarouselController();
 
   final imageList = [
-    Image.asset("lib/assets/images/book_image_not_found.png"),
-    Image.asset("lib/assets/images/book_image_not_found.png"),
-    Image.asset("lib/assets/images/book_image_not_found.png"),
+    Image.asset("lib/assets/images/beowulf.jpeg"),
+    Image.asset("lib/assets/images/beowulf2.jpeg"),
+    // Image.asset("lib/assets/images/book_image_not_found.png"),
   ];
 
   @override
@@ -23,12 +23,12 @@ class CarouselImages extends StatelessWidget {
         body: Center(
           child: Container(
             height: 1000,
-            color: AppColor.secondaryColor,
+            color: AppColor.primaryColor,
             child: CarouselSlider(
               options: CarouselOptions(
                 enlargeCenterPage: true,
                 enableInfiniteScroll: false,
-                autoPlay: true,
+                autoPlay: false,
               ),
               items: imageList,
               //   .map((e) => ClipRRect(
