@@ -11,7 +11,7 @@ class _MapScreenState extends State<MapScreen> {
   static const _initialCameraPosition =
       CameraPosition(target: LatLng(37.773972, -122.431297), zoom: 11.5);
 
-  late GoogleMapController _googleMapController;
+  GoogleMapController _googleMapController;
 
   @override
   void dispose() {

@@ -4,9 +4,5 @@ class MessagesUsers {
   final String imagePath;
   final String time;
 
-  const MessagesUsers(
-      {required this.name,
-      required this.messageText,
-      required this.imagePath,
-      required this.time});
+  const MessagesUsers({this.name, this.messageText, this.imagePath, this.time});
 }

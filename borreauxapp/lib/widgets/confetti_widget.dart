@@ -5,17 +5,16 @@ import 'package:flutter/material.dart';
 
 class confettiWidget extends StatefulWidget {
   @override
-  
   _confettiWidgetState createState() => _confettiWidgetState();
 }
 
 class _confettiWidgetState extends State<confettiWidget> {
-  late ConfettiController _controllerCenter;
+  ConfettiController _controllerCenter;
 
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance!.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       _controllerCenter.play();
     });
     _controllerCenter =
@@ -79,20 +78,18 @@ class _confettiWidgetState extends State<confettiWidget> {
           ),
           Align(
             alignment: Alignment.center,
-              child: Text(
-                'Congratulations!', 
-                style: TextStyle(
+            child: Text(
+              'Congratulations!',
+              style: TextStyle(
                   color: AppColor.secondaryColor,
                   fontSize: 50,
-                  fontFamily: 'OpenSans'
-                ),
-              ),
+                  fontFamily: 'OpenSans'),
+            ),
           ),
         ],
       ),
     );
   }
-
 
   Text _display(String text) {
     return Text(

@@ -17,9 +17,9 @@ class Storefront extends StatefulWidget {
 }
 
 class _StorefrontState extends State<Storefront> {
-  String? scanResult;
+  String scanResult;
   bool viewHasBeenPressed = false;
-  List<String>? selectedFilterCountList = [];
+  List<String> selectedFilterCountList = [];
 
   // Datasets for Each Listing
 
@@ -363,9 +363,9 @@ class _StorefrontState extends State<Storefront> {
         searchFieldHintText: "Search Here", choiceChipLabel: (item) {
       return item;
     }, validateSelectedItem: (list, val) {
-      return list!.contains(val);
+      return list.contains(val);
     }, onItemSearch: (list, text) {
-      if (list!.any(
+      if (list.any(
           (element) => element.toLowerCase().contains(text.toLowerCase()))) {
         return list
             .where(

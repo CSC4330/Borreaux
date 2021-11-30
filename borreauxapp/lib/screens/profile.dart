@@ -19,7 +19,7 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   FirebaseAuth auth = FirebaseAuth.instance;
 
-  static Future<void> signOut({required BuildContext context}) async {
+  static Future<void> signOut({BuildContext context}) async {
     final GoogleSignIn googleSignIn = GoogleSignIn();
 
     googleSignIn.signOut();
@@ -86,14 +86,12 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget buildLogoutButton() => ElevatedButton(
       child: Text('Logout'),
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all<Color>(AppColor.secondaryColor),
-        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-          RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(18.0),
-            side: BorderSide(color: AppColor.secondaryColor)
-          )
-        )
-      ),
+          backgroundColor:
+              MaterialStateProperty.all<Color>(AppColor.secondaryColor),
+          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(18.0),
+                  side: BorderSide(color: AppColor.secondaryColor)))),
       onPressed: () async {
         signOut(context: context);
         Navigator.push(

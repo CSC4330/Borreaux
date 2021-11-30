@@ -8,9 +8,9 @@ class User {
 
   // constructor
   const User({
-    required this.imagePath,
-    required this.name,
-    required this.email,
-    required this.about,
+    this.imagePath,
+    this.name,
+    this.email,
+    this.about,
   });
 }
