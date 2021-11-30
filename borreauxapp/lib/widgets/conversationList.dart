@@ -9,11 +9,11 @@ class ConversationList extends StatefulWidget {
   String time;
   bool isMessageRead;
   ConversationList(
-      {required this.name,
-      required this.messageText,
-      required this.imagePath,
-      required this.time,
-      required this.isMessageRead});
+      {this.name,
+      this.messageText,
+      this.imagePath,
+      this.time,
+      this.isMessageRead});
   @override
   _ConversationListState createState() => _ConversationListState();
 }
