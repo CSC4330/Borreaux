@@ -398,6 +398,15 @@ class _StorefrontState extends State<Storefront> {
     }
     if (!mounted) return;
 
-    setState(() => this.scanResult = scanResult);
+    setState(() {
+      print(scanResult);
+      if (scanResult != null)
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ListingsPage(Colors.green),
+          ),
+        );
+    });
   }
 }
