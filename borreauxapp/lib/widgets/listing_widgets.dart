@@ -63,53 +63,70 @@ class ListingPrices extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
+        SizedBox(width: 30),
         Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text("Daily",
                 style: TextStyle(
                   color: Colors.grey,
-                  fontSize: 16,
+                  fontSize: 18,
                 )),
             Text(dailyPrice,
                 style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
-                  fontSize: 20,
+                  fontSize: 18,
                 ))
           ],
         ),
+        SizedBox(width: 15),
+        Container(
+          height: 24,
+          child: VerticalDivider(thickness: 1),
+        ),
+        SizedBox(width: 15),
         Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text("Weekly",
                 style: TextStyle(
                   color: Colors.grey,
-                  fontSize: 16,
+                  fontSize: 18,
                 )),
             Text(weeklyPrice,
                 style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
-                  fontSize: 20,
+                  fontSize: 18,
                 ))
           ],
         ),
+        SizedBox(width: 15),
+        Container(
+          height: 24,
+          child: VerticalDivider(thickness: 1),
+        ),
+        SizedBox(width: 15),
         Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text("Monthly",
                 style: TextStyle(
                   color: Colors.grey,
-                  fontSize: 16,
+                  fontSize: 18,
                 )),
             Text(monthlyPrice,
                 style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
-                  fontSize: 20,
+                  fontSize: 18,
                 ))
           ],
-        )
+        ),
+        SizedBox(width: 30),
       ],
     );
   }
