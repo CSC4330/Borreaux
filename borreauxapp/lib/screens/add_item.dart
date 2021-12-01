@@ -9,6 +9,7 @@ import 'package:borreauxapp/widgets/textfield_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:borreauxapp/widgets/google_map.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:borreauxapp/widgets/datepicker_widget.dart';
 
 class AddItemPage extends StatefulWidget {
   @override
@@ -16,8 +17,6 @@ class AddItemPage extends StatefulWidget {
 }
 
 class _AddItemPageState extends State<AddItemPage> {
-  
-
   @override
   Widget build(BuildContext context) => Scaffold(
         // appBar: AppBar(
@@ -30,24 +29,24 @@ class _AddItemPageState extends State<AddItemPage> {
           padding: EdgeInsets.symmetric(horizontal: 32),
           physics: BouncingScrollPhysics(),
           children: [
-            const SizedBox(height: 60,),
+            const SizedBox(
+              height: 60,
+            ),
             Container(
               margin: const EdgeInsets.all(30.0),
               padding: const EdgeInsets.all(100.0),
-              decoration:  BoxDecoration(
-                border: Border.all(
-                  color: AppColor.secondaryColor,
-                  width: 1,
-                ),
-                borderRadius: BorderRadius.all(Radius.circular(20))
-                ), 
+              decoration: BoxDecoration(
+                  border: Border.all(
+                    color: AppColor.secondaryColor,
+                    width: 1,
+                  ),
+                  borderRadius: BorderRadius.all(Radius.circular(20))),
               child: Text(
                 "Image(s)",
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 15.0),
               ),
             ),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -62,18 +61,17 @@ class _AddItemPageState extends State<AddItemPage> {
                   },
                   child: Text("Take Photo(s)"),
                   style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(
-                          AppColor.secondaryColor),
-                      shape: MaterialStateProperty.all<
-                              RoundedRectangleBorder>(
+                      backgroundColor:
+                          MaterialStateProperty.all(AppColor.secondaryColor),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(18.0),
-                              side: BorderSide(
-                                  color: AppColor.secondaryColor)))),
+                              side:
+                                  BorderSide(color: AppColor.secondaryColor)))),
                 ),
-
-                 const SizedBox(width: 50,),
-
+                const SizedBox(
+                  width: 50,
+                ),
                 ElevatedButton(
                   onPressed: () {
                     // Navigator.push(
@@ -85,20 +83,19 @@ class _AddItemPageState extends State<AddItemPage> {
                   },
                   child: Text("Camera Roll"),
                   style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(
-                          AppColor.secondaryColor),
-                      shape: MaterialStateProperty.all<
-                              RoundedRectangleBorder>(
+                      backgroundColor:
+                          MaterialStateProperty.all(AppColor.secondaryColor),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(18.0),
-                              side: BorderSide(
-                                  color: AppColor.secondaryColor)))),
+                              side:
+                                  BorderSide(color: AppColor.secondaryColor)))),
                 ),
-                
-              ],),
-
-            const SizedBox(height: 30,),
-
+              ],
+            ),
+            const SizedBox(
+              height: 30,
+            ),
             TextFieldWidget(
               label: 'Book Title',
               text: "",
@@ -118,7 +115,6 @@ class _AddItemPageState extends State<AddItemPage> {
               maxLines: 5,
               onChanged: (about) {},
             ),
-
             const SizedBox(height: 24),
             TextFieldWidget(
               label: 'Location Details',
@@ -126,27 +122,25 @@ class _AddItemPageState extends State<AddItemPage> {
               maxLines: 5,
               onChanged: (about) {},
             ),
+            Center(
+              child: DateRangePickerWidget(),
+            ),
             const SizedBox(height: 24),
-
-             MapScreen(),
-
+            MapScreen(),
             const SizedBox(height: 30),
             buildPublishButton(),
-
           ],
         ),
       );
-      
+
   Widget buildPublishButton() => ElevatedButton(
         style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all<Color>(AppColor.secondaryColor),
-          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-            RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(18.0),
-          side: BorderSide(color: AppColor.secondaryColor)
-      )
-    )
-        ),
+            backgroundColor:
+                MaterialStateProperty.all<Color>(AppColor.secondaryColor),
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(18.0),
+                    side: BorderSide(color: AppColor.secondaryColor)))),
         child: Text('Publish'),
         onPressed: () {
           Navigator.push(
@@ -156,8 +150,7 @@ class _AddItemPageState extends State<AddItemPage> {
             ),
           );
         },
-  );
-
+      );
 }
 
 // implement database to save this info
