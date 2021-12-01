@@ -9,9 +9,16 @@ class ListingProfilePic extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
-      width: 50,
-      child: Image.asset(ProfilePicPath),
+      width: 70,
+      height: 70,
+      clipBehavior: Clip.antiAlias,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+      ),
+      child: Image.asset(
+        ProfilePicPath,
+        fit: BoxFit.contain,
+      ),
     );
   }
 }
@@ -23,7 +30,7 @@ class ListingUsername extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text('Username',
+    return Text(Username,
         style: TextStyle(
           color: Colors.black,
           fontWeight: FontWeight.bold,
@@ -143,7 +150,7 @@ class ListingDescription extends StatelessWidget {
       SizedBox(
         width: 30,
       ),
-      Text(myDescription, style: TextStyle(color: Colors.black)),
+      Text(myDescription, style: TextStyle(color: Colors.black, height: 1.5)),
     ]);
   }
 }
@@ -164,7 +171,7 @@ class ListingTitle extends StatelessWidget {
           style: TextStyle(
             color: Colors.black,
             fontWeight: FontWeight.bold,
-            fontSize: 20,
+            fontSize: 25,
           )),
     ]);
   }

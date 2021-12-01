@@ -51,7 +51,15 @@ class StorefrontRate extends StatelessWidget {
       SizedBox(
         width: 15,
       ),
-      Expanded(flex: 15, child: Text(myRate)),
+      Expanded(
+          flex: 15,
+          child: Text(myRate,
+              style: TextStyle(
+                fontFamily: 'Lexend Deca',
+                fontSize: 14,
+                color: Color(0xFF3E3B3B),
+                fontWeight: FontWeight.bold,
+              ))),
     ]);
   }
 }

@@ -129,6 +129,7 @@ class _AddItemPageState extends State<AddItemPage> {
             MapScreen(),
             const SizedBox(height: 30),
             buildPublishButton(),
+            const SizedBox(height: 30),
           ],
         ),
       );

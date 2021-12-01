@@ -36,7 +36,7 @@ class ListingsPage extends StatelessWidget {
                         child: (CarouselImages()),
                         height: 300,
                         width: MediaQuery.of(context).size.width,
-                        color: Colors.grey),
+                        color: Colors.grey[25]),
                     SizedBox(
                       height: 15,
                     ),
@@ -45,34 +45,32 @@ class ListingsPage extends StatelessWidget {
                       height: 15,
                     ),
                     Divider(
-                      color: Colors.grey,
+                      color: Colors.grey[25],
                       thickness: 1,
                     ),
                     SizedBox(
-                      height: 30,
+                      height: 10,
                     ),
 
                     ListingTitle("Beowulf"),
 
                     SizedBox(
-                      height: 15,
+                      height: 10,
                     ),
                     ListingDescription(
-                        'Posted on November 29, 2021\n\nCondition:  Used(normal wear)\n\nISBN: 2381632089'),
+                        'Posted on November 29, 2021\nCondition:  Used (normal wear)\nISBN: 2381632089'),
 
                     SizedBox(
-                      height: 30,
+                      height: 15,
                     ),
 
                     Divider(
-                      color: AppColor.secondaryColor,
-                      thickness: 3,
-                      indent: 30,
-                      endIndent: 30,
+                      color: Colors.grey[25],
+                      thickness: 1,
                     ),
 
                     SizedBox(
-                      height: 30,
+                      height: 15,
                     ),
 
                     ListingSubHeader("Rental Info"),
@@ -88,23 +86,113 @@ class ListingsPage extends StatelessWidget {
                     ),
 
                     Divider(
-                      color: AppColor.secondaryColor,
-                      thickness: 3,
-                      indent: 30,
-                      endIndent: 30,
+                      color: Colors.grey[25],
+                      thickness: 1,
                     ),
 
                     SizedBox(
-                      height: 30,
+                      height: 15,
                     ),
 
+                    // RENTER
+                    Row(
+                      children: [
+                        // user avatar
+                        SizedBox(width: 30),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            InkResponse(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => SellerProfilePage(),
+                                  ),
+                                );
+                              },
+                              child: ListingProfilePic(
+                                  "lib/assets/images/burrow.png"),
+                            )
+                          ],
+                        ),
+                        SizedBox(width: 30),
+                        // username text
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                InkResponse(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            SellerProfilePage(),
+                                      ),
+                                    );
+                                  },
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(left: 5),
+                                    child: ListingUsername("Joe Burrow"),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [RatingBarWidget(5.0, 25.0, "44")]),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            SizedBox(width: 30),
+                            Icon(Icons.keyboard_arrow_right_rounded, size: 40),
+                          ],
+                        ),
+                      ],
+                    ),
+
+                    SizedBox(
+                      height: 15,
+                    ),
+
+                    // ElevatedButton(
+                    //   onPressed: () {
+                    //     Navigator.push(
+                    //       context,
+                    //       MaterialPageRoute(
+                    //         builder: (context) => MessagesPage(),
+                    //       ),
+                    //     );
+                    //   },
+                    //   child: Text("Message"),
+                    //   style: ButtonStyle(
+                    //       backgroundColor: MaterialStateProperty.all(
+                    //           AppColor.secondaryColor),
+                    //       shape:
+                    //           MaterialStateProperty.all<RoundedRectangleBorder>(
+                    //               RoundedRectangleBorder(
+                    //                   borderRadius: BorderRadius.circular(18.0),
+                    //                   side: BorderSide(
+                    //                       color: AppColor.secondaryColor)))),
+                    // ),
+                    Divider(
+                      color: Colors.grey[25],
+                      thickness: 1,
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
                     ListingSubHeader("Location Details"),
 
                     SizedBox(
                       height: 30,
                     ),
 
-                    ListingDescription('Rental Info Goes here'),
+                    ListingDescription('Location details go here'),
 
                     SizedBox(
                       height: 30,
@@ -139,70 +227,6 @@ class ListingsPage extends StatelessWidget {
                     //     ),
                     //   ]
                     // ),
-
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        InkResponse(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => SellerProfilePage(),
-                              ),
-                            );
-                          },
-                          child: ListingProfilePic(
-                              "lib/assets/images/blank_profile.png"),
-                        )
-                      ],
-                    ),
-
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        InkResponse(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => SellerProfilePage(),
-                              ),
-                            );
-                          },
-                          child: ListingUsername("Username"),
-                        ),
-                      ],
-                    ),
-
-                    Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [RatingBarWidget(3.0, 25.0, "44")]),
-
-                    SizedBox(
-                      height: 30,
-                    ),
-
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => MessagesPage(),
-                          ),
-                        );
-                      },
-                      child: Text("Message"),
-                      style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all(
-                              AppColor.secondaryColor),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(18.0),
-                                      side: BorderSide(
-                                          color: AppColor.secondaryColor)))),
-                    ),
                   ]),
                 ),
               ]),
