@@ -183,7 +183,7 @@ class _StorefrontState extends State<Storefront> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: PreferredSize(
-            preferredSize: Size.fromHeight(60.0),
+            preferredSize: Size.fromHeight(90.0),
             child: AppBar(
               backgroundColor: AppColor.secondaryColor,
               elevation: 0,
@@ -253,13 +253,14 @@ class _StorefrontState extends State<Storefront> {
                         child: RichText(
                           text: TextSpan(
                             children: [
-                              WidgetSpan(
-                                child: Icon(Icons.add_location_alt_outlined,
-                                    size: 20),
-                              ),
+                              // WidgetSpan(
+                              //   child: Icon(Icons.add_location_alt_outlined,
+                              //       size: 20),
+                              // ),
                               TextSpan(
-                                  text: "RESULTS",
-                                  style: TextStyle(color: Colors.black)),
+                                  text: "Results",
+                                  style: TextStyle(
+                                      color: Colors.black, fontSize: 20)),
                             ],
                           ),
                         ),

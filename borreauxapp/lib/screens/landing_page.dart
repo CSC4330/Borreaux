@@ -107,98 +107,201 @@ class _LandingPage extends State<LandingPage> {
 
   @override
   Widget build(BuildContext context) => MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: PreferredSize(
-            preferredSize: Size.fromHeight(90.0),
-            child: AppBar(
-              backgroundColor: AppColor.secondaryColor,
-              elevation: 0,
-              flexibleSpace: Container(
-                decoration: const BoxDecoration(
-                    boxShadow: <BoxShadow>[
-                      BoxShadow(
-                        blurRadius: 5,
-                      )
-                    ],
-                    gradient: LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        colors: <Color>[
-                          Color.fromRGBO(52, 90, 107, 0.8),
-                          AppColor.secondaryColor
-                        ])),
-              ),
-              title: Center(
-                child: Row(
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
+          appBar: PreferredSize(
+              preferredSize: Size.fromHeight(115.0),
+              child: AppBar(
+                backgroundColor: AppColor.secondaryColor,
+                elevation: 0,
+                // flexibleSpace: Container(
+                //   child: Text("Hello world!"),
+                //   decoration: const BoxDecoration(
+                //       boxShadow: <BoxShadow>[
+                //         BoxShadow(
+                //           blurRadius: 5,
+                //         )
+                //       ],
+                //       gradient: LinearGradient(
+                //           begin: Alignment.topCenter,
+                //           end: Alignment.bottomCenter,
+                //           colors: <Color>[
+                //             Color.fromRGBO(52, 90, 107, 0.8),
+                //             AppColor.secondaryColor
+                //           ])),
+                // ),
+                title: Column(
                   children: <Widget>[
-                    Expanded(
-                      child: Container(
-                        height: 40,
-                        color: Colors.transparent,
-                        child: Center(
-                          child: TextField(
-                            decoration: InputDecoration(
-                              filled: true,
-                              fillColor: Colors.white,
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(20.0),
+                    Row(
+                      children: <Widget>[
+                        Expanded(
+                          child: Container(
+                            height: 40,
+                            color: Colors.transparent,
+                            child: Center(
+                              child: TextField(
+                                decoration: InputDecoration(
+                                  filled: true,
+                                  fillColor: Colors.white,
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(20.0),
+                                  ),
+                                  hintText: 'Search...',
+                                  hintStyle: TextStyle(fontSize: 13),
+                                  prefixIcon: Icon(Icons.search),
+                                  suffixIcon: barcodeButton(),
+                                ),
                               ),
-                              hintText: 'Search...',
-                              hintStyle: TextStyle(fontSize: 13),
-                              prefixIcon: Icon(Icons.search),
-                              suffixIcon: barcodeButton(),
                             ),
                           ),
                         ),
-                      ),
+                      ],
                     ),
-                    filterButton(),
                   ],
                 ),
-              ),
-              bottom: PreferredSize(
-                preferredSize: Size.fromHeight(50.0),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Container(
-                        height: 32,
-                        color: AppColor.primaryColor.withOpacity(.9),
-                        padding: EdgeInsets.fromLTRB(10, 5, 30, 2),
-                        child: RichText(
-                          text: TextSpan(
-                            children: [
-                              WidgetSpan(
-                                child: Icon(Icons.add_location_alt_outlined,
-                                    size: 20),
-                              ),
-                              TextSpan(
-                                  text:
-                                      "  Select a location to see product availability",
-                                  style: TextStyle(color: Colors.black)),
+                flexibleSpace: Container(
+                  decoration: const BoxDecoration(
+                      boxShadow: <BoxShadow>[
+                        BoxShadow(
+                          blurRadius: 5,
+                        )
+                      ],
+                      gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: <Color>[
+                            Color.fromRGBO(52, 90, 107, 0.8),
+                            AppColor.secondaryColor
+                          ])),
+                  child: Column(
+                    children: <Widget>[
+                      SizedBox(
+                        height: 55,
+                      ),
+                      Container(
+                        child: Text(""),
+                        decoration: const BoxDecoration(
+                            boxShadow: <BoxShadow>[
+                              BoxShadow(
+                                blurRadius: 5,
+                              )
                             ],
+                            gradient: LinearGradient(
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                                colors: <Color>[
+                                  Color.fromRGBO(52, 90, 107, 0.8),
+                                  AppColor.secondaryColor
+                                ])),
+                      ),
+                      DefaultTextStyle(
+                        style: TextStyle(color: AppColor.primaryColor),
+                        child: Container(
+                            height: 36,
+                            color: Colors.transparent,
+                            child: Row(
+                              children: <Widget>[
+                                Container(
+                                  color: Colors.transparent,
+                                  child: Text("Popular"),
+                                  padding: EdgeInsets.fromLTRB(18, 0, 16, 0),
+                                ),
+                                Container(
+                                  color: Colors.transparent,
+                                  child: Text("Best Sellers"),
+                                  padding: EdgeInsets.fromLTRB(16, 0, 16, 0),
+                                ),
+                                Container(
+                                  color: Colors.transparent,
+                                  child: Text("New Releases"),
+                                  padding: EdgeInsets.fromLTRB(16, 0, 16, 0),
+                                ),
+                                Container(
+                                  color: Colors.transparent,
+                                  child: Text("Suggested"),
+                                  padding: EdgeInsets.fromLTRB(16, 0, 18, 0),
+                                ),
+
+                                // ElevatedButton(
+                                //   child: Text("Hello world!"),
+                                //   style: ElevatedButton.styleFrom(
+                                //       primary: AppColor.primaryColor,
+                                //       padding: EdgeInsets.all(20)),
+                                //   onPressed: () {
+                                //     Navigator.push(
+                                //       context,
+                                //       MaterialPageRoute(
+                                //         builder: (context) =>
+                                //             ListingsPage(Colors.green),
+                                //       ),
+                                //     );
+                                //   },
+                                // ),
+                              ],
+                            )),
+                      ),
+                    ],
+                  ),
+                ),
+                bottom: PreferredSize(
+                  preferredSize: Size.fromHeight(20.0),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Container(
+                          height: 32,
+                          color: AppColor.primaryColor.withOpacity(.9),
+                          padding: EdgeInsets.fromLTRB(10, 5, 30, 2),
+                          child: RichText(
+                            text: TextSpan(
+                              children: [
+                                WidgetSpan(
+                                  child: Icon(Icons.add_location_alt_outlined,
+                                      size: 20),
+                                ),
+                                TextSpan(
+                                    text:
+                                        "  Select a location to see product availability",
+                                    style: TextStyle(color: Colors.black)),
+                              ],
+                            ),
                           ),
                         ),
+                        //     Container(
+                        //   padding: EdgeInsets.fromLTRB(10, 5, 30, 2),
+                        //   height: 30,
+                        //   color: AppColor.primaryColor.withOpacity(.8),
+                        //   child: TextButton(
+                        //     child: Text("Hello world!"),
+                        //   ),
+                        // )
                       ),
-                      //     Container(
-                      //   padding: EdgeInsets.fromLTRB(10, 5, 30, 2),
-                      //   height: 30,
-                      //   color: AppColor.primaryColor.withOpacity(.8),
-                      //   child: TextButton(
-                      //     child: Text("Hello world!"),
-                      //   ),
-                      // )
-                    ),
-                  ],
+                    ],
+                  ),
+                ),
+              )), // APP BAR
+          body: Column(
+            // mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Container(
+                padding: EdgeInsets.fromLTRB(10, 10, 10, 2),
+                child: Text(
+                  "New Releases",
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Lexend Deca',
+                  ),
                 ),
               ),
-            )), // APP BAR
-        body: Container(
-          height: 1300.0,
-          child: viewHasBeenPressed ? _contentGridView() : _contentListView(),
+              Container(
+                height: 200.0,
+                child: _contentGridView(),
+              ),
+            ],
+          ),
         ),
-      ));
+      );
 
   Widget _contentListView() {
     return Container(
@@ -299,11 +402,10 @@ class _LandingPage extends State<LandingPage> {
 
   Widget _contentGridView() {
     return Container(
-        color: AppColor.secondaryColor,
-        child: GridView.builder(
+        color: AppColor.primaryColor,
+        child: ListView.builder(
           itemCount: 5,
-          gridDelegate:
-              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+          scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) => Card(
             child: GridTile(
               child: InkResponse(
