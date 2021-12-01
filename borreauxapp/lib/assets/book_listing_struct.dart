@@ -7,10 +7,11 @@ class newListing {
   String monthRate;
   bool bookmarked;
   double rating;
+  String numberOfReviews;
   String bookTitle;
 
   newListing(bookCoverPicPath, username, profilePicPath, dayRate, weekRate,
-      monthRate, bookmarked, rating, bookTitle) {
+      monthRate, bookmarked, rating, numberOfReviews, bookTitle) {
     this.bookCoverPicPath = bookCoverPicPath;
     this.username = username;
     this.profilePicPath = profilePicPath;
@@ -19,6 +20,7 @@ class newListing {
     this.monthRate = monthRate;
     this.bookmarked = bookmarked;
     this.rating = rating;
+    this.numberOfReviews = numberOfReviews;
     this.bookTitle = bookTitle;
   }
 }

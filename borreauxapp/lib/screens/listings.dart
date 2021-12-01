@@ -177,7 +177,7 @@ class ListingsPage extends StatelessWidget {
 
                     Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: [RatingBarWidget(3.0, 25.0)]),
+                        children: [RatingBarWidget(3.0, 25.0, "44")]),
 
                     SizedBox(
                       height: 30,

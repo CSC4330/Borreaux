@@ -2,6 +2,7 @@ import 'package:borreauxapp/assets/book_listing_struct.dart';
 import 'package:borreauxapp/assets/colors.dart';
 import 'package:borreauxapp/screens/bookmark.dart';
 import 'package:borreauxapp/screens/listings.dart';
+import 'package:borreauxapp/widgets/barcode_widget.dart';
 import 'package:borreauxapp/widgets/ratingbar_widget.dart';
 import 'package:borreauxapp/widgets/storefront_widgets.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +10,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:filter_list/filter_list.dart';
+import 'package:borreauxapp/widgets/filter_widget.dart';
 
 class Storefront extends StatefulWidget {
   @override
@@ -32,6 +34,7 @@ class _StorefrontState extends State<Storefront> {
         "\$30.70",
         false,
         1.0,
+        "44",
         "Fahrenheit 451"),
     newListing(
         "lib/assets/images/shakespeare.jpg",
@@ -42,6 +45,7 @@ class _StorefrontState extends State<Storefront> {
         "\$30.70",
         false,
         3.5,
+        "44",
         "Tragedies"),
     newListing(
         "lib/assets/images/scarletLetter.jpg",
@@ -52,6 +56,7 @@ class _StorefrontState extends State<Storefront> {
         "\$30.70",
         false,
         2.5,
+        "44",
         "Scarlet Letter"),
     newListing(
         "lib/assets/images/beowulf.jpeg",
@@ -62,6 +67,7 @@ class _StorefrontState extends State<Storefront> {
         "\$30.70",
         false,
         5.0,
+        "44",
         "Beowulf"),
     newListing(
         "lib/assets/images/wutheringHeights.jpg",
@@ -72,6 +78,7 @@ class _StorefrontState extends State<Storefront> {
         "\$50.70",
         true,
         3.0,
+        "44",
         "Wuthering Heights"),
   ];
 
@@ -176,66 +183,86 @@ class _StorefrontState extends State<Storefront> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: PreferredSize(
-            preferredSize: Size.fromHeight(100.0), // here the desired height
+            preferredSize: Size.fromHeight(60.0),
             child: AppBar(
-              backgroundColor: const Color(0xff41c5ff),
+              backgroundColor: AppColor.secondaryColor,
               elevation: 0,
-              title: Container(
-                width: double.infinity,
-                height: 40,
-                color: AppColor.secondaryColor,
-                child: Center(
-                  child: TextField(
-                    decoration: InputDecoration(
-                      filled: true,
-                      fillColor: Colors.white,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
-                      hintText: 'Search...',
-                      hintStyle: TextStyle(fontSize: 13),
-                      prefixIcon: Icon(Icons.search),
-                      suffixIcon: IconButton(
-                        icon: ImageIcon(
-                          AssetImage("lib/assets/images/barcode_scan.png"),
-                          size: 35,
+              flexibleSpace: Container(
+                decoration: const BoxDecoration(
+                    boxShadow: <BoxShadow>[
+                      BoxShadow(
+                        blurRadius: 5,
+                      )
+                    ],
+                    gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: <Color>[
+                          Color.fromRGBO(52, 90, 107, 0.8),
+                          AppColor.secondaryColor
+                        ])),
+              ),
+
+              title: Center(
+                child: Row(
+                  children: <Widget>[
+                    // IconButton(
+                    //   onPressed: () {
+                    //     setState(() {
+                    //       viewHasBeenPressed = !viewHasBeenPressed;
+                    //     });
+                    //   },
+                    //   icon: viewHasBeenPressed
+                    //       ? Icon(Icons.grid_view)
+                    //       : Icon(Icons.format_list_bulleted),
+                    // ),
+                    Expanded(
+                      child: Container(
+                        height: 40,
+                        color: Colors.transparent,
+                        child: Center(
+                          child: TextField(
+                            decoration: InputDecoration(
+                              filled: true,
+                              fillColor: Colors.white,
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(20.0),
+                              ),
+                              hintText: 'Search...',
+                              hintStyle: TextStyle(fontSize: 13),
+                              prefixIcon: Icon(Icons.search),
+                              suffixIcon: barcodeButton(),
+                            ),
+                          ),
                         ),
-                        onPressed: scanBarcode,
                       ),
                     ),
-                  ),
+                    filterButton(),
+                  ],
                 ),
               ),
-              bottom: PreferredSize(
-                preferredSize: Size.fromHeight(10.0),
-                child: Column(children: [
-                  Row(
-                    children: [
-                      TextButton.icon(
-                        onPressed: () {
-                          setState(() {
-                            viewHasBeenPressed = !viewHasBeenPressed;
-                          });
-                        },
-                        label: Text(("View")),
-                        icon: viewHasBeenPressed
-                            ? Icon(Icons.grid_view)
-                            : Icon(Icons.format_list_bulleted),
-                        style: TextButton.styleFrom(primary: Colors.white),
-                      ),
-                      SizedBox(
-                        width: 230,
-                      ),
-                      TextButton.icon(
-                        onPressed: _openFilterWindow,
-                        label: Text(("Filter")),
-                        icon: Icon(Icons.filter_list),
-                        style: TextButton.styleFrom(primary: Colors.white),
-                      ),
-                    ],
-                  ),
-                ]),
-              ),
+              // bottom: PreferredSize(
+              //   preferredSize: Size.fromHeight(10.0),
+              //   child: Column(children: [
+              //     Row(
+              //       children: [
+              //         // TextButton.icon(
+              //         //   onPressed: () {
+              //         //     setState(() {
+              //         //       viewHasBeenPressed = !viewHasBeenPressed;
+              //         //     });
+              //         //   },
+              //         //   label: Text(("View")),
+              //         //   icon: viewHasBeenPressed
+              //         //       ? Icon(Icons.grid_view)
+              //         //       : Icon(Icons.format_list_bulleted),
+              //         //   style: TextButton.styleFrom(primary: Colors.white),
+              //         // ),
+              //         // filterButton(),
+              //       ],
+              //     ),
+              //   ]),
+              // ),
             )), // APP BAR
         body: Container(
           height: 1000.0,
@@ -289,7 +316,8 @@ class _StorefrontState extends State<Storefront> {
                         SizedBox(
                           width: 50,
                         ),
-                        RatingBarWidget(listings[index].rating, 15.0),
+                        RatingBarWidget(listings[index].rating, 15.0,
+                            listings[index].numberOfReviews),
                       ]),
                       SizedBox(
                         height: 10,
