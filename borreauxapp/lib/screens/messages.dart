@@ -85,8 +85,11 @@ class _MessagesPageState extends State<MessagesPage> {
                     // ignore: prefer_const_constructors
                     Text(
                       "Conversations",
-                      style:
-                          TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontSize: 32,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Lexend Deca',
+                      ),
                     ),
                     Container(
                       padding:
