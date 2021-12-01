@@ -302,6 +302,7 @@ class _StorefrontState extends State<Storefront> {
                 Expanded(
                   flex: 50,
                   child: ListView(
+                    physics: NeverScrollableScrollPhysics(),
                     children: [
                       SizedBox(
                         height: 15,
