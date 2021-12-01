@@ -241,6 +241,41 @@ class _StorefrontState extends State<Storefront> {
                   ],
                 ),
               ),
+              bottom: PreferredSize(
+                preferredSize: Size.fromHeight(50.0),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        height: 32,
+                        color: AppColor.primaryColor.withOpacity(.9),
+                        padding: EdgeInsets.fromLTRB(10, 5, 30, 2),
+                        child: RichText(
+                          text: TextSpan(
+                            children: [
+                              WidgetSpan(
+                                child: Icon(Icons.add_location_alt_outlined,
+                                    size: 20),
+                              ),
+                              TextSpan(
+                                  text: "RESULTS",
+                                  style: TextStyle(color: Colors.black)),
+                            ],
+                          ),
+                        ),
+                      ),
+                      //     Container(
+                      //   padding: EdgeInsets.fromLTRB(10, 5, 30, 2),
+                      //   height: 30,
+                      //   color: AppColor.primaryColor.withOpacity(.8),
+                      //   child: TextButton(
+                      //     child: Text("Hello world!"),
+                      //   ),
+                      // )
+                    ),
+                  ],
+                ),
+              ),
               // bottom: PreferredSize(
               //   preferredSize: Size.fromHeight(10.0),
               //   child: Column(children: [

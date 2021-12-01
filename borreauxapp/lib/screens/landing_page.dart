@@ -12,12 +12,12 @@ import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:filter_list/filter_list.dart';
 import 'package:borreauxapp/widgets/filter_widget.dart';
 
-class Storefront extends StatefulWidget {
+class LandingPage extends StatefulWidget {
   @override
-  _StorefrontState createState() => _StorefrontState();
+  _LandingPage createState() => _LandingPage();
 }
 
-class _StorefrontState extends State<Storefront> {
+class _LandingPage extends State<LandingPage> {
   String scanResult;
   bool viewHasBeenPressed = false;
   List<String> selectedFilterCountList = [];
@@ -110,7 +110,7 @@ class _StorefrontState extends State<Storefront> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: PreferredSize(
-            preferredSize: Size.fromHeight(60.0),
+            preferredSize: Size.fromHeight(90.0),
             child: AppBar(
               backgroundColor: AppColor.secondaryColor,
               elevation: 0,
@@ -157,9 +157,45 @@ class _StorefrontState extends State<Storefront> {
                   ],
                 ),
               ),
+              bottom: PreferredSize(
+                preferredSize: Size.fromHeight(50.0),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        height: 32,
+                        color: AppColor.primaryColor.withOpacity(.9),
+                        padding: EdgeInsets.fromLTRB(10, 5, 30, 2),
+                        child: RichText(
+                          text: TextSpan(
+                            children: [
+                              WidgetSpan(
+                                child: Icon(Icons.add_location_alt_outlined,
+                                    size: 20),
+                              ),
+                              TextSpan(
+                                  text:
+                                      "  Select a location to see product availability",
+                                  style: TextStyle(color: Colors.black)),
+                            ],
+                          ),
+                        ),
+                      ),
+                      //     Container(
+                      //   padding: EdgeInsets.fromLTRB(10, 5, 30, 2),
+                      //   height: 30,
+                      //   color: AppColor.primaryColor.withOpacity(.8),
+                      //   child: TextButton(
+                      //     child: Text("Hello world!"),
+                      //   ),
+                      // )
+                    ),
+                  ],
+                ),
+              ),
             )), // APP BAR
         body: Container(
-          height: 1000.0,
+          height: 1300.0,
           child: viewHasBeenPressed ? _contentGridView() : _contentListView(),
         ),
       ));
@@ -175,7 +211,12 @@ class _StorefrontState extends State<Storefront> {
         color: AppColor.primaryColor,
       ),
       height: 175.0,
-      child: ListView.builder(
+      child:
+          // Container(
+          //   height: 250.0,
+          //   padding: EdgeInsets.all(10),
+          // ),
+          ListView.builder(
         itemExtent: 175.0,
         itemCount: 5,
         itemBuilder: (content, index) => Container(
@@ -282,61 +323,5 @@ class _StorefrontState extends State<Storefront> {
             ),
           ),
         ));
-  }
-
-  void _openFilterWindow() async {
-    await FilterListDialog.display<String>(context,
-        listData: filterCountList,
-        selectedListData: selectedFilterCountList,
-        height: 480,
-        headlineText: "Select Count",
-        searchFieldHintText: "Search Here", choiceChipLabel: (item) {
-      return item;
-    }, validateSelectedItem: (list, val) {
-      return list.contains(val);
-    }, onItemSearch: (list, text) {
-      if (list.any(
-          (element) => element.toLowerCase().contains(text.toLowerCase()))) {
-        return list
-            .where(
-                (element) => element.toLowerCase().contains(text.toLowerCase()))
-            .toList();
-      } else {
-        return [];
-      }
-    }, onApplyButtonClick: (list) {
-      if (list != null) {
-        setState(() {
-          selectedFilterCountList = List.from(list);
-        });
-      }
-      Navigator.pop(context);
-    });
-  }
-
-  Future scanBarcode() async {
-    String scanResult;
-    try {
-      scanResult = await FlutterBarcodeScanner.scanBarcode(
-        "#ff6666",
-        "Cancel",
-        true,
-        ScanMode.BARCODE,
-      );
-    } on PlatformException {
-      scanResult = "Failed to get platform version.";
-    }
-    if (!mounted) return;
-
-    setState(() {
-      print(scanResult);
-      if (scanResult != null)
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => ListingsPage(Colors.green),
-          ),
-        );
-    });
   }
 }
