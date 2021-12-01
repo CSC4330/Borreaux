@@ -284,70 +284,77 @@ class _StorefrontState extends State<Storefront> {
       child: ListView.builder(
         itemExtent: 175.0,
         itemCount: 5,
-        itemBuilder: (content, index) => Card(
-          color: Colors.white,
-          margin: EdgeInsets.all(0),
-          child: InkResponse(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ListingsPage(Colors.green),
-                ),
-              );
-            },
-            child: Row(
-              children: [
-                StorefrontImage(listings[index].bookCoverPicPath),
-                Expanded(
-                  flex: 50,
-                  child: ListView(
-                    physics: NeverScrollableScrollPhysics(),
-                    children: [
-                      SizedBox(
-                        height: 15,
-                      ),
-                      StorefrontTitle(listings[index].bookTitle),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      StorefrontProfile(listings[index].profilePicPath,
-                          listings[index].username),
-                      Row(children: [
-                        SizedBox(
-                          width: 50,
-                        ),
-                        RatingBarWidget(listings[index].rating, 15.0,
-                            listings[index].numberOfReviews),
-                      ]),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      StorefrontRate("Daily: ${listings[index].dayRate}"),
-                      StorefrontRate("Weekly: ${listings[index].weekRate}"),
-                      StorefrontRate("Monthly: ${listings[index].monthRate}"),
-                      Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-                        IconButton(
-                            padding: EdgeInsets.zero,
-                            constraints: BoxConstraints(),
-                            icon: Icon(Icons.bookmark),
-                            onPressed: () {
-                              setState(() {
-                                listings[index].bookmarked =
-                                    !listings[index].bookmarked;
-                              });
-                            },
-                            color: (listings[index].bookmarked)
-                                ? Colors.red
-                                : const Color(0xff9A9A9A)),
-                        SizedBox(
-                          width: 10,
-                        ),
-                      ]),
-                    ],
+        itemBuilder: (content, index) => Container(
+          height: 1000,
+          padding: EdgeInsets.all(5),
+          child: Card(
+            color: Colors.white,
+            shadowColor: Colors.transparent,
+            // margin: EdgeInsets.all(0),
+            child: InkResponse(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ListingsPage(Colors.green),
                   ),
-                ),
-              ],
+                );
+              },
+              child: Row(
+                children: [
+                  StorefrontImage(listings[index].bookCoverPicPath),
+                  Expanded(
+                    flex: 55,
+                    child: ListView(
+                      physics: NeverScrollableScrollPhysics(),
+                      children: [
+                        StorefrontTitle(listings[index].bookTitle),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        StorefrontProfile(listings[index].profilePicPath,
+                            listings[index].username),
+                        SizedBox(
+                          height: 3,
+                        ),
+                        Row(children: [
+                          SizedBox(
+                            width: 12,
+                          ),
+                          RatingBarWidget(listings[index].rating, 15.0,
+                              listings[index].numberOfReviews),
+                        ]),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        StorefrontRate("${listings[index].dayRate}/day"),
+                        StorefrontRate("${listings[index].weekRate}/week"),
+                        StorefrontRate("${listings[index].monthRate}/month"),
+                        Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              IconButton(
+                                  padding: EdgeInsets.zero,
+                                  constraints: BoxConstraints(),
+                                  icon: Icon(Icons.bookmark),
+                                  onPressed: () {
+                                    setState(() {
+                                      listings[index].bookmarked =
+                                          !listings[index].bookmarked;
+                                    });
+                                  },
+                                  color: (listings[index].bookmarked)
+                                      ? Colors.red
+                                      : const Color(0xff9A9A9A)),
+                              SizedBox(
+                                width: 10,
+                              ),
+                            ]),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
