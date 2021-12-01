@@ -42,8 +42,8 @@ class _DateRangePickerWidgetState extends State<DateRangePickerWidget> {
     );
     final newDateRange = await showDateRangePicker(
       context: context,
-      firstDate: DateTime(DateTime.now().year - 1),
-      lastDate: DateTime(DateTime.now().year + 1),
+      firstDate: DateTime(DateTime.now().year),
+      lastDate: DateTime(DateTime.now().year + 2),
       initialDateRange: dateRange ?? initialDateRange,
     );
 
