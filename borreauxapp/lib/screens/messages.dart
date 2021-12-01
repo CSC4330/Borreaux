@@ -1,6 +1,7 @@
 import 'package:borreauxapp/assets/colors.dart';
 import 'package:borreauxapp/model/messagesUser.dart';
 import 'package:borreauxapp/widgets/conversationList.dart';
+import 'package:borreauxapp/widgets/searchbar_widget.dart';
 import 'package:flutter/material.dart';
 
 // class MessagesWidget extends StatelessWidget {
@@ -134,7 +135,10 @@ class _MessagesPageState extends State<MessagesPage> {
               ),
             ),
             // CONVERSATION LIST
-            ListView.builder(
+            ListView.separated(
+              separatorBuilder: (context, index) => Divider(
+                color: Colors.black.withOpacity(.2),
+              ),
               itemCount: messagesUsers.length,
               shrinkWrap: true,
               padding: EdgeInsets.only(top: 16),

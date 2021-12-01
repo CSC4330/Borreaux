@@ -36,7 +36,15 @@ class _MessagesDetailPageState extends State<MessagesDetailPage> {
         flexibleSpace: SafeArea(
           child: Container(
             padding: EdgeInsets.only(right: 16),
-
+            decoration: BoxDecoration(
+              color: AppColor.primaryColor,
+              boxShadow: <BoxShadow>[
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.2),
+                  blurRadius: 2,
+                ),
+              ],
+            ),
             // top of chat details with user's name, status,
             // profile picture, and the back button & gear
             child: Row(
@@ -115,14 +123,19 @@ class _MessagesDetailPageState extends State<MessagesDetailPage> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       color: (messages[index].messageType == "receiver"
-                          ? Colors.grey.shade200
+                          ? Colors.grey.shade300
                           : AppColor.secondaryColor),
                     ),
                     padding: EdgeInsets.all(16),
                     // putting the message in the text bubble
                     child: Text(
                       messages[index].messageContent,
-                      style: TextStyle(fontSize: 15),
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: (messages[index].messageType == "receiver"
+                            ? Colors.black
+                            : AppColor.primaryColor),
+                      ),
                     ),
                   ),
                 ),
@@ -134,11 +147,19 @@ class _MessagesDetailPageState extends State<MessagesDetailPage> {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
+              decoration: BoxDecoration(
+                color: AppColor.primaryColor,
+                boxShadow: <BoxShadow>[
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.2),
+                    blurRadius: 2,
+                  ),
+                ],
+              ),
               padding:
                   EdgeInsets.only(left: 20, bottom: 50, top: 10, right: 10),
               height: 100,
               width: double.infinity,
-              color: AppColor.primaryColor,
               child: Row(
                 children: <Widget>[
                   GestureDetector(
