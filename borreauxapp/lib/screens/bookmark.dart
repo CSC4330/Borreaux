@@ -21,7 +21,7 @@ class _BookmarkPageState extends State<BookmarkPage> {
         "\$1.10",
         "\$10.00",
         "\$30.70",
-        false,
+        true,
         5.0,
         "44",
         "Beowulf"),
@@ -29,6 +29,30 @@ class _BookmarkPageState extends State<BookmarkPage> {
   int numberOfSavedListings = 1;
 
   // Datasets for Each Listing
+  List<newListing> listings = [
+    newListing(
+        "lib/assets/images/beowulf.jpeg",
+        "alice_2",
+        "lib/assets/images/blank_profile.png",
+        "\$1.10",
+        "\$10.00",
+        "\$30.70",
+        true,
+        5.0,
+        "44",
+        "Beowulf"),
+    newListing(
+        "lib/assets/images/wutheringHeights.jpg",
+        "hello_world",
+        "lib/assets/images/blank_profile.png",
+        "\$0.50",
+        "\$10.00",
+        "\$50.70",
+        true,
+        3.0,
+        "44",
+        "Wuthering Heights"),
+  ];
 
   // Builds the Storefront
   @override
@@ -58,70 +82,77 @@ class _BookmarkPageState extends State<BookmarkPage> {
       child: ListView.builder(
         itemExtent: 175.0,
         itemCount: numberOfSavedListings,
-        itemBuilder: (content, index) => Card(
-          color: Colors.white,
-          child: InkResponse(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ListingsPage(Colors.green),
-                ),
-              );
-            },
-            child: Row(
-              children: [
-                StorefrontImage(savedListings[index].bookCoverPicPath),
-                Expanded(
-                  flex: 50,
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: 15,
-                      ),
-                      StorefrontTitle(savedListings[index].bookTitle),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      StorefrontProfile(savedListings[index].profilePicPath,
-                          savedListings[index].username),
-                      Row(children: [
-                        SizedBox(
-                          width: 50,
-                        ),
-                        RatingBarWidget(savedListings[index].rating, 15.0,
-                            savedListings[index].numberOfReviews),
-                      ]),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      StorefrontRate("Daily: ${savedListings[index].dayRate}"),
-                      StorefrontRate(
-                          "Weekly: ${savedListings[index].weekRate}"),
-                      StorefrontRate(
-                          "Monthly: ${savedListings[index].monthRate}"),
-                      Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-                        IconButton(
-                            padding: EdgeInsets.zero,
-                            constraints: BoxConstraints(),
-                            icon: Icon(Icons.bookmark),
-                            onPressed: () {
-                              setState(() {
-                                savedListings[index].bookmarked =
-                                    !savedListings[index].bookmarked;
-                              });
-                            },
-                            color: (savedListings[index].bookmarked)
-                                ? Colors.red
-                                : const Color(0xff9A9A9A)),
-                        SizedBox(
-                          width: 10,
-                        ),
-                      ]),
-                    ],
+        itemBuilder: (content, index) => Container(
+          height: 1000,
+          padding: EdgeInsets.all(5),
+          child: Card(
+            color: Colors.white,
+            shadowColor: Colors.transparent,
+            // margin: EdgeInsets.all(0),
+            child: InkResponse(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ListingsPage(Colors.green),
                   ),
-                )
-              ],
+                );
+              },
+              child: Row(
+                children: [
+                  StorefrontImage(listings[index].bookCoverPicPath),
+                  Expanded(
+                    flex: 55,
+                    child: ListView(
+                      physics: NeverScrollableScrollPhysics(),
+                      children: [
+                        StorefrontTitle(listings[index].bookTitle),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        StorefrontProfile(listings[index].profilePicPath,
+                            listings[index].username),
+                        SizedBox(
+                          height: 3,
+                        ),
+                        Row(children: [
+                          SizedBox(
+                            width: 12,
+                          ),
+                          RatingBarWidget(listings[index].rating, 15.0,
+                              listings[index].numberOfReviews),
+                        ]),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        StorefrontRate("${listings[index].dayRate}/day"),
+                        StorefrontRate("${listings[index].weekRate}/week"),
+                        StorefrontRate("${listings[index].monthRate}/month"),
+                        Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              IconButton(
+                                  padding: EdgeInsets.zero,
+                                  constraints: BoxConstraints(),
+                                  icon: Icon(Icons.bookmark),
+                                  onPressed: () {
+                                    setState(() {
+                                      listings[index].bookmarked =
+                                          !listings[index].bookmarked;
+                                    });
+                                  },
+                                  color: (listings[index].bookmarked)
+                                      ? Colors.red
+                                      : const Color(0xff9A9A9A)),
+                              SizedBox(
+                                width: 10,
+                              ),
+                            ]),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),

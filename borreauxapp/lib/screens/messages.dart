@@ -115,25 +115,45 @@ class _MessagesPageState extends State<MessagesPage> {
               ),
             ),
             // SEARCH BAR
-            Padding(
-              padding: EdgeInsets.only(top: 16, left: 16, right: 16),
-              child: TextField(
-                decoration: InputDecoration(
-                  hintText: "Search...",
-                  hintStyle: TextStyle(color: Colors.grey.shade600),
-                  prefixIcon: Icon(
-                    Icons.search,
-                    color: AppColor.secondaryColor,
-                    size: 20,
+            // Padding(
+            //   padding: EdgeInsets.only(top: 16, left: 16, right: 16),
+            //   child: TextField(
+            //     decoration: InputDecoration(
+            //       hintText: "Search...",
+            //       hintStyle: TextStyle(color: Colors.grey.shade600),
+            //       prefixIcon: Icon(
+            //         Icons.search,
+            //         color: AppColor.secondaryColor,
+            //         size: 20,
+            //       ),
+            //       filled: true,
+            //       fillColor: Colors.grey.shade100,
+            //       enabledBorder: OutlineInputBorder(
+            //           borderRadius: BorderRadius.circular(20),
+            //           borderSide: BorderSide(color: AppColor.secondaryColor)),
+            //     ),
+            //   ),
+            // ),
+            Container(
+              height: 52,
+              padding: EdgeInsets.fromLTRB(15, 10, 15, 0),
+              color: Colors.transparent,
+              child: Center(
+                child: TextField(
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20.0),
+                    ),
+                    hintText: 'Search...',
+                    hintStyle: TextStyle(fontSize: 13),
+                    prefixIcon: Icon(Icons.search),
                   ),
-                  filled: true,
-                  fillColor: Colors.grey.shade100,
-                  enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      borderSide: BorderSide(color: AppColor.secondaryColor)),
                 ),
               ),
             ),
+
             // CONVERSATION LIST
             ListView.separated(
               separatorBuilder: (context, index) => Divider(
