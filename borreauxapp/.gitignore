@@ -1,0 +1,5 @@
+/ios/Pods
+/ios/.symlinks
+/build
+/.dart_tool
+/ios/Runner.xcworkspace
