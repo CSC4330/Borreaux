@@ -9,6 +9,7 @@ import 'package:borreauxapp/widgets/textfield_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:borreauxapp/widgets/google_map.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:borreauxapp/widgets/datepicker_widget.dart';
 
 class AddItemPage extends StatefulWidget {
   @override
@@ -120,6 +121,9 @@ class _AddItemPageState extends State<AddItemPage> {
               text: "",
               maxLines: 5,
               onChanged: (about) {},
+            ),
+            Center(
+              child: DateRangePickerWidget(),
             ),
             const SizedBox(height: 24),
             MapScreen(),

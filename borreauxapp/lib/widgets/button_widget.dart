@@ -1,6 +1,28 @@
 import 'package:borreauxapp/assets/colors.dart';
 import 'package:flutter/material.dart';
 
+class ButtonHeaderWidget extends StatelessWidget {
+  final String title;
+  final String text;
+  final VoidCallback onClicked;
+
+  const ButtonHeaderWidget({
+    Key key,
+    @required this.title,
+    @required this.text,
+    @required this.onClicked,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) => HeaderWidget(
+        title: title,
+        child: ButtonWidget(
+          text: text,
+          onClicked: onClicked,
+        ),
+      );
+}
+
 class ButtonWidget extends StatelessWidget {
   final String text;
   final VoidCallback onClicked;
@@ -13,12 +35,41 @@ class ButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          shape: StadiumBorder(),
-          onPrimary: AppColor.primaryColor, // text color
-          padding: EdgeInsets.symmetric(horizontal: 32, vertical: 12),
-        ),
         child: Text(text),
+        style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(AppColor.secondaryColor),
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(18.0),
+                    side: BorderSide(color: AppColor.secondaryColor)))),
         onPressed: onClicked,
+      );
+}
+
+class HeaderWidget extends StatelessWidget {
+  final String title;
+  final Widget child;
+
+  const HeaderWidget({
+    Key key,
+    @required this.title,
+    @required this.child,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) => Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            title,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 8),
+          child,
+        ],
       );
 }
