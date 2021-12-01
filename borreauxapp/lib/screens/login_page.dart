@@ -214,17 +214,9 @@ class _LoginPageState extends State<LoginPage> {
                       buildPasswordTextbox(),
                       const SizedBox(height: 20.0),
                       Row(
-                        children: <Widget>[
-                          Container(
-                            height: 0.11,
-                          ),
+                        children: [
                           buildLoginButton(),
-                          Column(children: <Widget>[
-                            Container(
-                              height: 0.11,
-                            ),
-                            buildForgotPasswordBtn(),
-                          ])
+                          // buildForgotPasswordBtn(),
                         ],
                       ),
                       Row(
