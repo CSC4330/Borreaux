@@ -31,35 +31,45 @@ class _nav_bar_state extends State<nav_bar> {
       //title: Text("Temp Bar to go back to Login"),       // REMOVE APP BAR LINES TO FIX FORMAT
       //),
       body: _children[_currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        onTap: onTabTapped, // new
-        currentIndex: _currentIndex,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        type: BottomNavigationBarType.fixed,
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.bookmark),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.add),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.mail),
-            label: '',
-          ),
-          // ignore: prefer_const_constructors
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: '',
-          )
-        ],
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          boxShadow: <BoxShadow>[
+            BoxShadow(
+              color: Colors.black.withOpacity(0.2),
+              blurRadius: 10,
+            ),
+          ],
+        ),
+        child: BottomNavigationBar(
+          onTap: onTabTapped, // new
+          currentIndex: _currentIndex,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          type: BottomNavigationBarType.fixed,
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.bookmark),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.add),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.mail),
+              label: '',
+            ),
+            // ignore: prefer_const_constructors
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: '',
+            )
+          ],
+        ),
       ),
     );
   }
