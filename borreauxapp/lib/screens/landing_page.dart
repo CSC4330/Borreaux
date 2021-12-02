@@ -305,20 +305,21 @@ class _LandingPage extends State<LandingPage> {
                               child: Text("Popular"),
                               padding: EdgeInsets.fromLTRB(18, 0, 10, 0),
                             ),
+
                             Container(
                               color: Colors.transparent,
-                              child: Text("Best Sellers"),
-                              padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                            ),
-                            Container(
-                              color: Colors.transparent,
-                              child: Text("New Releases"),
+                              child: Text("Newly Added"),
                               padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                             ),
                             Container(
                               color: Colors.transparent,
                               child: Text("Suggested"),
                               padding: EdgeInsets.fromLTRB(10, 0, 18, 0),
+                            ),
+                            Container(
+                              color: Colors.transparent,
+                              child: Text("Near Me"),
+                              padding: EdgeInsets.fromLTRB(5, 0, 10, 0),
                             ),
 
                             // ElevatedButton(
@@ -392,12 +393,24 @@ class _LandingPage extends State<LandingPage> {
               color: Colors.red,
               child: Expanded(
                 child: Container(
+                  padding: EdgeInsets.all(0.0),
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage('lib/assets/images/nash.png'),
                       fit: BoxFit.fill,
                     ),
                   ),
+                  child: new TextButton(
+                      // padding: EdgeInsets.all(0.0),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Storefront(),
+                          ),
+                        );
+                      },
+                      child: null),
                 ),
               ),
             ),
@@ -467,7 +480,7 @@ class _LandingPage extends State<LandingPage> {
                       children: [
                         Container(
                           width: 150,
-                          height: 100,
+                          height: 75,
                           child: ListView(
                             physics: NeverScrollableScrollPhysics(),
                             children: [
@@ -495,14 +508,14 @@ class _LandingPage extends State<LandingPage> {
                                     15.0, givenListings[index].numberOfReviews),
                               ]),
                               SizedBox(
-                                height: 5,
+                                height: 10,
                               ),
-                              StorefrontRate(
-                                  "${givenListings[index].dayRate}/day"),
+                              // StorefrontRate(
+                              //     "${givenListings[index].dayRate}/day"),
                               StorefrontRate(
                                   "${givenListings[index].weekRate}/week"),
-                              StorefrontRate(
-                                  "${givenListings[index].monthRate}/month"),
+                              // StorefrontRate(
+                              //     "${givenListings[index].monthRate}/month"),
                             ],
                           ),
                         ),
