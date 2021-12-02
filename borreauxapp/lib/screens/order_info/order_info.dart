@@ -189,7 +189,7 @@ class _OrderInfoWidgetState extends State<OrderInfoWidget> {
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                         child: Text(
-                          'Aug. 5,2021',
+                          'Dec. 2, 2021',
                           style: FlutterFlowTheme.bodyText1.override(
                             fontFamily: 'Lexend Deca',
                             color: Colors.black,
@@ -218,7 +218,7 @@ class _OrderInfoWidgetState extends State<OrderInfoWidget> {
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                         child: Text(
-                          'Dec. 15,2021',
+                          'May 15,2021',
                           style: FlutterFlowTheme.bodyText1.override(
                             fontFamily: 'Lexend Deca',
                             color: Colors.black,
