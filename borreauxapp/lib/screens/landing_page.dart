@@ -391,15 +391,13 @@ class _LandingPage extends State<LandingPage> {
               width: 1000,
               color: Colors.red,
               child: Expanded(
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => Storefront(),
-                      ),
-                    );
-                  },
+                child: Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('lib/assets/images/nash.png'),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
                 ),
               ),
             ),
