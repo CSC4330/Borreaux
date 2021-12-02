@@ -204,7 +204,7 @@ class _LoginPageState extends State<LoginPage> {
                       Padding(
                         padding: EdgeInsets.all(60),
                         child: Image.asset(
-                          'lib/assets/images/4330logo3.png',
+                          'lib/assets/images/loginLogo.png',
                           width: 130.0,
                           height: 130.0,
                         ),
