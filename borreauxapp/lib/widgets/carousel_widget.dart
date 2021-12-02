@@ -7,8 +7,8 @@ class CarouselImages extends StatelessWidget {
   CarouselController buttonCarouselController = CarouselController();
 
   final imageList = [
-    Image.asset("lib/assets/images/beowulf.jpeg"),
-    Image.asset("lib/assets/images/beowulf2.jpeg"),
+    Image.asset("lib/assets/images/Screen_Shot_2021-11-28_at_3.07.32_PM.png"),
+    Image.asset("lib/assets/images/20211201_215438.jpg"),
     // Image.asset("lib/assets/images/book_image_not_found.png"),
   ];
 
