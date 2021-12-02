@@ -106,7 +106,7 @@ class _OrderHistoryWidgetState extends State<OrderHistoryWidget> {
                                       child: ClipRRect(
                                         borderRadius: BorderRadius.circular(60),
                                         child: Image.asset(
-                                          'lib/assets/images/Joe_Burrow.png',
+                                          'lib/assets/images/Screen_Shot_2021-11-28_at_3.07.32_PM.png',
                                           width: 80,
                                           height: 80,
                                           fit: BoxFit.cover,
@@ -127,7 +127,7 @@ class _OrderHistoryWidgetState extends State<OrderHistoryWidget> {
                                           shape: BoxShape.circle,
                                         ),
                                         child: Image.asset(
-                                          'lib/assets/images/156227635_103478585135693_417729300111963756_n.jpeg',
+                                          'lib/assets/images/Joe_Burrow.png',
                                         ),
                                       ),
                                     ),
