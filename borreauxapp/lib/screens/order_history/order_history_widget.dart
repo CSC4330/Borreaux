@@ -43,12 +43,11 @@ class _OrderHistoryWidgetState extends State<OrderHistoryWidget> {
                   size: 30,
                 ),
                 onPressed: () async {
-                  await Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => CorinProfileWidget(),
-                    ),
-                  );
+                  await Navigator.pop(context
+                      // MaterialPageRoute(
+                      //   builder: (context) => CorinProfileWidget(),
+                      // ),
+                      );
                 },
               ),
               Align(
@@ -128,7 +127,7 @@ class _OrderHistoryWidgetState extends State<OrderHistoryWidget> {
                                           shape: BoxShape.circle,
                                         ),
                                         child: Image.asset(
-                                          'lib/assets/images/burrow.png',
+                                          'lib/assets/images/156227635_103478585135693_417729300111963756_n.jpeg',
                                         ),
                                       ),
                                     ),
@@ -358,14 +357,14 @@ class _OrderHistoryWidgetState extends State<OrderHistoryWidget> {
                                           shape: BoxShape.circle,
                                         ),
                                         child: Image.asset(
-                                          'lib/assets/images/156227635_103478585135693_417729300111963756_n.jpeg',
+                                          'lib/assets/images/Joe_Burrow.png',
                                         ),
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             8, 0, 0, 0),
                                         child: AutoSizeText(
-                                          'Beth Shoenberger',
+                                          'Joe Burrow',
                                           textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.bodyText1
                                               .override(
@@ -528,7 +527,7 @@ class _OrderHistoryWidgetState extends State<OrderHistoryWidget> {
                                             shape: BoxShape.circle,
                                           ),
                                           child: Image.asset(
-                                            'lib/assets/images/156227635_103478585135693_417729300111963756_n.jpeg',
+                                            'lib/assets/images/Joe_Burrow.png',
                                           ),
                                         ),
                                         Padding(
@@ -536,7 +535,7 @@ class _OrderHistoryWidgetState extends State<OrderHistoryWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   8, 0, 0, 0),
                                           child: AutoSizeText(
-                                            'Beth Shoenberger',
+                                            'Joe Burrow',
                                             textAlign: TextAlign.start,
                                             style: FlutterFlowTheme.bodyText1
                                                 .override(
@@ -701,14 +700,14 @@ class _OrderHistoryWidgetState extends State<OrderHistoryWidget> {
                                           shape: BoxShape.circle,
                                         ),
                                         child: Image.asset(
-                                          'lib/assets/images/burrow.png',
+                                          'lib/assets/images/156227635_103478585135693_417729300111963756_n.jpeg',
                                         ),
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             8, 0, 0, 0),
                                         child: AutoSizeText(
-                                          'Joe Burrow',
+                                          'Elizabeth Shoenberger',
                                           textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.bodyText1
                                               .override(
