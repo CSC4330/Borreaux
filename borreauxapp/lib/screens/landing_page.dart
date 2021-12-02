@@ -225,6 +225,7 @@ class _LandingPage extends State<LandingPage> {
       appBar: PreferredSize(
           preferredSize: Size.fromHeight(115.0),
           child: AppBar(
+            automaticallyImplyLeading: false,
             backgroundColor: AppColor.secondaryColor,
             elevation: 0,
             title: Column(
