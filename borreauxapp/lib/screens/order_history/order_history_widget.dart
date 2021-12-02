@@ -26,6 +26,7 @@ class _OrderHistoryWidgetState extends State<OrderHistoryWidget> {
       key: scaffoldKey,
       backgroundColor: Colors.white,
       body: SafeArea(
+        // minimum: EdgeInsets.all(),
         child: Container(
           width: MediaQuery.of(context).size.width * 50,
           height: MediaQuery.of(context).size.height * 5,
@@ -320,7 +321,7 @@ class _OrderHistoryWidgetState extends State<OrderHistoryWidget> {
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         AutoSizeText(
-                                          'Rented Date: ',
+                                          'Rental Date: ',
                                           textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.bodyText1
                                               .override(

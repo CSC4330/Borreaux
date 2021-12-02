@@ -2,6 +2,7 @@ import 'package:borreauxapp/assets/colors.dart';
 import 'package:borreauxapp/screens/messages.dart';
 import 'package:borreauxapp/screens/profile.dart';
 import 'package:borreauxapp/screens/seller_profile.dart';
+import 'package:borreauxapp/widgets/button_widget.dart';
 import 'package:borreauxapp/widgets/carousel_widget.dart';
 import 'package:borreauxapp/widgets/google_map.dart';
 import 'package:borreauxapp/widgets/listing_widgets.dart';
@@ -184,17 +185,6 @@ class ListingsPage extends StatelessWidget {
                       thickness: 1,
                     ),
                     SizedBox(
-                      height: 15,
-                    ),
-                    ListingSubHeader("Location Details"),
-
-                    SizedBox(
-                      height: 30,
-                    ),
-
-                    ListingDescription('Location details go here'),
-
-                    SizedBox(
                       height: 30,
                     ),
 
@@ -204,12 +194,12 @@ class ListingsPage extends StatelessWidget {
                       height: 30,
                     ),
 
-                    Divider(
-                      color: AppColor.secondaryColor,
-                      thickness: 3,
-                      indent: 30,
-                      endIndent: 30,
-                    ),
+                    // Divider(
+                    //   color: AppColor.secondaryColor,
+                    //   thickness: 3,
+                    //   indent: 30,
+                    //   endIndent: 30,
+                    // ),
 
                     SizedBox(
                       height: 30,
@@ -234,6 +224,49 @@ class ListingsPage extends StatelessWidget {
           ],
         ),
       ),
+      persistentFooterButtons: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MessagesPage(),
+                  ),
+                );
+              },
+              child: Text(
+                "Message",
+                style: TextStyle(color: AppColor.secondaryColor),
+              ),
+              style: ElevatedButton.styleFrom(
+                fixedSize: const Size(175, 25),
+                primary: AppColor.primaryColor,
+                onPrimary: AppColor.secondaryColor,
+                shadowColor: Colors.transparent,
+                side: BorderSide(color: AppColor.secondaryColor),
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (context) => MessagesPage(),
+                //   ),
+                // );
+              },
+              child: Text("Rent"),
+              style: ElevatedButton.styleFrom(
+                fixedSize: const Size(175, 25),
+                primary: AppColor.secondaryColor,
+              ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }

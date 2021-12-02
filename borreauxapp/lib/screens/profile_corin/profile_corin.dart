@@ -18,7 +18,6 @@ class CorinProfileWidget extends StatefulWidget {
 }
 
 class _CorinProfileWidgetState extends State<CorinProfileWidget> {
-
   bool _loadingButton1 = false;
   bool _loadingButton2 = false;
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -56,27 +55,22 @@ class _CorinProfileWidgetState extends State<CorinProfileWidget> {
                 }
               },
             ),
-            Align(
-              alignment: AlignmentDirectional(0, 0),
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.center,
+            Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Flexible(
+                  child: Column(
                     children: [
                       Align(
-                        alignment: AlignmentDirectional(0.15, 0),
+                        alignment: AlignmentDirectional(10, 0),
                         child: Stack(
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(-9.91, -3.48),
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    90, 40, 0, 20),
+                                    0, 40, 0, 20),
                                 child: Container(
                                   width: 120,
                                   height: 120,
@@ -95,12 +89,12 @@ class _CorinProfileWidgetState extends State<CorinProfileWidget> {
                               alignment: AlignmentDirectional(-0.72, 1.07),
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    170, 130, 0, 0),
+                                    190, 130, 0, 0),
                                 child: FlutterFlowIconButton(
                                   borderColor: Color(0xFFEFF5F8),
                                   borderRadius: 50,
                                   borderWidth: 2,
-                                  buttonSize: 45,
+                                  buttonSize: 40,
                                   fillColor: Color(0xFF3A7CA5),
                                   icon: Icon(
                                     Icons.edit_sharp,
@@ -108,7 +102,7 @@ class _CorinProfileWidgetState extends State<CorinProfileWidget> {
                                     size: 20,
                                   ),
                                   onPressed: () {
-                                    print('IconButton pressed ...');
+                                    print('Edit button pressed ...');
                                   },
                                 ),
                               ),
@@ -190,7 +184,7 @@ class _CorinProfileWidgetState extends State<CorinProfileWidget> {
                                     fontFamily: 'Poppins',
                                     color: Color(0xFF3E3B3B),
                                     fontSize: 45,
-                                    fontWeight: FontWeight.w100,
+                                    fontWeight: FontWeight.w200,
                                   ),
                                 ),
                                 Column(
@@ -221,31 +215,21 @@ class _CorinProfileWidgetState extends State<CorinProfileWidget> {
                         ],
                       ),
                       Column(
-                        mainAxisSize: MainAxisSize.max,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Align(
-                            alignment: AlignmentDirectional(0.35, -0.15),
-                            child: Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 35, 240, 0),
-                              child: Text(
-                                'About Me',
-                                textAlign: TextAlign.start,
-                                style: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'Lexend Deca',
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
+                          SizedBox(height: 50),
+                          Text(
+                            'About Me',
+                            textAlign: TextAlign.start,
+                            style: FlutterFlowTheme.bodyText1.override(
+                              fontFamily: 'Lexend Deca',
+                              fontSize: 20,
+                              fontWeight: FontWeight.w600,
                             ),
                           ),
-                          Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 5, 20, 15),
-                            child: Text(
-                              'Senior at Louisiana State Unversity majoring in\nComputer Science. ',
-                              style: FlutterFlowTheme.bodyText1,
-                            ),
+                          Text(
+                            'Senior at Louisiana State Unversity majoring in\nComputer Science. ',
+                            style: FlutterFlowTheme.bodyText1,
                           )
                         ],
                       ),
@@ -319,9 +303,9 @@ class _CorinProfileWidgetState extends State<CorinProfileWidget> {
                         ),
                       )
                     ],
-                  )
-                ],
-              ),
+                  ),
+                )
+              ],
             )
           ],
         ),

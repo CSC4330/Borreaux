@@ -183,7 +183,7 @@ class _StorefrontState extends State<Storefront> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: PreferredSize(
-            preferredSize: Size.fromHeight(60.0),
+            preferredSize: Size.fromHeight(90.0),
             child: AppBar(
               backgroundColor: AppColor.secondaryColor,
               elevation: 0,
@@ -238,6 +238,42 @@ class _StorefrontState extends State<Storefront> {
                       ),
                     ),
                     filterButton(),
+                  ],
+                ),
+              ),
+              bottom: PreferredSize(
+                preferredSize: Size.fromHeight(50.0),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        height: 32,
+                        color: AppColor.primaryColor.withOpacity(.9),
+                        padding: EdgeInsets.fromLTRB(10, 5, 30, 2),
+                        child: RichText(
+                          text: TextSpan(
+                            children: [
+                              // WidgetSpan(
+                              //   child: Icon(Icons.add_location_alt_outlined,
+                              //       size: 20),
+                              // ),
+                              TextSpan(
+                                  text: "Results",
+                                  style: TextStyle(
+                                      color: Colors.black, fontSize: 20)),
+                            ],
+                          ),
+                        ),
+                      ),
+                      //     Container(
+                      //   padding: EdgeInsets.fromLTRB(10, 5, 30, 2),
+                      //   height: 30,
+                      //   color: AppColor.primaryColor.withOpacity(.8),
+                      //   child: TextButton(
+                      //     child: Text("Hello world!"),
+                      //   ),
+                      // )
+                    ),
                   ],
                 ),
               ),
