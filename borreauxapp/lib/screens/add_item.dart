@@ -10,6 +10,8 @@ import 'package:flutter/material.dart';
 import 'package:borreauxapp/widgets/google_map.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:borreauxapp/widgets/datepicker_widget.dart';
+import 'package:borreauxapp/assets/book_listing_struct.dart';
+import 'package:borreauxapp/screens/storefront.dart';
 
 class AddItemPage extends StatefulWidget {
   @override
@@ -144,6 +146,19 @@ class _AddItemPageState extends State<AddItemPage> {
                     side: BorderSide(color: AppColor.secondaryColor)))),
         child: Text('Publish'),
         onPressed: () {
+          listings.add(
+            newListing(
+                "lib/assets/images/book_image_not_found.png",
+                "adding",
+                "lib/assets/images/blank_profile.png",
+                "\$0.45",
+                "\$69.00",
+                "\$420.70",
+                false,
+                1.0,
+                "420",
+                "Adding successful"),
+          );
           Navigator.push(
             context,
             MaterialPageRoute(
