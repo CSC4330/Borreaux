@@ -239,7 +239,7 @@ class ListingsPage extends StatelessWidget {
               },
               child: Text(
                 "Message",
-                style: TextStyle(color: AppColor.secondaryColor),
+                style: TextStyle(color: AppColor.secondaryColor, fontFamily: 'Lexend Deca'),
               ),
               style: ElevatedButton.styleFrom(
                 fixedSize: const Size(175, 25),

@@ -44,7 +44,7 @@ class _AddItemPageState extends State<AddItemPage> {
               child: Text(
                 "Image(s)",
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 15.0),
+                style: TextStyle(fontSize: 15.0, fontFamily: 'Lexend Deca'),
               ),
             ),
             Row(

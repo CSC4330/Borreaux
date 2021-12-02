@@ -63,7 +63,7 @@ class _ProfilePageState extends State<ProfilePage> {
           // shows user's name
           Text(
             user.name,
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24, fontFamily: 'Lexend Deca'),
           ),
           const SizedBox(height: 4),
           // shows user email
@@ -97,12 +97,12 @@ class _ProfilePageState extends State<ProfilePage> {
           children: [
             Text(
               'About',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, fontFamily: 'Lexend Deca'),
             ),
             const SizedBox(height: 16),
             Text(
               user.about,
-              style: TextStyle(fontSize: 16, height: 1.4),
+              style: TextStyle(fontSize: 16, height: 1.4, fontFamily: 'Lexend Deca'),
             ),
           ],
         ),
