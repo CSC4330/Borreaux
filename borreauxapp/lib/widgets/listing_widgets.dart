@@ -35,7 +35,7 @@ class ListingUsername extends StatelessWidget {
           color: Colors.black,
           fontWeight: FontWeight.bold,
           fontSize: 20,
-            fontFamily: 'Lexend Deca',
+          fontFamily: 'Lexend Deca',
         ));
   }
 }
@@ -167,13 +167,15 @@ class ListingTitle extends StatelessWidget {
       SizedBox(
         width: 30,
       ),
-      Text(myTitle,
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-            fontSize: 25,
-          )),
+      Flexible(
+        child: Text(myTitle,
+            textAlign: TextAlign.start,
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontSize: 25,
+            )),
+      ),
     ]);
   }
 }

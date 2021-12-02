@@ -1,6 +1,7 @@
 import 'package:borreauxapp/screens/flutter_flow/flutter_flow_theme.dart';
 import 'package:borreauxapp/screens/flutter_flow/flutter_flow_util.dart';
 import 'package:borreauxapp/screens/flutter_flow/flutter_flow_widgets.dart';
+import 'package:borreauxapp/screens/order_info/order_info.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -132,10 +133,15 @@ class _TransactionConfirmedWidgetState
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     FFButtonWidget(
-                      onPressed: () {
-                        print('Button pressed ...');
+                      onPressed: ()  async {
+                        await Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => OrderInfoWidget(),
+                          ),
+                        );
                       },
-                      text: 'Go Home',
+                      text: 'Order Details',
                       options: FFButtonOptions(
                         width: 230,
                         height: 50,
