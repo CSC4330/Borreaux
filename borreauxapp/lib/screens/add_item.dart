@@ -12,6 +12,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:borreauxapp/widgets/datepicker_widget.dart';
 import 'package:borreauxapp/assets/book_listing_struct.dart';
 import 'package:borreauxapp/screens/storefront.dart';
+import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 
 class AddItemPage extends StatefulWidget {
   @override
@@ -19,6 +20,9 @@ class AddItemPage extends StatefulWidget {
 }
 
 class _AddItemPageState extends State<AddItemPage> {
+
+  String scanResult;
+
   @override
   Widget build(BuildContext context) => Scaffold(
         // appBar: AppBar(
@@ -101,7 +105,8 @@ class _AddItemPageState extends State<AddItemPage> {
             TextFieldWidget(
               label: 'Book Title',
               text: "",
-              onChanged: (name) {},
+              onChanged: (name) {
+              },
             ),
             const SizedBox(height: 24),
             TextFieldWidget(
@@ -149,15 +154,15 @@ class _AddItemPageState extends State<AddItemPage> {
           listings.add(
             newListing(
                 "lib/assets/images/book_image_not_found.png",
-                "adding",
-                "lib/assets/images/blank_profile.png",
+                "Corin Canepa",
+                "lib/assets/images/13707656_10208704555125113_2536130105804357909_n.jpeg",
                 "\$0.45",
                 "\$69.00",
                 "\$420.70",
                 false,
-                1.0,
+                5.0,
                 "420",
-                "Adding successful"),
+                "New Book"),
           );
           Navigator.push(
             context,
