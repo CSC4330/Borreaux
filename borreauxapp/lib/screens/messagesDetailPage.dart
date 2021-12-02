@@ -90,6 +90,7 @@ class _MessagesDetailPageState extends State<MessagesDetailPage> {
                         style: TextStyle(
                           color: Colors.grey.shade600,
                           fontSize: 13,
+                            fontFamily: 'Lexend Deca',
                         ),
                       ),
                     ],

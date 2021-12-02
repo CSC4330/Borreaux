@@ -150,7 +150,7 @@ class _MessagesPageState extends State<MessagesPage> {
                       borderRadius: BorderRadius.circular(20.0),
                     ),
                     hintText: 'Search...',
-                    hintStyle: TextStyle(fontSize: 13),
+                    hintStyle: TextStyle(fontSize: 13,fontFamily: 'Lexend Deca'),
                     prefixIcon: Icon(Icons.search),
                   ),
                 ),

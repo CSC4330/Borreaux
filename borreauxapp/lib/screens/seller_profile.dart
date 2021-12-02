@@ -30,7 +30,7 @@ class _ProfilePageState extends State<SellerProfilePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColor.secondaryColor,
-        title: Text("Seller Profile"),
+        title: Text("Renter Profile"),
       ),
       body: ListView(
         physics: BouncingScrollPhysics(),
@@ -72,7 +72,7 @@ class _ProfilePageState extends State<SellerProfilePage> {
         children: [
           Text(
             user.name,
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24, fontFamily: 'Lexend Deca'),
           ),
           const SizedBox(height: 4),
           Text(
@@ -94,12 +94,12 @@ class _ProfilePageState extends State<SellerProfilePage> {
           children: [
             Text(
               'About',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold,fontFamily: 'Lexend Deca'),
             ),
             const SizedBox(height: 16),
             Text(
               user.about,
-              style: TextStyle(fontSize: 16, height: 1.4),
+              style: TextStyle(fontSize: 16, height: 1.4, fontFamily: 'Lexend Deca'),
             ),
           ],
         ),

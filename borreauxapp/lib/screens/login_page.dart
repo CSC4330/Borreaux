@@ -70,7 +70,7 @@ class _LoginPageState extends State<LoginPage> {
             keyboardType: TextInputType.emailAddress,
             style: TextStyle(
               color: AppColor.secondaryColor,
-              fontFamily: 'OpenSans',
+              fontFamily: 'Lexend Deca',
             ),
             decoration: InputDecoration(
               border: InputBorder.none,
@@ -119,7 +119,7 @@ class _LoginPageState extends State<LoginPage> {
             obscureText: true,
             style: TextStyle(
               color: AppColor.secondaryColor,
-              fontFamily: 'OpenSans',
+              fontFamily: 'Lexend Deca',
             ),
             decoration: InputDecoration(
               border: InputBorder.none,

@@ -4,6 +4,8 @@ import '../flutter_flow/flutter_flow_util.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:borreauxapp/screens/seller_profile.dart';
+
 
 class OrderInfoWidget extends StatefulWidget {
   OrderInfoWidget({Key key}) : super(key: key);
@@ -96,7 +98,7 @@ class _OrderInfoWidgetState extends State<OrderInfoWidget> {
                                           shape: BoxShape.circle,
                                         ),
                                         child: Image.asset(
-                                          'lib/assets/images/156227635_103478585135693_417729300111963756_n.jpeg',
+                                          'lib/assets/images/burrow.png',
                                         ),
                                       ),
                                     ),
@@ -271,36 +273,48 @@ class _OrderInfoWidgetState extends State<OrderInfoWidget> {
               children: [
                 Divider(
                   color: Color(0xFFD2CCCC),
+
+
                 ),
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
-                      child: Icon(
-                        Icons.person,
-                        color: Colors.black,
-                        size: 24,
+                InkWell(
+                  onTap: () async {
+                    await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SellerProfilePage(),
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
-                      child: Text(
-                        'View Renter\'s Profile',
-                        style: FlutterFlowTheme.bodyText1.override(
-                          fontFamily: 'Lexend Deca',
+                    );
+                  },
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                        child: Icon(
+                          Icons.person,
+                          color: Colors.black,
+                          size: 24,
                         ),
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(130, 0, 0, 0),
-                      child: Icon(
-                        Icons.keyboard_arrow_right_sharp,
-                        color: Colors.black,
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
+                        child: Text(
+                          'View Renter\'s Profile',
+                          style: FlutterFlowTheme.bodyText1.override(
+                            fontFamily: 'Lexend Deca',
+                          ),
+                        ),
                       ),
-                    )
-                  ],
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(130, 0, 0, 0),
+                        child: Icon(
+                          Icons.keyboard_arrow_right_sharp,
+                          color: Colors.black,
+                        ),
+                      )
+                    ],
+                  ),
                 )
               ],
             ),
@@ -404,6 +418,7 @@ class _OrderInfoWidgetState extends State<OrderInfoWidget> {
               ],
             ),
             Divider(
+              height: 20,
               color: Color(0xFFD2CCCC),
             ),
             Column(
