@@ -54,7 +54,7 @@ class ListingsPage extends StatelessWidget {
                       height: 10,
                     ),
 
-                    ListingTitle("Beowulf"),
+                    ListingTitle("Java Concepts: Early Objects"),
 
                     SizedBox(
                       height: 10,
@@ -81,7 +81,7 @@ class ListingsPage extends StatelessWidget {
                       height: 10,
                     ),
 
-                    ListingDescription('Rental Info Goes here'),
+                    ListingDescription('Available rental dates: August 14th to November 20th'),
 
                     SizedBox(
                       height: 30,

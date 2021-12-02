@@ -3,6 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:borreauxapp/screens/listings.dart';
+import 'package:borreauxapp/screens/login_page.dart';
 
 class barcodeButton extends StatefulWidget {
   @override
@@ -38,10 +39,18 @@ class _barcodeButton extends State<barcodeButton> {
     setState(() {
       print(scanResult);
       if (scanResult != null)
+        if(scanResult == "290118431121")
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ListingsPage(Colors.green),
+            ),
+          );
+      if(scanResult == "2900135210641")
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => ListingsPage(Colors.green),
+            builder: (context) => LoginPage(),
           ),
         );
     });

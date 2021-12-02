@@ -12,6 +12,66 @@ import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:filter_list/filter_list.dart';
 import 'package:borreauxapp/widgets/filter_widget.dart';
 
+// Datasets for Each Listing
+
+List<newListing> listings = [
+  newListing(
+      "lib/assets/images/fahrenheit451.jpg",
+      "joey_b",
+      "lib/assets/images/burrow.png",
+      "\$3.50",
+      "\$10.00",
+      "\$30.70",
+      false,
+      1.0,
+      "44",
+      "Fahrenheit 451"),
+  newListing(
+      "lib/assets/images/shakespeare.jpg",
+      "mike_123",
+      "lib/assets/images/blank_profile.png",
+      "\$1.00",
+      "\$10.00",
+      "\$30.70",
+      false,
+      3.5,
+      "44",
+      "Tragedies"),
+  newListing(
+      "lib/assets/images/scarletLetter.jpg",
+      "bob_4",
+      "lib/assets/images/blank_profile.png",
+      "\$2.30",
+      "\$10.00",
+      "\$30.70",
+      false,
+      2.5,
+      "44",
+      "Scarlet Letter"),
+  newListing(
+      "lib/assets/images/Screen_Shot_2021-11-28_at_3.07.32_PM.png",
+      "joey_b",
+      "lib/assets/images/burrow.png",
+      "\$2.50",
+      "\$7.50",
+      "\$10.50",
+      false,
+      5.0,
+      "44",
+      "Java Concepts: Early Objects"),
+  newListing(
+      "lib/assets/images/wutheringHeights.jpg",
+      "hello_world",
+      "lib/assets/images/blank_profile.png",
+      "\$0.50",
+      "\$10.00",
+      "\$50.70",
+      true,
+      3.0,
+      "44",
+      "Wuthering Heights"),
+];
+
 class Storefront extends StatefulWidget {
   @override
   _StorefrontState createState() => _StorefrontState();
@@ -22,65 +82,7 @@ class _StorefrontState extends State<Storefront> {
   bool viewHasBeenPressed = false;
   List<String> selectedFilterCountList = [];
 
-  // Datasets for Each Listing
 
-  List<newListing> listings = [
-    newListing(
-        "lib/assets/images/fahrenheit451.jpg",
-        "joey_b",
-        "lib/assets/images/burrow.png",
-        "\$3.50",
-        "\$10.00",
-        "\$30.70",
-        false,
-        1.0,
-        "44",
-        "Fahrenheit 451"),
-    newListing(
-        "lib/assets/images/shakespeare.jpg",
-        "mike_123",
-        "lib/assets/images/blank_profile.png",
-        "\$1.00",
-        "\$10.00",
-        "\$30.70",
-        false,
-        3.5,
-        "44",
-        "Tragedies"),
-    newListing(
-        "lib/assets/images/scarletLetter.jpg",
-        "bob_4",
-        "lib/assets/images/blank_profile.png",
-        "\$2.30",
-        "\$10.00",
-        "\$30.70",
-        false,
-        2.5,
-        "44",
-        "Scarlet Letter"),
-    newListing(
-        "lib/assets/images/beowulf.jpeg",
-        "alice_2",
-        "lib/assets/images/blank_profile.png",
-        "\$1.10",
-        "\$10.00",
-        "\$30.70",
-        false,
-        5.0,
-        "44",
-        "Beowulf"),
-    newListing(
-        "lib/assets/images/wutheringHeights.jpg",
-        "hello_world",
-        "lib/assets/images/blank_profile.png",
-        "\$0.50",
-        "\$10.00",
-        "\$50.70",
-        true,
-        3.0,
-        "44",
-        "Wuthering Heights"),
-  ];
 
   List<String> filterCountList = [
     "One",
@@ -319,7 +321,8 @@ class _StorefrontState extends State<Storefront> {
       height: 175.0,
       child: ListView.builder(
         itemExtent: 175.0,
-        itemCount: 5,
+        itemCount: listings.length
+        ,
         itemBuilder: (content, index) => Container(
           height: 1000,
           padding: EdgeInsets.all(5),
