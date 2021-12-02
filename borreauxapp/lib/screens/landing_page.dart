@@ -1,3 +1,5 @@
+//landingpage
+
 import 'package:borreauxapp/assets/book_listing_struct.dart';
 import 'package:borreauxapp/assets/colors.dart';
 import 'package:borreauxapp/screens/listings.dart';
@@ -17,6 +19,182 @@ class _LandingPage extends State<LandingPage> {
   String scanResult;
   bool viewHasBeenPressed = false;
   List<String> selectedFilterCountList = [];
+
+  // Datasets for Each Listing
+
+  List<newListing> listings = [
+    newListing(
+        "lib/assets/images/fahrenheit451.jpg",
+        "joey_b",
+        "lib/assets/images/burrow.png",
+        "\$3.50",
+        "\$10.00",
+        "\$30.70",
+        false,
+        1.0,
+        "44",
+        "Fahrenheit 451"),
+    newListing(
+        "lib/assets/images/shakespeare.jpg",
+        "mike_123",
+        "lib/assets/images/blank_profile.png",
+        "\$1.00",
+        "\$10.00",
+        "\$30.70",
+        false,
+        3.5,
+        "44",
+        "Tragedies"),
+    newListing(
+        "lib/assets/images/scarletLetter.jpg",
+        "bob_4",
+        "lib/assets/images/blank_profile.png",
+        "\$2.30",
+        "\$10.00",
+        "\$30.70",
+        false,
+        2.5,
+        "44",
+        "Scarlet Letter"),
+    newListing(
+        "lib/assets/images/beowulf.jpeg",
+        "alice_2",
+        "lib/assets/images/blank_profile.png",
+        "\$1.10",
+        "\$10.00",
+        "\$30.70",
+        false,
+        5.0,
+        "44",
+        "Beowulf"),
+    newListing(
+        "lib/assets/images/wutheringHeights.jpg",
+        "hello_world",
+        "lib/assets/images/blank_profile.png",
+        "\$0.50",
+        "\$10.00",
+        "\$50.70",
+        true,
+        3.0,
+        "44",
+        "Wuthering Heights"),
+  ];
+
+  List<newListing> listings2 = [
+    newListing(
+        "lib/assets/images/fahrenheit451.jpg",
+        "joey_b",
+        "lib/assets/images/burrow.png",
+        "\$3.50",
+        "\$10.00",
+        "\$30.70",
+        false,
+        1.0,
+        "44",
+        "Fahrenheit 451"),
+    newListing(
+        "lib/assets/images/shakespeare.jpg",
+        "mike_123",
+        "lib/assets/images/blank_profile.png",
+        "\$1.00",
+        "\$10.00",
+        "\$30.70",
+        false,
+        3.5,
+        "44",
+        "Tragedies"),
+    newListing(
+        "lib/assets/images/scarletLetter.jpg",
+        "bob_4",
+        "lib/assets/images/blank_profile.png",
+        "\$2.30",
+        "\$10.00",
+        "\$30.70",
+        false,
+        2.5,
+        "44",
+        "Scarlet Letter"),
+    newListing(
+        "lib/assets/images/beowulf.jpeg",
+        "alice_2",
+        "lib/assets/images/blank_profile.png",
+        "\$1.10",
+        "\$10.00",
+        "\$30.70",
+        false,
+        5.0,
+        "44",
+        "Beowulf"),
+    newListing(
+        "lib/assets/images/wutheringHeights.jpg",
+        "hello_world",
+        "lib/assets/images/blank_profile.png",
+        "\$0.50",
+        "\$10.00",
+        "\$50.70",
+        true,
+        3.0,
+        "44",
+        "Wuthering Heights"),
+  ];
+
+  List<newListing> listings3 = [
+    newListing(
+        "lib/assets/images/fahrenheit451.jpg",
+        "joey_b",
+        "lib/assets/images/burrow.png",
+        "\$3.50",
+        "\$10.00",
+        "\$30.70",
+        false,
+        1.0,
+        "44",
+        "Fahrenheit 451"),
+    newListing(
+        "lib/assets/images/shakespeare.jpg",
+        "mike_123",
+        "lib/assets/images/blank_profile.png",
+        "\$1.00",
+        "\$10.00",
+        "\$30.70",
+        false,
+        3.5,
+        "44",
+        "Tragedies"),
+    newListing(
+        "lib/assets/images/scarletLetter.jpg",
+        "bob_4",
+        "lib/assets/images/blank_profile.png",
+        "\$2.30",
+        "\$10.00",
+        "\$30.70",
+        false,
+        2.5,
+        "44",
+        "Scarlet Letter"),
+    newListing(
+        "lib/assets/images/beowulf.jpeg",
+        "alice_2",
+        "lib/assets/images/blank_profile.png",
+        "\$1.10",
+        "\$10.00",
+        "\$30.70",
+        false,
+        5.0,
+        "44",
+        "Beowulf"),
+    newListing(
+        "lib/assets/images/wutheringHeights.jpg",
+        "hello_world",
+        "lib/assets/images/blank_profile.png",
+        "\$0.50",
+        "\$10.00",
+        "\$50.70",
+        true,
+        3.0,
+        "44",
+        "Wuthering Heights"),
+  ];
 
   List<String> filterCountList = [
     "One",
@@ -83,7 +261,7 @@ class _LandingPage extends State<LandingPage> {
                                       borderRadius: BorderRadius.circular(20.0),
                                     ),
                                     hintText: 'Search...',
-                                    hintStyle: TextStyle(fontSize: 13, fontFamily: 'Lexend Deca'),
+                                    hintStyle: TextStyle(fontSize: 13),
                                     prefixIcon: Icon(Icons.search),
                                     suffixIcon: barcodeButton(),
                                   ),
@@ -133,29 +311,30 @@ class _LandingPage extends State<LandingPage> {
                         DefaultTextStyle(
                           style: TextStyle(color: AppColor.primaryColor),
                           child: Container(
-                              height: 36,
+                              height: 80,
                               color: Colors.transparent,
                               child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
                                   Container(
                                     color: Colors.transparent,
                                     child: Text("Popular"),
-                                    padding: EdgeInsets.fromLTRB(18, 0, 16, 0),
+                                    padding: EdgeInsets.fromLTRB(18, 0, 10, 0),
                                   ),
                                   Container(
                                     color: Colors.transparent,
                                     child: Text("Best Sellers"),
-                                    padding: EdgeInsets.fromLTRB(16, 0, 16, 0),
+                                    padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                                   ),
                                   Container(
                                     color: Colors.transparent,
                                     child: Text("New Releases"),
-                                    padding: EdgeInsets.fromLTRB(16, 0, 16, 0),
+                                    padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                                   ),
                                   Container(
                                     color: Colors.transparent,
                                     child: Text("Suggested"),
-                                    padding: EdgeInsets.fromLTRB(16, 0, 18, 0),
+                                    padding: EdgeInsets.fromLTRB(10, 0, 18, 0),
                                   ),
 
                                   // ElevatedButton(
@@ -263,7 +442,7 @@ class _LandingPage extends State<LandingPage> {
                       ),
                     ),
                   ),
-                  _contentGridView(listings),
+                  _contentGridView(listings2),
                   Container(
                     padding: EdgeInsets.fromLTRB(10, 10, 10, 2),
                     child: Text(
@@ -275,7 +454,7 @@ class _LandingPage extends State<LandingPage> {
                       ),
                     ),
                   ),
-                  _contentGridView(listings),
+                  _contentGridView(listings3),
                 ],
               ),
             ))),
@@ -287,7 +466,7 @@ class _LandingPage extends State<LandingPage> {
         width: 1200.0,
         color: AppColor.primaryColor,
         child: ListView.builder(
-          itemCount: listings.length,
+          itemCount: 5,
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) => Card(
             child: GridTile(
@@ -321,7 +500,6 @@ class _LandingPage extends State<LandingPage> {
                                           color: Colors.black,
                                           fontWeight: FontWeight.bold,
                                           fontSize: 15,
-                                            fontFamily: 'Lexend Deca'
                                         )),
                                   ),
                                 )
@@ -334,7 +512,7 @@ class _LandingPage extends State<LandingPage> {
                                     15.0, givenListings[index].numberOfReviews),
                               ]),
                               SizedBox(
-                                height: 10,
+                                height: 5,
                               ),
                               StorefrontRate(
                                   "${givenListings[index].dayRate}/day"),
@@ -342,24 +520,6 @@ class _LandingPage extends State<LandingPage> {
                                   "${givenListings[index].weekRate}/week"),
                               StorefrontRate(
                                   "${givenListings[index].monthRate}/month"),
-                              Row(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    IconButton(
-                                        padding: EdgeInsets.zero,
-                                        constraints: BoxConstraints(),
-                                        icon: Icon(Icons.bookmark),
-                                        onPressed: () {
-                                          setState(() {
-                                            givenListings[index].bookmarked =
-                                                !givenListings[index]
-                                                    .bookmarked;
-                                          });
-                                        },
-                                        color: (givenListings[index].bookmarked)
-                                            ? Colors.red
-                                            : const Color(0xff9A9A9A)),
-                                  ]),
                             ],
                           ),
                         ),

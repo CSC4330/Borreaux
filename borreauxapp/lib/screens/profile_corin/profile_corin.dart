@@ -27,126 +27,131 @@ class _CorinProfileWidgetState extends State<CorinProfileWidget> {
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Color(0xFFF5F5F5),
+      appBar: PreferredSize(
+          preferredSize: Size.fromHeight(0),
+          child: AppBar(
+              backgroundColor: AppColor.secondaryColor,
+              elevation: 0,
+              flexibleSpace: Container(
+                  decoration: const BoxDecoration(
+                      gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [AppColor.secondaryColor],
+              ))))),
       body: SafeArea(
         child: Stack(
-          alignment: AlignmentDirectional(-1, -1),
+          // alignment: AlignmentDirectional(-1, -1),
           children: [
-            FlutterFlowIconButton(
-              borderColor: Colors.transparent,
-              borderRadius: 30,
-              borderWidth: 1,
-              buttonSize: 60,
-              icon: Icon(
-                Icons.chevron_left_rounded,
-                color: Color(0xFF3A7CA5),
-                size: 30,
-              ),
-              onPressed: () async {
-                setState(() => _loadingButton1 = true);
-                try {
-                  await Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => nav_bar(),
-                    ),
-                  );
-                } finally {
-                  setState(() => _loadingButton1 = false);
-                }
-              },
-            ),
             Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Flexible(
                   child: Column(
                     children: [
-                      Align(
-                        alignment: AlignmentDirectional(10, 0),
-                        child: Stack(
-                          children: [
-                            Align(
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0, 40, 0, 20),
-                                child: Container(
-                                  width: 120,
-                                  height: 120,
-                                  clipBehavior: Clip.antiAlias,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                  ),
-                                  child: Image.asset(
-                                    'lib/assets/images/13707656_10208704555125113_2536130105804357909_n.jpeg',
-                                    fit: BoxFit.contain,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Align(
-                              alignment: AlignmentDirectional(-0.72, 1.07),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    190, 130, 0, 0),
-                                child: FlutterFlowIconButton(
-                                  borderColor: Color(0xFFEFF5F8),
-                                  borderRadius: 50,
-                                  borderWidth: 2,
-                                  buttonSize: 40,
-                                  fillColor: Color(0xFF3A7CA5),
-                                  icon: Icon(
-                                    Icons.edit_sharp,
-                                    color: FlutterFlowTheme.tertiaryColor,
-                                    size: 20,
-                                  ),
-                                  onPressed: () {
-                                    print('Edit button pressed ...');
-                                  },
-                                ),
-                              ),
-                            ),
-                            Align(
-                              alignment: AlignmentDirectional(3.75, -1.39),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    250, 0, 0, 0),
-                                child: FlutterFlowIconButton(
-                                  borderColor: Colors.transparent,
-                                  borderRadius: 30,
-                                  borderWidth: 1,
-                                  buttonSize: 60,
-                                  icon: Icon(
-                                    Icons.settings,
-                                    color: Colors.black,
-                                    size: 30,
-                                  ),
-                                  onPressed: () async {
-                                    await Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => SettingsWidget(),
-                                      ),
-                                    );
-                                  },
-                                ),
-                              ),
-                            )
+                      Container(
+                        decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [
+                            AppColor.secondaryColor,
+                            // AppColor.secondaryColor.withOpacity(.9),
+                            // AppColor.secondaryColor.withOpacity(.8),
+                            // AppColor.secondaryColor.withOpacity(.7),
+                            // AppColor.secondaryColor.withOpacity(.5),
+                            // AppColor.secondaryColor.withOpacity(.1),
+                            Color(0xFFF5F5F5),
                           ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
-                        child: Text(
-                          'Corin Canepa',
-                          style: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Lexend Deca',
-                            color: Color(0xFF3E3B3B),
-                            fontSize: 30,
-                            fontWeight: FontWeight.w800,
+                        )),
+                        child: Column(children: [
+                          Align(
+                            alignment: AlignmentDirectional(10, 0),
+                            child: Stack(
+                              children: [
+                                Align(
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0, 40, 0, 20),
+                                    child: Container(
+                                      width: 120,
+                                      height: 120,
+                                      clipBehavior: Clip.antiAlias,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: Image.asset(
+                                        'lib/assets/images/13707656_10208704555125113_2536130105804357909_n.jpeg',
+                                        fit: BoxFit.contain,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Align(
+                                  alignment: AlignmentDirectional(-0.72, 1.07),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        190, 130, 0, 0),
+                                    child: FlutterFlowIconButton(
+                                      borderColor: Color(0xFFEFF5F8),
+                                      borderRadius: 50,
+                                      borderWidth: 2,
+                                      buttonSize: 40,
+                                      fillColor: AppColor.secondaryColor,
+                                      icon: Icon(
+                                        Icons.edit_sharp,
+                                        color: FlutterFlowTheme.tertiaryColor,
+                                        size: 20,
+                                      ),
+                                      onPressed: () {
+                                        print('Edit button pressed ...');
+                                      },
+                                    ),
+                                  ),
+                                ),
+                                Align(
+                                  alignment: AlignmentDirectional(3.75, -1.39),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        250, 0, 0, 0),
+                                    child: FlutterFlowIconButton(
+                                      borderColor: Colors.transparent,
+                                      borderRadius: 30,
+                                      borderWidth: 1,
+                                      buttonSize: 60,
+                                      icon: Icon(
+                                        Icons.settings,
+                                        color: Colors.black,
+                                        size: 30,
+                                      ),
+                                      onPressed: () async {
+                                        await Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                SettingsWidget(),
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
-                        ),
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
+                            child: Text(
+                              'Corin Canepa',
+                              style: FlutterFlowTheme.bodyText1.override(
+                                fontFamily: 'Lexend Deca',
+                                color: Color(0xFF3E3B3B),
+                                fontSize: 30,
+                                fontWeight: FontWeight.w800,
+                              ),
+                            ),
+                          ),
+                        ]),
                       ),
                       Stack(
                         children: [
@@ -288,7 +293,7 @@ class _CorinProfileWidgetState extends State<CorinProfileWidget> {
                           options: FFButtonOptions(
                             width: 130,
                             height: 40,
-                            color: Color(0xFF3A7CA5),
+                            color: AppColor.secondaryColor,
                             textStyle: FlutterFlowTheme.subtitle2.override(
                               fontFamily: 'Poppins',
                               color: Colors.white,
