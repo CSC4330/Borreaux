@@ -39,7 +39,7 @@ class _barcodeButton extends State<barcodeButton> {
     setState(() {
       print(scanResult);
       if (scanResult != null)
-        if(scanResult == "290118431121")
+        if(scanResult == "2901118431121")
           Navigator.push(
             context,
             MaterialPageRoute(
