@@ -1,3 +1,4 @@
+import 'package:borreauxapp/screens/add_item_google.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
@@ -38,19 +39,25 @@ class _barcodeButton extends State<barcodeButton> {
 
     setState(() {
       print(scanResult);
-      if (scanResult != null)
-        if(scanResult == "2901118431121")
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => ListingsPage(Colors.green),
-            ),
-          );
-      if(scanResult == "2900135210641")
+      if (scanResult != null) if (scanResult == "2901118431121")
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ListingsPage(Colors.green),
+          ),
+        );
+      else if (scanResult == "2900135210641")
         Navigator.push(
           context,
           MaterialPageRoute(
             builder: (context) => LoginPage(),
+          ),
+        );
+      else if (scanResult == "9781492082798")
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AddItemPageGoogle(),
           ),
         );
     });

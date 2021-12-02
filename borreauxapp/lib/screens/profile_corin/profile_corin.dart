@@ -266,7 +266,7 @@ class _CorinProfileWidgetState extends State<CorinProfileWidget> {
                             color: Color(0xFFF5F5F5),
                             textStyle: FlutterFlowTheme.subtitle2.override(
                               fontFamily: 'Lexend Deca',
-                              color: Color(0xFF3A7CA5),
+                              color: AppColor.secondaryColor,
                               fontWeight: FontWeight.w600,
                             ),
                             borderSide: BorderSide(

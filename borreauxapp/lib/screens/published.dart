@@ -5,8 +5,8 @@ import 'package:borreauxapp/widgets/nav_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class ConfettiSample extends StatelessWidget {
-  const ConfettiSample({Key key}) : super(key: key);
+class PublishedBook extends StatelessWidget {
+  const PublishedBook({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,23 +19,47 @@ class ConfettiSample extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               confettiWidget(),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => nav_bar(),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
+                child: Text(
+                  'Your Book Has Been Listed!',
+                  style: TextStyle(
+                    fontFamily: 'Lexend Deca',
+                    color: AppColor.secondaryColor,
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: 200,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => nav_bar(),
+                      ),
+                    );
+                  },
+                  child: Text(
+                    "Home",
+                    style: TextStyle(
+                      fontFamily: 'Lexend Deca',
+                      color: Colors.white,
+                      fontSize: 24,
+                      fontWeight: FontWeight.normal,
                     ),
-                  );
-                },
-                child: Text("Go Back!"),
-                style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all(AppColor.secondaryColor),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(18.0),
-                            side: BorderSide(color: AppColor.secondaryColor)))),
+                  ),
+                  style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all(AppColor.secondaryColor),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(18.0),
+                              side:
+                                  BorderSide(color: AppColor.secondaryColor)))),
+                ),
               ),
             ],
           ),

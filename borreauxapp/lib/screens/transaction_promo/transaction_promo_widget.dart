@@ -1,3 +1,4 @@
+import 'package:borreauxapp/assets/colors.dart';
 import 'package:borreauxapp/screens/flutter_flow/flutter_flow_icon_button.dart';
 import 'package:borreauxapp/screens/flutter_flow/flutter_flow_theme.dart';
 import 'package:borreauxapp/screens/flutter_flow/flutter_flow_util.dart';
@@ -150,7 +151,7 @@ class _TransactionPromoWidgetState extends State<TransactionPromoWidget> {
                                             8, 0, 0, 0),
                                         child: ClipRRect(
                                           borderRadius:
-                                          BorderRadius.circular(60),
+                                              BorderRadius.circular(60),
                                           child: Image.asset(
                                             'lib/assets/images/Screen_Shot_2021-11-28_at_3.07.32_PM.png',
                                             width: 74,
@@ -168,24 +169,24 @@ class _TransactionPromoWidgetState extends State<TransactionPromoWidget> {
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
-                                        MainAxisAlignment.center,
+                                            MainAxisAlignment.center,
                                         crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                            CrossAxisAlignment.start,
                                         children: [
                                           Text(
                                             'Java Concepts',
                                             style: FlutterFlowTheme.subtitle1
                                                 .override(
                                               fontFamily: 'Lexend Deca',
-                                              color: Color(0xFF3A7CA5),
+                                              color: AppColor.secondaryColor,
                                               fontSize: 18,
                                               fontWeight: FontWeight.w500,
                                             ),
                                           ),
                                           Padding(
                                             padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0, 4, 0, 4),
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0, 4, 0, 4),
                                             child: Text(
                                               'Author: Cay Horstmann',
                                               style: FlutterFlowTheme.bodyText1
@@ -206,41 +207,41 @@ class _TransactionPromoWidgetState extends State<TransactionPromoWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0, 8, 0, 0),
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0, 8, 0, 0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
-                                              MainAxisAlignment.center,
+                                                  MainAxisAlignment.center,
                                               children: [
                                                 Expanded(
                                                   child: Padding(
                                                     padding:
-                                                    EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                        0, 0, 16, 0),
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(
+                                                                0, 0, 16, 0),
                                                     child: Column(
                                                       mainAxisSize:
-                                                      MainAxisSize.max,
+                                                          MainAxisSize.max,
                                                       mainAxisAlignment:
-                                                      MainAxisAlignment.end,
+                                                          MainAxisAlignment.end,
                                                       crossAxisAlignment:
-                                                      CrossAxisAlignment
-                                                          .end,
+                                                          CrossAxisAlignment
+                                                              .end,
                                                       children: [
                                                         Text(
                                                           '\$25 per semester',
                                                           style:
-                                                          FlutterFlowTheme
-                                                              .subtitle1
-                                                              .override(
+                                                              FlutterFlowTheme
+                                                                  .subtitle1
+                                                                  .override(
                                                             fontFamily:
-                                                            'Lexend Deca',
+                                                                'Lexend Deca',
                                                             color: Color(
                                                                 0xFF151B1E),
                                                             fontSize: 18,
                                                             fontWeight:
-                                                            FontWeight.w500,
+                                                                FontWeight.w500,
                                                           ),
                                                         )
                                                       ],
@@ -288,7 +289,7 @@ class _TransactionPromoWidgetState extends State<TransactionPromoWidget> {
                                     Text(
                                       'Order Summary',
                                       style:
-                                      FlutterFlowTheme.subtitle2.override(
+                                          FlutterFlowTheme.subtitle2.override(
                                         fontFamily: 'Lexend Deca',
                                         color: Color(0xFF090F13),
                                         fontSize: 16,
@@ -304,12 +305,12 @@ class _TransactionPromoWidgetState extends State<TransactionPromoWidget> {
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment:
-                                  MainAxisAlignment.spaceBetween,
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
                                       'Subtotal',
                                       style:
-                                      FlutterFlowTheme.bodyText2.override(
+                                          FlutterFlowTheme.bodyText2.override(
                                         fontFamily: 'Lexend Deca',
                                         color: Color(0xFF8B97A2),
                                         fontSize: 14,
@@ -320,7 +321,7 @@ class _TransactionPromoWidgetState extends State<TransactionPromoWidget> {
                                       '\$25.00',
                                       textAlign: TextAlign.end,
                                       style:
-                                      FlutterFlowTheme.subtitle2.override(
+                                          FlutterFlowTheme.subtitle2.override(
                                         fontFamily: 'Lexend Deca',
                                         color: Color(0xFF111417),
                                         fontSize: 16,
@@ -336,12 +337,12 @@ class _TransactionPromoWidgetState extends State<TransactionPromoWidget> {
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment:
-                                  MainAxisAlignment.spaceBetween,
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
                                       'Tax',
                                       style:
-                                      FlutterFlowTheme.bodyText2.override(
+                                          FlutterFlowTheme.bodyText2.override(
                                         fontFamily: 'Lexend Deca',
                                         color: Color(0xFF8B97A2),
                                         fontSize: 14,
@@ -355,7 +356,7 @@ class _TransactionPromoWidgetState extends State<TransactionPromoWidget> {
                                         '\$2.48',
                                         textAlign: TextAlign.end,
                                         style:
-                                        FlutterFlowTheme.subtitle2.override(
+                                            FlutterFlowTheme.subtitle2.override(
                                           fontFamily: 'Lexend Deca',
                                           color: Color(0xFF111417),
                                           fontSize: 16,
@@ -372,12 +373,12 @@ class _TransactionPromoWidgetState extends State<TransactionPromoWidget> {
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment:
-                                  MainAxisAlignment.spaceBetween,
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
                                       'Fees',
                                       style:
-                                      FlutterFlowTheme.bodyText2.override(
+                                          FlutterFlowTheme.bodyText2.override(
                                         fontFamily: 'Lexend Deca',
                                         color: Color(0xFF8B97A2),
                                         fontSize: 14,
@@ -391,7 +392,7 @@ class _TransactionPromoWidgetState extends State<TransactionPromoWidget> {
                                         '\$1.25',
                                         textAlign: TextAlign.end,
                                         style:
-                                        FlutterFlowTheme.subtitle2.override(
+                                            FlutterFlowTheme.subtitle2.override(
                                           fontFamily: 'Lexend Deca',
                                           color: Color(0xFF111417),
                                           fontSize: 16,
@@ -414,7 +415,7 @@ class _TransactionPromoWidgetState extends State<TransactionPromoWidget> {
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
                                             'Discount',
@@ -428,8 +429,8 @@ class _TransactionPromoWidgetState extends State<TransactionPromoWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                250, 0, 0, 0),
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    233, 0, 0, 0),
                                             child: Text(
                                               '-\$28.75',
                                               textAlign: TextAlign.end,
@@ -454,12 +455,12 @@ class _TransactionPromoWidgetState extends State<TransactionPromoWidget> {
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment:
-                                  MainAxisAlignment.spaceBetween,
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
                                       'Total',
                                       style:
-                                      FlutterFlowTheme.bodyText2.override(
+                                          FlutterFlowTheme.bodyText2.override(
                                         fontFamily: 'Lexend Deca',
                                         color: Color(0xFF8B97A2),
                                         fontSize: 14,
@@ -470,7 +471,7 @@ class _TransactionPromoWidgetState extends State<TransactionPromoWidget> {
                                       '\$0.00',
                                       textAlign: TextAlign.end,
                                       style:
-                                      FlutterFlowTheme.subtitle1.override(
+                                          FlutterFlowTheme.subtitle1.override(
                                         fontFamily: 'Lexend Deca',
                                         color: Color(0xFF151B1E),
                                         fontSize: 18,
@@ -491,12 +492,12 @@ class _TransactionPromoWidgetState extends State<TransactionPromoWidget> {
                                       decoration: InputDecoration(
                                         labelText: 'Promo Code',
                                         labelStyle:
-                                        FlutterFlowTheme.bodyText1.override(
+                                            FlutterFlowTheme.bodyText1.override(
                                           fontFamily: 'Lexend Deca',
                                         ),
                                         hintText: 'Enter Promo Code',
                                         hintStyle:
-                                        FlutterFlowTheme.bodyText1.override(
+                                            FlutterFlowTheme.bodyText1.override(
                                           fontFamily: 'Lexend Deca',
                                         ),
                                         enabledBorder: UnderlineInputBorder(
@@ -521,7 +522,7 @@ class _TransactionPromoWidgetState extends State<TransactionPromoWidget> {
                                         ),
                                       ),
                                       style:
-                                      FlutterFlowTheme.bodyText1.override(
+                                          FlutterFlowTheme.bodyText1.override(
                                         fontFamily: 'Lexend Deca',
                                       ),
                                       textAlign: TextAlign.start,
@@ -544,7 +545,7 @@ class _TransactionPromoWidgetState extends State<TransactionPromoWidget> {
                                           textStyle: FlutterFlowTheme.subtitle2
                                               .override(
                                             fontFamily: 'Lexend Deca',
-                                            color: Color(0xFF3A7CA5),
+                                            color: AppColor.secondaryColor,
                                           ),
                                           borderSide: BorderSide(
                                             color: Colors.transparent,
@@ -575,7 +576,7 @@ class _TransactionPromoWidgetState extends State<TransactionPromoWidget> {
                         children: [
                           Padding(
                             padding:
-                            EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
+                                EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(8),
                               child: Image.asset(
@@ -607,7 +608,7 @@ class _TransactionPromoWidgetState extends State<TransactionPromoWidget> {
                         options: FFButtonOptions(
                           width: 320,
                           height: 60,
-                          color: Color(0xFF3A7CA5),
+                          color: AppColor.secondaryColor,
                           textStyle: FlutterFlowTheme.subtitle2.override(
                             fontFamily: 'Lexend Deca',
                             color: Colors.white,

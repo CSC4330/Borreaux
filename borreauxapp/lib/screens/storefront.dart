@@ -82,8 +82,6 @@ class _StorefrontState extends State<Storefront> {
   bool viewHasBeenPressed = false;
   List<String> selectedFilterCountList = [];
 
-
-
   List<String> filterCountList = [
     "One",
     "Two",
@@ -231,7 +229,8 @@ class _StorefrontState extends State<Storefront> {
                                 borderRadius: BorderRadius.circular(20.0),
                               ),
                               hintText: 'Search...',
-                              hintStyle: TextStyle(fontSize: 13, fontFamily: 'Lexend Deca'),
+                              hintStyle: TextStyle(
+                                  fontSize: 13, fontFamily: 'Lexend Deca'),
                               prefixIcon: Icon(Icons.search),
                               suffixIcon: barcodeButton(),
                             ),
@@ -262,7 +261,9 @@ class _StorefrontState extends State<Storefront> {
                               TextSpan(
                                   text: "Results",
                                   style: TextStyle(
-                                      color: Colors.black, fontSize: 20, fontFamily: 'Lexend Deca')),
+                                      color: Colors.black,
+                                      fontSize: 20,
+                                      fontFamily: 'Lexend Deca')),
                             ],
                           ),
                         ),
@@ -321,8 +322,7 @@ class _StorefrontState extends State<Storefront> {
       height: 175.0,
       child: ListView.builder(
         itemExtent: 175.0,
-        itemCount: listings.length
-        ,
+        itemCount: listings.length,
         itemBuilder: (content, index) => Container(
           height: 1000,
           padding: EdgeInsets.all(5),

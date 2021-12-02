@@ -1,6 +1,7 @@
 import 'package:borreauxapp/assets/colors.dart';
 import 'package:borreauxapp/model/user.dart';
 import 'package:borreauxapp/screens/published.dart';
+import 'package:borreauxapp/screens/search_for_listing.dart';
 import 'package:borreauxapp/utils/user_preferences.dart';
 import 'package:borreauxapp/widgets/button_widget.dart';
 import 'package:borreauxapp/widgets/carousel_widget.dart';
@@ -20,7 +21,6 @@ class AddItemPage extends StatefulWidget {
 }
 
 class _AddItemPageState extends State<AddItemPage> {
-
   String scanResult;
 
   @override
@@ -36,141 +36,134 @@ class _AddItemPageState extends State<AddItemPage> {
           physics: BouncingScrollPhysics(),
           children: [
             const SizedBox(
-              height: 60,
+              height: 70,
             ),
-            Container(
-              margin: const EdgeInsets.all(30.0),
-              padding: const EdgeInsets.all(100.0),
-              decoration: BoxDecoration(
-                  border: Border.all(
-                    color: AppColor.secondaryColor,
-                    width: 1,
+            ConstrainedBox(
+                constraints: BoxConstraints.tightFor(width: 300, height: 70),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => searchExistListing(),
+                      ),
+                    );
+                  },
+                  child: Text(
+                    "List An Item",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Lexend Deca',
+                    ),
                   ),
-                  borderRadius: BorderRadius.all(Radius.circular(20))),
-              child: Text(
-                "Image(s)",
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 15.0, fontFamily: 'Lexend Deca'),
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  onPressed: () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) => MessagesPage(),
-                    //   ),
-                    // );
-                  },
-                  child: Text("Take Photo(s)"),
                   style: ButtonStyle(
                       backgroundColor:
                           MaterialStateProperty.all(AppColor.secondaryColor),
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(18.0),
+                              borderRadius: BorderRadius.circular(40.0),
                               side:
                                   BorderSide(color: AppColor.secondaryColor)))),
-                ),
-                const SizedBox(
-                  width: 50,
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) => MessagesPage(),
-                    //   ),
-                    // );
-                  },
-                  child: Text("Camera Roll"),
-                  style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all(AppColor.secondaryColor),
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(18.0),
-                              side:
-                                  BorderSide(color: AppColor.secondaryColor)))),
-                ),
-              ],
-            ),
+                )),
             const SizedBox(
               height: 30,
             ),
-            TextFieldWidget(
-              label: 'Book Title',
-              text: "",
-              onChanged: (name) {
-              },
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SizedBox(width: 30),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text("0",
+                        style: TextStyle(
+                          color: AppColor.secondaryColor,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        )),
+                    Text("Active",
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 18,
+                        ))
+                  ],
+                ),
+                SizedBox(width: 15),
+                Container(
+                  height: 24,
+                  child: VerticalDivider(thickness: 2),
+                ),
+                SizedBox(width: 15),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text("0",
+                        style: TextStyle(
+                          color: AppColor.secondaryColor,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        )),
+                    Text("Sold",
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 18,
+                        ))
+                  ],
+                ),
+                SizedBox(width: 15),
+                Container(
+                  height: 24,
+                  child: VerticalDivider(thickness: 2),
+                ),
+                SizedBox(width: 15),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text("0",
+                        style: TextStyle(
+                          color: AppColor.secondaryColor,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        )),
+                    Text("Unsold",
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 18,
+                        ))
+                  ],
+                ),
+                SizedBox(width: 30),
+              ],
             ),
-            const SizedBox(height: 24),
-            TextFieldWidget(
-              label: 'Description',
-              text: "",
-              maxLines: 5,
-              onChanged: (email) {},
+            SizedBox(height: 210),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("\$0.00",
+                    style: TextStyle(
+                      color: Colors.green,
+                      fontSize: 70,
+                      fontWeight: FontWeight.w800,
+                      fontFamily: 'Lexend Deca',
+                    )),
+              ],
             ),
-            const SizedBox(height: 24),
-            TextFieldWidget(
-              label: 'Rental Info',
-              text: "",
-              maxLines: 5,
-              onChanged: (about) {},
-            ),
-            const SizedBox(height: 24),
-            TextFieldWidget(
-              label: 'Location Details',
-              text: "",
-              maxLines: 5,
-              onChanged: (about) {},
-            ),
-            Center(
-              child: DateRangePickerWidget(),
-            ),
-            const SizedBox(height: 24),
-            MapScreen(),
-            const SizedBox(height: 30),
-            buildPublishButton(),
-            const SizedBox(height: 30),
+            SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("90 Days Total",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 30,
+                      fontWeight: FontWeight.normal,
+                      fontFamily: 'Lexend Deca',
+                    )),
+              ],
+            )
           ],
         ),
-      );
-
-  Widget buildPublishButton() => ElevatedButton(
-        style: ButtonStyle(
-            backgroundColor:
-                MaterialStateProperty.all<Color>(AppColor.secondaryColor),
-            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(18.0),
-                    side: BorderSide(color: AppColor.secondaryColor)))),
-        child: Text('Publish'),
-        onPressed: () {
-          listings.add(
-            newListing(
-                "lib/assets/images/book_image_not_found.png",
-                "Corin Canepa",
-                "lib/assets/images/13707656_10208704555125113_2536130105804357909_n.jpeg",
-                "\$0.45",
-                "\$69.00",
-                "\$420.70",
-                false,
-                5.0,
-                "420",
-                "New Book"),
-          );
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => ConfettiSample(),
-            ),
-          );
-        },
       );
 }
 

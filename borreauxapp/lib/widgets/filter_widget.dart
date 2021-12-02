@@ -8,26 +8,11 @@ class filterButton extends StatefulWidget {
 
 class _filterButton extends State<filterButton> {
   List<String> filterCountList = [
-    "One",
-    "Two",
-    "Three",
-    "Four",
-    "Five",
-    "Six",
-    "Seven",
-    "Eight",
-    "Nine",
-    "Ten",
-    "Eleven",
-    "Tweleve",
-    "Thirteen",
-    "Fourteen",
-    "Fifteen",
-    "Sixteen",
-    "Seventeen",
-    "Eighteen",
-    "Nineteen",
-    "Twenty"
+    "Romance",
+    "Action",
+    "Coding",
+    "Thriller",
+    "Horror",
   ];
 
   List<String> selectedFilterCountList = [];
