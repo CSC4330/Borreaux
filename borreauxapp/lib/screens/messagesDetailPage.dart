@@ -77,7 +77,10 @@ class _MessagesDetailPageState extends State<MessagesDetailPage> {
                       Text(
                         "Ja'Marr Chase",
                         style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.w600),
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                          fontFamily: 'Lexend Deca',
+                        ),
                       ),
                       SizedBox(
                         height: 6,
@@ -85,7 +88,9 @@ class _MessagesDetailPageState extends State<MessagesDetailPage> {
                       Text(
                         "Online",
                         style: TextStyle(
-                            color: Colors.grey.shade600, fontSize: 13),
+                          color: Colors.grey.shade600,
+                          fontSize: 13,
+                        ),
                       ),
                     ],
                   ),
@@ -132,6 +137,7 @@ class _MessagesDetailPageState extends State<MessagesDetailPage> {
                       messages[index].messageContent,
                       style: TextStyle(
                         fontSize: 15,
+                        fontFamily: 'Lexend Deca',
                         color: (messages[index].messageType == "receiver"
                             ? Colors.black
                             : AppColor.primaryColor),
