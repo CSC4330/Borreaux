@@ -127,7 +127,7 @@ class _OrderHistoryWidgetState extends State<OrderHistoryWidget> {
                                           shape: BoxShape.circle,
                                         ),
                                         child: Image.asset(
-                                          'lib/assets/images/156227635_103478585135693_417729300111963756_n.jpeg',
+                                          'lib/assets/images/Joe_Burrow.png',
                                         ),
                                       ),
                                     ),
