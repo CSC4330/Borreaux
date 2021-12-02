@@ -42,7 +42,7 @@ class ListingsPage extends StatelessWidget {
                     SizedBox(
                       height: 15,
                     ),
-                    ListingPrices("\$2.50", "\$7.50", "\$10.50"),
+                    ListingPrices("\$1.50", "\$4.50", "\$16.50"),
                     SizedBox(
                       height: 15,
                     ),
