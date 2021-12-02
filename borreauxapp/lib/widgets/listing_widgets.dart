@@ -35,6 +35,7 @@ class ListingUsername extends StatelessWidget {
           color: Colors.black,
           fontWeight: FontWeight.bold,
           fontSize: 20,
+            fontFamily: 'Lexend Deca',
         ));
   }
 }

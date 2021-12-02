@@ -42,7 +42,7 @@ class buildTextBox extends StatelessWidget {
                 keyboardType: inputType, //************* */
                 style: const TextStyle(
                   color: AppColor.secondaryColor,
-                  fontFamily: 'OpenSans',
+                  fontFamily: 'Lexend Deca',
                 ),
                 decoration: InputDecoration(
                   border: InputBorder.none,

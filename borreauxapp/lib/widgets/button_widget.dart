@@ -63,6 +63,7 @@ class HeaderWidget extends StatelessWidget {
           Text(
             title,
             style: TextStyle(
+              fontFamily: 'Lexend Deca',
               color: Colors.white,
               fontSize: 24,
               fontWeight: FontWeight.bold,

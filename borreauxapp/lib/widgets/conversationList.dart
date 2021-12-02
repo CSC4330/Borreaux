@@ -50,7 +50,7 @@ class _ConversationListState extends State<ConversationList> {
                         children: <Widget>[
                           Text(
                             widget.name,
-                            style: TextStyle(fontSize: 16),
+                            style: TextStyle(fontSize: 16, fontFamily: 'Lexend Deca'),
                           ),
                           SizedBox(
                             height: 6,
@@ -74,6 +74,7 @@ class _ConversationListState extends State<ConversationList> {
             Text(
               widget.time,
               style: TextStyle(
+                  fontFamily: 'Lexend Deca',
                   fontSize: 12,
                   fontWeight: widget.isMessageRead
                       ? FontWeight.bold
