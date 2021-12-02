@@ -80,7 +80,8 @@ class ListingsPage extends StatelessWidget {
                       height: 10,
                     ),
 
-                    ListingDescription('Available rental dates: August 14th to November 20th'),
+                    ListingDescription(
+                        'Available rental dates: August 14th to November 20th'),
 
                     SizedBox(
                       height: 30,
@@ -239,7 +240,8 @@ class ListingsPage extends StatelessWidget {
               },
               child: Text(
                 "Message",
-                style: TextStyle(color: AppColor.secondaryColor, fontFamily: 'Lexend Deca'),
+                style: TextStyle(
+                    color: AppColor.secondaryColor, fontFamily: 'Lexend Deca'),
               ),
               style: ElevatedButton.styleFrom(
                 fixedSize: const Size(175, 25),
