@@ -1,4 +1,0 @@
-io/flutter/plugins/GeneratedPluginRegistrant.java
- io.flutter.plugins.GeneratedPluginRegistrant
-com/example/borreauxapp/BuildConfig.java
- com.example.borreauxapp.BuildConfig

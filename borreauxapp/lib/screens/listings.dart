@@ -82,7 +82,7 @@ class ListingsPage extends StatelessWidget {
                     ),
 
                     ListingDescription(
-                        'Available rental dates: August 14th to November 20th'),
+                        'Available rental dates: November 4th to January 20th'),
 
                     SizedBox(
                       height: 30,

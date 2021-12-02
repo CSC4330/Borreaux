@@ -391,14 +391,22 @@ class _LandingPage extends State<LandingPage> {
               color: Colors.red,
               child: Expanded(
                 child: ElevatedButton(
+                  child: Container(
+                  child: Image.asset(
+                     'lib/assets/images/Red_and_Gold_Classy_and_Elegant_Organic_Stars_Business_Christmas_Banner.png'
+                  ),
+                    height: 30000,
+                    width: 30000,
+                  ),
                   onPressed: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => Storefront(),
                       ),
+
                     );
-                  },
+                    },
                 ),
               ),
             ),
