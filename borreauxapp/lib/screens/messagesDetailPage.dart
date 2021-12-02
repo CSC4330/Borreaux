@@ -14,17 +14,13 @@ class _MessagesDetailPageState extends State<MessagesDetailPage> {
   // RECEIVER is the person you are texting
   // SENDER is you
   List<ChatMessage> messages = [
-    ChatMessage(messageContent: "hey joe", messageType: "receiver"),
+    ChatMessage(messageContent: "hey corin", messageType: "receiver"),
     ChatMessage(
-        messageContent: "do u still have that football 1001 book",
+        messageContent:
+            "do u still have that book Nash suggested for us in class",
         messageType: "receiver"),
     ChatMessage(
-        messageContent: "no i think coach o took it from me",
-        messageType: "sender"),
-    ChatMessage(
-        messageContent: "but you promised me i could have it",
-        messageType: "receiver"),
-    ChatMessage(messageContent: "leave me alone", messageType: "sender"),
+        messageContent: "i rented the textbook to nash", messageType: "sender"),
   ];
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,7 +59,8 @@ class _MessagesDetailPageState extends State<MessagesDetailPage> {
                   width: 2,
                 ),
                 CircleAvatar(
-                  backgroundImage: AssetImage("lib/assets/images/chase.png"),
+                  backgroundImage:
+                      AssetImage("lib/assets/images/cute_nash.png"),
                   maxRadius: 20,
                 ),
                 SizedBox(
@@ -75,7 +72,7 @@ class _MessagesDetailPageState extends State<MessagesDetailPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(
-                        "Ja'Marr Chase",
+                        "nashfan123",
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
@@ -90,7 +87,7 @@ class _MessagesDetailPageState extends State<MessagesDetailPage> {
                         style: TextStyle(
                           color: Colors.grey.shade600,
                           fontSize: 13,
-                            fontFamily: 'Lexend Deca',
+                          fontFamily: 'Lexend Deca',
                         ),
                       ),
                     ],
