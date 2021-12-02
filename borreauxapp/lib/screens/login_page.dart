@@ -19,7 +19,7 @@ class _LoginPageState extends State<LoginPage> {
 
       children: <Widget>[
         const SizedBox(
-            width: 200, // works
+            width: 170, // works
             height: 1),
         ElevatedButton(
           child: const Text('Sign In'),
@@ -137,20 +137,22 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget buildForgotPasswordBtn() {
-    return Container(
-      alignment: Alignment.topLeft,
-      child: TextButton(
-        child: const Text('Forgot Password?'),
-        style: TextButton.styleFrom(
-          primary: AppColor.secondaryColor,
-        ),
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => nav_bar()),
-          );
-        },
-      ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        TextButton(
+          child: const Text('Forgot Password?'),
+          style: TextButton.styleFrom(
+            primary: AppColor.secondaryColor,
+          ),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => nav_bar()),
+            );
+          },
+        )
+      ],
     );
   }
 
@@ -216,7 +218,7 @@ class _LoginPageState extends State<LoginPage> {
                       Row(
                         children: [
                           buildLoginButton(),
-                          // buildForgotPasswordBtn(),
+                          buildForgotPasswordBtn(),
                         ],
                       ),
                       Row(

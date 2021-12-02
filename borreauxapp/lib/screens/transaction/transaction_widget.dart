@@ -1,3 +1,5 @@
+import 'package:borreauxapp/assets/colors.dart';
+
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -175,7 +177,7 @@ class _TransactionWidgetState extends State<TransactionWidget> {
                                           style: FlutterFlowTheme.subtitle1
                                               .override(
                                             fontFamily: 'Lexend Deca',
-                                            color: Color(0xFF3A7CA5),
+                                            color: AppColor.secondaryColor,
                                             fontSize: 18,
                                             fontWeight: FontWeight.w500,
                                           ),
@@ -415,8 +417,8 @@ class _TransactionWidgetState extends State<TransactionWidget> {
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      10, 0, 120, 0),
-                                  child: TextFormField(
+                                      10, 0, 120, 10),
+                                  child: TextField(
                                     controller: textController,
                                     obscureText: false,
                                     decoration: InputDecoration(
@@ -490,7 +492,7 @@ class _TransactionWidgetState extends State<TransactionWidget> {
                                         textStyle:
                                             FlutterFlowTheme.subtitle2.override(
                                           fontFamily: 'Lexend Deca',
-                                          color: Color(0xFF3A7CA5),
+                                          color: AppColor.secondaryColor,
                                         ),
                                         borderSide: BorderSide(
                                           color: Colors.transparent,
@@ -541,7 +543,7 @@ class _TransactionWidgetState extends State<TransactionWidget> {
                       options: FFButtonOptions(
                         width: 320,
                         height: 60,
-                        color: Color(0xFF3A7CA5),
+                        color: AppColor.secondaryColor,
                         textStyle: FlutterFlowTheme.subtitle2.override(
                           fontFamily: 'Lexend Deca',
                           color: Colors.white,

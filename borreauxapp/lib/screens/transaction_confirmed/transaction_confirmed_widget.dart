@@ -1,7 +1,10 @@
+import 'package:borreauxapp/assets/colors.dart';
 import 'package:borreauxapp/screens/flutter_flow/flutter_flow_theme.dart';
 import 'package:borreauxapp/screens/flutter_flow/flutter_flow_util.dart';
 import 'package:borreauxapp/screens/flutter_flow/flutter_flow_widgets.dart';
+import 'package:borreauxapp/screens/landing_page.dart';
 import 'package:borreauxapp/screens/order_info/order_info.dart';
+import 'package:borreauxapp/widgets/nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -31,7 +34,7 @@ class _TransactionConfirmedWidgetState
               padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
               child: Card(
                 clipBehavior: Clip.antiAliasWithSaveLayer,
-                color: Color(0xFF3A7CA5),
+                color: AppColor.secondaryColor,
                 elevation: 3,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(70),
@@ -52,7 +55,7 @@ class _TransactionConfirmedWidgetState
                 'Payment Confirmed!',
                 style: FlutterFlowTheme.title1.override(
                   fontFamily: 'Lexend Deca',
-                  color: Color(0xFF3A7CA5),
+                  color: AppColor.secondaryColor,
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
                 ),
@@ -89,10 +92,10 @@ class _TransactionConfirmedWidgetState
                 width: 300,
                 height: 70,
                 decoration: BoxDecoration(
-                  color: Color(0xFF3A7CA5),
+                  color: AppColor.secondaryColor,
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(
-                    color: Color(0xFF090F13),
+                    color: Color(0xFF3A7CA5),
                   ),
                 ),
                 child: Row(
@@ -133,7 +136,7 @@ class _TransactionConfirmedWidgetState
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     FFButtonWidget(
-                      onPressed: ()  async {
+                      onPressed: () async {
                         await Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -145,7 +148,39 @@ class _TransactionConfirmedWidgetState
                       options: FFButtonOptions(
                         width: 230,
                         height: 50,
-                        color: Color(0xFF3A7CA5),
+                        color: AppColor.secondaryColor,
+                        textStyle: FlutterFlowTheme.subtitle2.override(
+                          fontFamily: 'Lexend Deca',
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                        ),
+                        elevation: 0,
+                        borderSide: BorderSide(
+                          color: Colors.transparent,
+                          width: 1,
+                        ),
+                        borderRadius: 40,
+                      ),
+                      loading: _loadingButton,
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    FFButtonWidget(
+                      onPressed: () async {
+                        await Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => nav_bar(),
+                          ),
+                        );
+                      },
+                      text: 'Home',
+                      options: FFButtonOptions(
+                        width: 230,
+                        height: 50,
+                        color: AppColor.secondaryColor,
                         textStyle: FlutterFlowTheme.subtitle2.override(
                           fontFamily: 'Lexend Deca',
                           color: Colors.white,

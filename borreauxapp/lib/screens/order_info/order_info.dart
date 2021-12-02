@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:borreauxapp/screens/seller_profile.dart';
 
-
 class OrderInfoWidget extends StatefulWidget {
   OrderInfoWidget({Key key}) : super(key: key);
 
@@ -273,8 +272,6 @@ class _OrderInfoWidgetState extends State<OrderInfoWidget> {
               children: [
                 Divider(
                   color: Color(0xFFD2CCCC),
-
-
                 ),
                 InkWell(
                   onTap: () async {

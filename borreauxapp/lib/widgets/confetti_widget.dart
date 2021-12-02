@@ -32,7 +32,7 @@ class _confettiWidgetState extends State<confettiWidget> {
     // Method to convert degree to radians
     double degToRad(double deg) => deg * (pi / 180.0);
 
-    const numberOfPoints = 8;
+    const numberOfPoints = 5;
     final halfWidth = size.width / 2;
     final externalRadius = halfWidth;
     final internalRadius = halfWidth / 2.5;
@@ -62,6 +62,8 @@ class _confettiWidgetState extends State<confettiWidget> {
             alignment: Alignment.center,
             child: ConfettiWidget(
               confettiController: _controllerCenter,
+              numberOfParticles: 3,
+              emissionFrequency: 0.05,
               blastDirectionality: BlastDirectionality
                   .explosive, // don't specify a direction, blast randomly
               shouldLoop:
@@ -69,21 +71,33 @@ class _confettiWidgetState extends State<confettiWidget> {
               colors: const [
                 Colors.green,
                 Colors.blue,
-                Colors.pink,
-                Colors.orange,
-                Colors.purple
+                Colors.purple,
+                Colors.yellow,
+                Colors.deepPurple,
               ], // manually specify the colors to be used
-              createParticlePath: drawStar, // define a custom shape/path.
+              //createParticlePath: drawStar, // define a custom shape/path.
             ),
           ),
           Align(
             alignment: Alignment.center,
-            child: Text(
-              'Congratulations!',
-              style: TextStyle(
-                  color: AppColor.secondaryColor,
-                  fontSize: 50,
-                  fontFamily: 'OpenSans'),
+            child: Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
+              child: Card(
+                clipBehavior: Clip.antiAliasWithSaveLayer,
+                color: AppColor.secondaryColor,
+                elevation: 3,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(70),
+                ),
+                child: Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(30, 30, 30, 30),
+                  child: Icon(
+                    Icons.check_rounded,
+                    color: Colors.white,
+                    size: 60,
+                  ),
+                ),
+              ),
             ),
           ),
         ],
