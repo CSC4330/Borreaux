@@ -25,34 +25,34 @@ class _MessagesPageState extends State<MessagesPage> {
   @override
   List<MessagesUsers> messagesUsers = [
     MessagesUsers(
-        name: "Ja'Marr Chase",
-        messageText: "leave me alone",
-        imagePath: "lib/assets/images/chase.png",
+        name: "nashfan123",
+        messageText: "i rented the book to nash",
+        imagePath: "lib/assets/images/cute_nash.png",
         time: "Yesterday"),
     MessagesUsers(
-        name: "Justin Jefferson",
-        messageText: "natty",
-        imagePath: "lib/assets/images/chase.png",
+        name: "iloveNash",
+        messageText: "whats your favorite thing about nash",
+        imagePath: "lib/assets/images/smart_nash.png",
         time: "Yesterday"),
     MessagesUsers(
-        name: "Jorge Henry",
-        messageText: "tomorrow?",
-        imagePath: "lib/assets/images/chase.png",
+        name: "nashattack",
+        messageText: "i watched billion dollar code just for nash",
+        imagePath: "lib/assets/images/indifferent_nash.png",
         time: "31 Mar"),
     MessagesUsers(
-        name: "Philip Fox",
-        messageText: "i don't have it anymore",
-        imagePath: "lib/assets/images/chase.png",
+        name: "Nash Mahmoud",
+        messageText: "why are there so many of me on here",
+        imagePath: "lib/assets/images/glowing_nash.png",
         time: "28 Mar"),
     MessagesUsers(
         name: "Debra Hawkins",
-        messageText: "yeah it's pretty much new",
+        messageText: "who is nash mahmoud",
         imagePath: "lib/assets/images/chase.png",
         time: "23 Mar"),
     MessagesUsers(
-        name: "Jacob Pena",
+        name: "Joe Burrow",
         messageText: "i think i can come in 10 mins",
-        imagePath: "lib/assets/images/chase.png",
+        imagePath: "lib/assets/images/Joe_Burrow.png",
         time: "17 Mar"),
     MessagesUsers(
         name: "Andrey Jones",
@@ -150,7 +150,8 @@ class _MessagesPageState extends State<MessagesPage> {
                       borderRadius: BorderRadius.circular(20.0),
                     ),
                     hintText: 'Search...',
-                    hintStyle: TextStyle(fontSize: 13,fontFamily: 'Lexend Deca'),
+                    hintStyle:
+                        TextStyle(fontSize: 13, fontFamily: 'Lexend Deca'),
                     prefixIcon: Icon(Icons.search),
                   ),
                 ),
