@@ -157,7 +157,7 @@ class _OrderHistoryWidgetState extends State<OrderHistoryWidget> {
                                       ),
                                     ),
                                     Text(
-                                      'Rental Date: August 5, 2021',
+                                      'Rental Date: December 2, 2021',
                                       style:
                                           FlutterFlowTheme.bodyText1.override(
                                         fontFamily: 'Lexend Deca',
@@ -171,7 +171,7 @@ class _OrderHistoryWidgetState extends State<OrderHistoryWidget> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         AutoSizeText(
-                                          'Return  Date: December 15, 2021',
+                                          'Return  Date: May 15, 2021',
                                           textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.bodyText1
                                               .override(
@@ -630,7 +630,7 @@ class _OrderHistoryWidgetState extends State<OrderHistoryWidget> {
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     AutoSizeText(
-                                      'Rented',
+                                      'Returned',
                                       textAlign: TextAlign.start,
                                       style:
                                           FlutterFlowTheme.subtitle2.override(
@@ -644,7 +644,7 @@ class _OrderHistoryWidgetState extends State<OrderHistoryWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           4, 0, 0, 0),
                                       child: AutoSizeText(
-                                        'Java Concepts',
+                                        'Applied Statistics',
                                         textAlign: TextAlign.start,
                                         style:
                                             FlutterFlowTheme.subtitle1.override(
@@ -664,7 +664,7 @@ class _OrderHistoryWidgetState extends State<OrderHistoryWidget> {
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Text(
-                                          'Return Date: ',
+                                          'Rental Date: ',
                                           textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.bodyText1
                                               .override(
@@ -672,7 +672,7 @@ class _OrderHistoryWidgetState extends State<OrderHistoryWidget> {
                                           ),
                                         ),
                                         AutoSizeText(
-                                          'December 15, 2021',
+                                          'May 15, 2021',
                                           textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.bodyText1
                                               .override(

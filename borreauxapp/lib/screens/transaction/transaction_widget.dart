@@ -150,7 +150,7 @@ class _TransactionWidgetState extends State<TransactionWidget> {
                                       child: ClipRRect(
                                         borderRadius: BorderRadius.circular(60),
                                         child: Image.asset(
-                                          'assets/images/Screen_Shot_2021-11-28_at_3.07.32_PM.png',
+                                          'lib/assets/images/Screen_Shot_2021-11-28_at_3.07.32_PM.png',
                                           width: 74,
                                           height: 74,
                                           fit: BoxFit.cover,
@@ -196,7 +196,7 @@ class _TransactionWidgetState extends State<TransactionWidget> {
                                           ),
                                         ),
                                         Text(
-                                          'Return Date:  December 15, 2021',
+                                          'Return Date:  May 15, 2021',
                                           style: FlutterFlowTheme.bodyText1
                                               .override(
                                             fontFamily: 'Lexend Deca',
@@ -524,7 +524,7 @@ class _TransactionWidgetState extends State<TransactionWidget> {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(8),
                             child: Image.asset(
-                              'assets/images/payPal.png',
+                              'lib/assets/images/payPal.png',
                               width: 160,
                               height: 44,
                               fit: BoxFit.cover,

@@ -2,6 +2,7 @@ import 'package:borreauxapp/assets/colors.dart';
 import 'package:borreauxapp/screens/messages.dart';
 import 'package:borreauxapp/screens/profile.dart';
 import 'package:borreauxapp/screens/seller_profile.dart';
+import 'package:borreauxapp/screens/transaction/transaction_widget.dart';
 import 'package:borreauxapp/widgets/button_widget.dart';
 import 'package:borreauxapp/widgets/carousel_widget.dart';
 import 'package:borreauxapp/widgets/google_map.dart';
@@ -251,12 +252,12 @@ class ListingsPage extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (context) => MessagesPage(),
-                //   ),
-                // );
+                 Navigator.push(
+                  context,
+                     MaterialPageRoute(
+                     builder: (context) => TransactionWidget(),
+                  ),
+                 );
               },
               child: Text("Rent"),
               style: ElevatedButton.styleFrom(
