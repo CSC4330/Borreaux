@@ -82,7 +82,7 @@ class ListingsPage extends StatelessWidget {
                     ),
 
                     ListingDescription(
-                        'Available rental dates: November 4th to January 20th'),
+                        'Available rental dates:\nNovember 4th to January 20th'),
 
                     SizedBox(
                       height: 30,
@@ -254,12 +254,12 @@ class ListingsPage extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                 Navigator.push(
+                Navigator.push(
                   context,
-                     MaterialPageRoute(
-                     builder: (context) => TransactionWidget(),
+                  MaterialPageRoute(
+                    builder: (context) => TransactionWidget(),
                   ),
-                 );
+                );
               },
               child: Text("Rent"),
               style: ElevatedButton.styleFrom(

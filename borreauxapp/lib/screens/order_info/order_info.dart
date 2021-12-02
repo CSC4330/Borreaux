@@ -1,3 +1,5 @@
+import 'package:borreauxapp/assets/colors.dart';
+
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -29,7 +31,7 @@ class _OrderInfoWidgetState extends State<OrderInfoWidget> {
           buttonSize: 46,
           icon: Icon(
             Icons.chevron_left_outlined,
-            color: Color(0xFF3A7CA5),
+            color: AppColor.secondaryColor,
             size: 30,
           ),
           onPressed: () async {
@@ -119,7 +121,7 @@ class _OrderInfoWidgetState extends State<OrderInfoWidget> {
                                       textAlign: TextAlign.start,
                                       style: FlutterFlowTheme.title1.override(
                                         fontFamily: 'Lexend Deca',
-                                        color: Color(0xFF3A7CA5),
+                                        color: AppColor.secondaryColor,
                                       ),
                                     ),
                                     Text(
