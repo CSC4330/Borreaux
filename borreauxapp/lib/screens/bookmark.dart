@@ -142,7 +142,7 @@ class _BookmarkPageState extends State<BookmarkPage> {
                                     });
                                   },
                                   color: (listings[index].bookmarked)
-                                      ? Colors.red
+                                      ? Colors.orange
                                       : const Color(0xff9A9A9A)),
                               SizedBox(
                                 width: 10,

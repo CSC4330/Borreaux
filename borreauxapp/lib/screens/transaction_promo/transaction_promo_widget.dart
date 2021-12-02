@@ -485,7 +485,7 @@ class _TransactionPromoWidgetState extends State<TransactionPromoWidget> {
                                 children: [
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        10, 0, 120, 0),
+                                        10, 0, 120, 10),
                                     child: TextFormField(
                                       controller: textController,
                                       obscureText: false,
@@ -532,7 +532,7 @@ class _TransactionPromoWidgetState extends State<TransactionPromoWidget> {
                                     alignment: AlignmentDirectional(1, -3.9),
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 0, 5, 0),
+                                          0, 5, 5, 30),
                                       child: FFButtonWidget(
                                         onPressed: () {
                                           print('Button pressed ...');

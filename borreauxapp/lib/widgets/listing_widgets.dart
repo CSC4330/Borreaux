@@ -151,7 +151,10 @@ class ListingDescription extends StatelessWidget {
       SizedBox(
         width: 30,
       ),
-      Text(myDescription, style: TextStyle(color: Colors.black, height: 1.5)),
+      Flexible(
+          child: Text(myDescription,
+              textAlign: TextAlign.start,
+              style: TextStyle(color: Colors.black, height: 1.5))),
     ]);
   }
 }

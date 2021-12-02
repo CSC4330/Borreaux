@@ -44,10 +44,14 @@ class _nav_bar_state extends State<nav_bar> {
         ),
         child: BottomNavigationBar(
           onTap: onTabTapped, // new
+          selectedItemColor: Colors.orange,
+          unselectedItemColor: Colors.white,
+          backgroundColor: AppColor.secondaryColor,
           currentIndex: _currentIndex,
           showSelectedLabels: false,
           showUnselectedLabels: false,
           type: BottomNavigationBarType.fixed,
+          iconSize: 30,
           items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.home),

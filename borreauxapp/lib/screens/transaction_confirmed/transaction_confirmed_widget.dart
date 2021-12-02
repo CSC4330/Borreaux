@@ -110,7 +110,8 @@ class _TransactionConfirmedWidgetState
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 4),
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(0, 0, 20, 0),
                             child: Text(
                               '\$0.00',
                               style: FlutterFlowTheme.subtitle2.override(
@@ -119,6 +120,7 @@ class _TransactionConfirmedWidgetState
                                 fontSize: 16,
                                 fontWeight: FontWeight.w500,
                               ),
+                              textAlign: TextAlign.center,
                             ),
                           )
                         ],

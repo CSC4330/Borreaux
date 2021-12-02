@@ -96,7 +96,7 @@ class _CorinProfileWidgetState extends State<CorinProfileWidget> {
                                       borderRadius: 50,
                                       borderWidth: 2,
                                       buttonSize: 40,
-                                      fillColor: AppColor.secondaryColor,
+                                      fillColor: Colors.orange,
                                       icon: Icon(
                                         Icons.edit_sharp,
                                         color: FlutterFlowTheme.tertiaryColor,
@@ -293,7 +293,7 @@ class _CorinProfileWidgetState extends State<CorinProfileWidget> {
                           options: FFButtonOptions(
                             width: 130,
                             height: 40,
-                            color: AppColor.secondaryColor,
+                            color: Colors.orange,
                             textStyle: FlutterFlowTheme.subtitle2.override(
                               fontFamily: 'Poppins',
                               color: Colors.white,

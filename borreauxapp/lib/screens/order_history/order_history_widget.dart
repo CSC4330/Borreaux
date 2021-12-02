@@ -1,3 +1,4 @@
+import 'package:borreauxapp/assets/colors.dart';
 import 'package:borreauxapp/screens/flutter_flow/flutter_flow_icon_button.dart';
 import 'package:borreauxapp/screens/flutter_flow/flutter_flow_theme.dart';
 import 'package:borreauxapp/screens/flutter_flow/flutter_flow_util.dart';
@@ -150,7 +151,7 @@ class _OrderHistoryWidgetState extends State<OrderHistoryWidget> {
                                       style:
                                           FlutterFlowTheme.subtitle1.override(
                                         fontFamily: 'Lexend Deca',
-                                        color: Color(0xFF3A7CA5),
+                                        color: Colors.orange,
                                         fontSize: 18,
                                         fontWeight: FontWeight.normal,
                                       ),
@@ -305,7 +306,7 @@ class _OrderHistoryWidgetState extends State<OrderHistoryWidget> {
                                         style:
                                             FlutterFlowTheme.subtitle1.override(
                                           fontFamily: 'Lexend Deca',
-                                          color: Color(0xFF3A7CA5),
+                                          color: Colors.orange,
                                           fontSize: 18,
                                           fontWeight: FontWeight.w500,
                                         ),
@@ -479,7 +480,7 @@ class _OrderHistoryWidgetState extends State<OrderHistoryWidget> {
                                           style: FlutterFlowTheme.subtitle1
                                               .override(
                                             fontFamily: 'Lexend Deca',
-                                            color: Color(0xFF3A7CA5),
+                                            color: Colors.orange,
                                             fontSize: 18,
                                             fontWeight: FontWeight.w500,
                                           ),
@@ -648,7 +649,7 @@ class _OrderHistoryWidgetState extends State<OrderHistoryWidget> {
                                         style:
                                             FlutterFlowTheme.subtitle1.override(
                                           fontFamily: 'Lexend Deca',
-                                          color: Color(0xFF3A7CA5),
+                                          color: Colors.orange,
                                           fontSize: 18,
                                           fontWeight: FontWeight.w500,
                                         ),
